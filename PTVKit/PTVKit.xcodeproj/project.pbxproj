@@ -22,6 +22,7 @@
 		17C92D622259D21E0098EB2C /* StopGPS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C92D612259D21E0098EB2C /* StopGPS.swift */; };
 		17C92D642259D3410098EB2C /* StopAccessibilityWheelchair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C92D632259D3410098EB2C /* StopAccessibilityWheelchair.swift */; };
 		17C92D662259D6180098EB2C /* StopStaffing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C92D652259D6180098EB2C /* StopStaffing.swift */; };
+		17C92D682259D75C0098EB2C /* StopAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C92D672259D75C0098EB2C /* StopAccessibility.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		17C92D612259D21E0098EB2C /* StopGPS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopGPS.swift; sourceTree = "<group>"; };
 		17C92D632259D3410098EB2C /* StopAccessibilityWheelchair.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopAccessibilityWheelchair.swift; sourceTree = "<group>"; };
 		17C92D652259D6180098EB2C /* StopStaffing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopStaffing.swift; sourceTree = "<group>"; };
+		17C92D672259D75C0098EB2C /* StopAccessibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopAccessibility.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,11 +153,12 @@
 		17C92D562259C6D50098EB2C /* Stops */ = {
 			isa = PBXGroup;
 			children = (
+				17C92D672259D75C0098EB2C /* StopAccessibility.swift */,
+				17C92D632259D3410098EB2C /* StopAccessibilityWheelchair.swift */,
+				17C92D612259D21E0098EB2C /* StopGPS.swift */,
+				17C92D652259D6180098EB2C /* StopStaffing.swift */,
 				17C92D5B2259D07E0098EB2C /* Location */,
 				17C92D5C2259D0860098EB2C /* Route */,
-				17C92D612259D21E0098EB2C /* StopGPS.swift */,
-				17C92D632259D3410098EB2C /* StopAccessibilityWheelchair.swift */,
-				17C92D652259D6180098EB2C /* StopStaffing.swift */,
 			);
 			path = Stops;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 				17C92D4B2259BFE50098EB2C /* Status.swift in Sources */,
 				17C92D4D2259C1360098EB2C /* RouteType.swift in Sources */,
 				17C92D662259D6180098EB2C /* StopStaffing.swift in Sources */,
+				17C92D682259D75C0098EB2C /* StopAccessibility.swift in Sources */,
 				17C92D602259D1090098EB2C /* StopsOnRouteResponse.swift in Sources */,
 				17C92D642259D3410098EB2C /* StopAccessibilityWheelchair.swift in Sources */,
 				17C92D622259D21E0098EB2C /* StopGPS.swift in Sources */,

@@ -15,6 +15,8 @@
 		17C92D4F2259C2D90098EB2C /* RouteTypesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C92D4E2259C2D90098EB2C /* RouteTypesResponse.swift */; };
 		17C92D522259C3670098EB2C /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C92D512259C3670098EB2C /* Route.swift */; };
 		17C92D552259C3EF0098EB2C /* RouteResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C92D542259C3EF0098EB2C /* RouteResponse.swift */; };
+		17C92D582259C6E10098EB2C /* StopGeosearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C92D572259C6E10098EB2C /* StopGeosearch.swift */; };
+		17C92D5A2259CA0F0098EB2C /* StopsByDistanceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C92D592259CA0F0098EB2C /* StopsByDistanceResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +41,8 @@
 		17C92D4E2259C2D90098EB2C /* RouteTypesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteTypesResponse.swift; sourceTree = "<group>"; };
 		17C92D512259C3670098EB2C /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		17C92D542259C3EF0098EB2C /* RouteResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteResponse.swift; sourceTree = "<group>"; };
+		17C92D572259C6E10098EB2C /* StopGeosearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopGeosearch.swift; sourceTree = "<group>"; };
+		17C92D592259CA0F0098EB2C /* StopsByDistanceResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopsByDistanceResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +106,7 @@
 				17C92D4A2259BFE50098EB2C /* Status.swift */,
 				17C92D502259C35B0098EB2C /* Routes */,
 				17C92D492259BFD10098EB2C /* RouteTypes */,
+				17C92D562259C6D50098EB2C /* Stops */,
 			);
 			path = DataModels;
 			sourceTree = "<group>";
@@ -131,6 +136,15 @@
 				17C92D542259C3EF0098EB2C /* RouteResponse.swift */,
 			);
 			path = Routes;
+			sourceTree = "<group>";
+		};
+		17C92D562259C6D50098EB2C /* Stops */ = {
+			isa = PBXGroup;
+			children = (
+				17C92D572259C6E10098EB2C /* StopGeosearch.swift */,
+				17C92D592259CA0F0098EB2C /* StopsByDistanceResponse.swift */,
+			);
+			path = Stops;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -247,6 +261,8 @@
 				17C92D552259C3EF0098EB2C /* RouteResponse.swift in Sources */,
 				17C92D4B2259BFE50098EB2C /* Status.swift in Sources */,
 				17C92D4D2259C1360098EB2C /* RouteType.swift in Sources */,
+				17C92D5A2259CA0F0098EB2C /* StopsByDistanceResponse.swift in Sources */,
+				17C92D582259C6E10098EB2C /* StopGeosearch.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,6 +469,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 57T46CP54H;
 				INFOPLIST_FILE = PTVKitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -472,6 +489,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 57T46CP54H;
 				INFOPLIST_FILE = PTVKitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

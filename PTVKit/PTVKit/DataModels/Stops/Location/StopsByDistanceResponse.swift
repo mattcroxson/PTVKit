@@ -8,8 +8,15 @@
 
 import Foundation
 
+/// Represents a response to a stops by distance request
 public struct StopsByDistanceResponse: Decodable {
+
+    /// Array of stops
     public let stops: [StopsGeosearch]?
+
+    /// Array of disruption objects
 //    public let disruptions: [Any]?
+
+    /// API system status
     public let status: Status?
 }

@@ -24,6 +24,9 @@
 		17C92D662259D6180098EB2C /* StopStaffing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C92D652259D6180098EB2C /* StopStaffing.swift */; };
 		17C92D682259D75C0098EB2C /* StopAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C92D672259D75C0098EB2C /* StopAccessibility.swift */; };
 		17C92D6A2259D9DF0098EB2C /* StopAmenityDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C92D692259D9DF0098EB2C /* StopAmenityDetails.swift */; };
+		17C92D6C2259DAA70098EB2C /* StopDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C92D6B2259DAA70098EB2C /* StopDetails.swift */; };
+		17C92D6E2259DB2B0098EB2C /* StopLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C92D6D2259DB2B0098EB2C /* StopLocation.swift */; };
+		17C92D702259DC090098EB2C /* StopResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C92D6F2259DC090098EB2C /* StopResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +60,9 @@
 		17C92D652259D6180098EB2C /* StopStaffing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopStaffing.swift; sourceTree = "<group>"; };
 		17C92D672259D75C0098EB2C /* StopAccessibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopAccessibility.swift; sourceTree = "<group>"; };
 		17C92D692259D9DF0098EB2C /* StopAmenityDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopAmenityDetails.swift; sourceTree = "<group>"; };
+		17C92D6B2259DAA70098EB2C /* StopDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopDetails.swift; sourceTree = "<group>"; };
+		17C92D6D2259DB2B0098EB2C /* StopLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopLocation.swift; sourceTree = "<group>"; };
+		17C92D6F2259DC090098EB2C /* StopResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,7 +164,10 @@
 				17C92D672259D75C0098EB2C /* StopAccessibility.swift */,
 				17C92D632259D3410098EB2C /* StopAccessibilityWheelchair.swift */,
 				17C92D692259D9DF0098EB2C /* StopAmenityDetails.swift */,
+				17C92D6B2259DAA70098EB2C /* StopDetails.swift */,
 				17C92D612259D21E0098EB2C /* StopGPS.swift */,
+				17C92D6D2259DB2B0098EB2C /* StopLocation.swift */,
+				17C92D6F2259DC090098EB2C /* StopResponse.swift */,
 				17C92D652259D6180098EB2C /* StopStaffing.swift */,
 				17C92D5B2259D07E0098EB2C /* Location */,
 				17C92D5C2259D0860098EB2C /* Route */,
@@ -298,12 +307,15 @@
 				17C92D522259C3670098EB2C /* Route.swift in Sources */,
 				17C92D552259C3EF0098EB2C /* RouteResponse.swift in Sources */,
 				17C92D4B2259BFE50098EB2C /* Status.swift in Sources */,
+				17C92D6C2259DAA70098EB2C /* StopDetails.swift in Sources */,
 				17C92D4D2259C1360098EB2C /* RouteType.swift in Sources */,
 				17C92D662259D6180098EB2C /* StopStaffing.swift in Sources */,
 				17C92D682259D75C0098EB2C /* StopAccessibility.swift in Sources */,
 				17C92D602259D1090098EB2C /* StopsOnRouteResponse.swift in Sources */,
+				17C92D702259DC090098EB2C /* StopResponse.swift in Sources */,
 				17C92D642259D3410098EB2C /* StopAccessibilityWheelchair.swift in Sources */,
 				17C92D622259D21E0098EB2C /* StopGPS.swift in Sources */,
+				17C92D6E2259DB2B0098EB2C /* StopLocation.swift in Sources */,
 				17C92D5A2259CA0F0098EB2C /* StopsByDistanceResponse.swift in Sources */,
 				17C92D5E2259D09C0098EB2C /* StopOnRoute.swift in Sources */,
 				17C92D582259C6E10098EB2C /* StopGeosearch.swift in Sources */,

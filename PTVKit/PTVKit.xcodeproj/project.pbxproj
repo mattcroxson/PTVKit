@@ -13,6 +13,8 @@
 		17C92D4B2259BFE50098EB2C /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C92D4A2259BFE50098EB2C /* Status.swift */; };
 		17C92D4D2259C1360098EB2C /* RouteType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C92D4C2259C1360098EB2C /* RouteType.swift */; };
 		17C92D4F2259C2D90098EB2C /* RouteTypesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C92D4E2259C2D90098EB2C /* RouteTypesResponse.swift */; };
+		17C92D522259C3670098EB2C /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C92D512259C3670098EB2C /* Route.swift */; };
+		17C92D552259C3EF0098EB2C /* RouteResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C92D542259C3EF0098EB2C /* RouteResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +37,8 @@
 		17C92D4A2259BFE50098EB2C /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		17C92D4C2259C1360098EB2C /* RouteType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteType.swift; sourceTree = "<group>"; };
 		17C92D4E2259C2D90098EB2C /* RouteTypesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteTypesResponse.swift; sourceTree = "<group>"; };
+		17C92D512259C3670098EB2C /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		17C92D542259C3EF0098EB2C /* RouteResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				17C92D4A2259BFE50098EB2C /* Status.swift */,
+				17C92D502259C35B0098EB2C /* Routes */,
 				17C92D492259BFD10098EB2C /* RouteTypes */,
 			);
 			path = DataModels;
@@ -117,6 +122,15 @@
 				17C92D4E2259C2D90098EB2C /* RouteTypesResponse.swift */,
 			);
 			path = RouteTypes;
+			sourceTree = "<group>";
+		};
+		17C92D502259C35B0098EB2C /* Routes */ = {
+			isa = PBXGroup;
+			children = (
+				17C92D512259C3670098EB2C /* Route.swift */,
+				17C92D542259C3EF0098EB2C /* RouteResponse.swift */,
+			);
+			path = Routes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,6 +243,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				17C92D4F2259C2D90098EB2C /* RouteTypesResponse.swift in Sources */,
+				17C92D522259C3670098EB2C /* Route.swift in Sources */,
+				17C92D552259C3EF0098EB2C /* RouteResponse.swift in Sources */,
 				17C92D4B2259BFE50098EB2C /* Status.swift in Sources */,
 				17C92D4D2259C1360098EB2C /* RouteType.swift in Sources */,
 			);

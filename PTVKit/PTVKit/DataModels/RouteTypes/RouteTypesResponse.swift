@@ -11,7 +11,7 @@ import Foundation
 /// Represents a response to a route types request
 public struct RouteTypesResponse: Decodable {
 
-    /// Optional array of route type identifiers
+    /// Array of route type identifiers
     public let routeTypes: [RouteType]?
 
     /// API system status

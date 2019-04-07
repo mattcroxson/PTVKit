@@ -35,3 +35,4 @@ playground.xcworkspace
 # Package.pins
 # Package.resolved
 .build/## User settings
+/PTVKit/PTVKit.xcodeproj/project.xcworkspace/xcuserdata/mattcroxson.xcuserdatad/UserInterfaceState.xcuserstate

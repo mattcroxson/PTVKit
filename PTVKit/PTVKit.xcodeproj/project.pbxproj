@@ -23,6 +23,7 @@
 		17C92D642259D3410098EB2C /* StopAccessibilityWheelchair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C92D632259D3410098EB2C /* StopAccessibilityWheelchair.swift */; };
 		17C92D662259D6180098EB2C /* StopStaffing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C92D652259D6180098EB2C /* StopStaffing.swift */; };
 		17C92D682259D75C0098EB2C /* StopAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C92D672259D75C0098EB2C /* StopAccessibility.swift */; };
+		17C92D6A2259D9DF0098EB2C /* StopAmenityDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C92D692259D9DF0098EB2C /* StopAmenityDetails.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		17C92D632259D3410098EB2C /* StopAccessibilityWheelchair.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopAccessibilityWheelchair.swift; sourceTree = "<group>"; };
 		17C92D652259D6180098EB2C /* StopStaffing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopStaffing.swift; sourceTree = "<group>"; };
 		17C92D672259D75C0098EB2C /* StopAccessibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopAccessibility.swift; sourceTree = "<group>"; };
+		17C92D692259D9DF0098EB2C /* StopAmenityDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopAmenityDetails.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +157,7 @@
 			children = (
 				17C92D672259D75C0098EB2C /* StopAccessibility.swift */,
 				17C92D632259D3410098EB2C /* StopAccessibilityWheelchair.swift */,
+				17C92D692259D9DF0098EB2C /* StopAmenityDetails.swift */,
 				17C92D612259D21E0098EB2C /* StopGPS.swift */,
 				17C92D652259D6180098EB2C /* StopStaffing.swift */,
 				17C92D5B2259D07E0098EB2C /* Location */,
@@ -290,6 +293,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17C92D6A2259D9DF0098EB2C /* StopAmenityDetails.swift in Sources */,
 				17C92D4F2259C2D90098EB2C /* RouteTypesResponse.swift in Sources */,
 				17C92D522259C3670098EB2C /* Route.swift in Sources */,
 				17C92D552259C3EF0098EB2C /* RouteResponse.swift in Sources */,

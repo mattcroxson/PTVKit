@@ -20,6 +20,7 @@
 		17C92D5E2259D09C0098EB2C /* StopOnRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C92D5D2259D09C0098EB2C /* StopOnRoute.swift */; };
 		17C92D602259D1090098EB2C /* StopsOnRouteResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C92D5F2259D1090098EB2C /* StopsOnRouteResponse.swift */; };
 		17C92D622259D21E0098EB2C /* StopGPS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C92D612259D21E0098EB2C /* StopGPS.swift */; };
+		17C92D642259D3410098EB2C /* StopAccessibilityWheelchair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C92D632259D3410098EB2C /* StopAccessibilityWheelchair.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		17C92D5D2259D09C0098EB2C /* StopOnRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopOnRoute.swift; sourceTree = "<group>"; };
 		17C92D5F2259D1090098EB2C /* StopsOnRouteResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopsOnRouteResponse.swift; sourceTree = "<group>"; };
 		17C92D612259D21E0098EB2C /* StopGPS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopGPS.swift; sourceTree = "<group>"; };
+		17C92D632259D3410098EB2C /* StopAccessibilityWheelchair.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopAccessibilityWheelchair.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 				17C92D5B2259D07E0098EB2C /* Location */,
 				17C92D5C2259D0860098EB2C /* Route */,
 				17C92D612259D21E0098EB2C /* StopGPS.swift */,
+				17C92D632259D3410098EB2C /* StopAccessibilityWheelchair.swift */,
 			);
 			path = Stops;
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 				17C92D4B2259BFE50098EB2C /* Status.swift in Sources */,
 				17C92D4D2259C1360098EB2C /* RouteType.swift in Sources */,
 				17C92D602259D1090098EB2C /* StopsOnRouteResponse.swift in Sources */,
+				17C92D642259D3410098EB2C /* StopAccessibilityWheelchair.swift in Sources */,
 				17C92D622259D21E0098EB2C /* StopGPS.swift in Sources */,
 				17C92D5A2259CA0F0098EB2C /* StopsByDistanceResponse.swift in Sources */,
 				17C92D5E2259D09C0098EB2C /* StopOnRoute.swift in Sources */,

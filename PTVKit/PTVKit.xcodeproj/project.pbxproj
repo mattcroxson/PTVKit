@@ -10,6 +10,9 @@
 		17574AB42259BB63007349BC /* PTVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17574AAA2259BB63007349BC /* PTVKit.framework */; };
 		17574AB92259BB63007349BC /* PTVKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17574AB82259BB63007349BC /* PTVKitTests.swift */; };
 		17574ABB2259BB63007349BC /* PTVKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 17574AAD2259BB63007349BC /* PTVKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		17C92D4B2259BFE50098EB2C /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C92D4A2259BFE50098EB2C /* Status.swift */; };
+		17C92D4D2259C1360098EB2C /* RouteType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C92D4C2259C1360098EB2C /* RouteType.swift */; };
+		17C92D4F2259C2D90098EB2C /* RouteTypesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C92D4E2259C2D90098EB2C /* RouteTypesResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +32,9 @@
 		17574AB32259BB63007349BC /* PTVKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PTVKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		17574AB82259BB63007349BC /* PTVKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTVKitTests.swift; sourceTree = "<group>"; };
 		17574ABA2259BB63007349BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		17C92D4A2259BFE50098EB2C /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
+		17C92D4C2259C1360098EB2C /* RouteType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteType.swift; sourceTree = "<group>"; };
+		17C92D4E2259C2D90098EB2C /* RouteTypesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteTypesResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +95,8 @@
 		1773FAA32259BE38002F96B5 /* DataModels */ = {
 			isa = PBXGroup;
 			children = (
+				17C92D4A2259BFE50098EB2C /* Status.swift */,
+				17C92D492259BFD10098EB2C /* RouteTypes */,
 			);
 			path = DataModels;
 			sourceTree = "<group>";
@@ -100,6 +108,15 @@
 				17574AAE2259BB63007349BC /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		17C92D492259BFD10098EB2C /* RouteTypes */ = {
+			isa = PBXGroup;
+			children = (
+				17C92D4C2259C1360098EB2C /* RouteType.swift */,
+				17C92D4E2259C2D90098EB2C /* RouteTypesResponse.swift */,
+			);
+			path = RouteTypes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,6 +181,7 @@
 				TargetAttributes = {
 					17574AA92259BB63007349BC = {
 						CreatedOnToolsVersion = 10.2;
+						LastSwiftMigration = 1010;
 					};
 					17574AB22259BB63007349BC = {
 						CreatedOnToolsVersion = 10.2;
@@ -210,6 +228,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17C92D4F2259C2D90098EB2C /* RouteTypesResponse.swift in Sources */,
+				17C92D4B2259BFE50098EB2C /* Status.swift in Sources */,
+				17C92D4D2259C1360098EB2C /* RouteType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,6 +378,7 @@
 		17574ABF2259BB63007349BC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -375,6 +397,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = au.id.mattcroxson.PTVKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -383,6 +406,7 @@
 		17574AC02259BB63007349BC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -409,6 +433,7 @@
 		17574AC22259BB63007349BC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 57T46CP54H;
 				INFOPLIST_FILE = PTVKitTests/Info.plist;
@@ -427,6 +452,7 @@
 		17574AC32259BB63007349BC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 57T46CP54H;
 				INFOPLIST_FILE = PTVKitTests/Info.plist;

@@ -10,6 +10,8 @@
 		17574AB42259BB63007349BC /* PTVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17574AAA2259BB63007349BC /* PTVKit.framework */; };
 		17574AB92259BB63007349BC /* PTVKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17574AB82259BB63007349BC /* PTVKitTests.swift */; };
 		17574ABB2259BB63007349BC /* PTVKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 17574AAD2259BB63007349BC /* PTVKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1796BE1A2262B45C00980F2A /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1796BE182262B45C00980F2A /* Nimble.framework */; };
+		1796BE1B2262B45C00980F2A /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1796BE192262B45C00980F2A /* Quick.framework */; };
 		17B5CFB12262AD7D00B12975 /* PTVAPIConfigurationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B5CFB02262AD7D00B12975 /* PTVAPIConfigurationProvider.swift */; };
 		17B5CFB42262AE3400B12975 /* PTVAPIAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B5CFB32262AE3400B12975 /* PTVAPIAccess.swift */; };
 		17B5CFB62262AF1000B12975 /* PTVAPIEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B5CFB52262AF1000B12975 /* PTVAPIEnvironment.swift */; };
@@ -49,6 +51,8 @@
 		17574AB32259BB63007349BC /* PTVKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PTVKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		17574AB82259BB63007349BC /* PTVKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTVKitTests.swift; sourceTree = "<group>"; };
 		17574ABA2259BB63007349BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1796BE182262B45C00980F2A /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
+		1796BE192262B45C00980F2A /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		17B5CFB02262AD7D00B12975 /* PTVAPIConfigurationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTVAPIConfigurationProvider.swift; sourceTree = "<group>"; };
 		17B5CFB32262AE3400B12975 /* PTVAPIAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTVAPIAccess.swift; sourceTree = "<group>"; };
 		17B5CFB52262AF1000B12975 /* PTVAPIEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTVAPIEnvironment.swift; sourceTree = "<group>"; };
@@ -84,6 +88,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				17574AB42259BB63007349BC /* PTVKit.framework in Frameworks */,
+				1796BE1A2262B45C00980F2A /* Nimble.framework in Frameworks */,
+				1796BE1B2262B45C00980F2A /* Quick.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +102,7 @@
 				17574AAC2259BB63007349BC /* PTVKit */,
 				17574AB72259BB63007349BC /* PTVKitTests */,
 				17574AAB2259BB63007349BC /* Products */,
+				1796BE172262B45C00980F2A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -145,6 +152,15 @@
 				17574AAE2259BB63007349BC /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		1796BE172262B45C00980F2A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1796BE182262B45C00980F2A /* Nimble.framework */,
+				1796BE192262B45C00980F2A /* Quick.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		17B5CFAF2262AD6400B12975 /* APIAccess */ = {
@@ -280,7 +296,7 @@
 				TargetAttributes = {
 					17574AA92259BB63007349BC = {
 						CreatedOnToolsVersion = 10.2;
-						LastSwiftMigration = 1010;
+						LastSwiftMigration = 1020;
 					};
 					17574AB22259BB63007349BC = {
 						CreatedOnToolsVersion = 10.2;
@@ -514,7 +530,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -541,7 +557,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = au.id.mattcroxson.PTVKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -552,6 +568,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 57T46CP54H;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = PTVKitTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -572,6 +592,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 57T46CP54H;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = PTVKitTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (

@@ -17,8 +17,7 @@ public final class PTVMockDataService {
 
     // MARK: - Properties
 
-    public let mockEnvironment: PTVAPIEnvironment
-    private let mockConfiguration: PTVAPIConfigurationProvider
+    public let mockConfiguration: PTVAPIConfigurationProvider
 
     // MARK - PTVMockDataService
     
@@ -28,6 +27,5 @@ public final class PTVMockDataService {
             let apiKey = "MOCK_KEY"
         }
         self.mockConfiguration = MockProvider()
-        self.mockEnvironment = PTVAPIEnvironment(configuration: mockConfiguration)
     }
 }

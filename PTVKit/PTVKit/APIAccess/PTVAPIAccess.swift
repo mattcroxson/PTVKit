@@ -14,4 +14,9 @@ public class PTVAPIAccess {
     public init(configuration: PTVAPIConfigurationProvider) {
         self.environment = PTVAPIEnvironment(configuration: configuration)
     }
+
+    public func signature(for url: URL?) -> String? {
+        guard let _ = url else { return nil }
+        return environment.configuration.apiKey + environment.configuration.apiUserId
+    }
 }

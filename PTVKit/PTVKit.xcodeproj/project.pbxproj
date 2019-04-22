@@ -11,6 +11,7 @@
 		17034F0B2262B5EF004462A6 /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1796BE192262B45C00980F2A /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		17034F0E2262B630004462A6 /* PTVAPIAccessSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17034F0D2262B630004462A6 /* PTVAPIAccessSpec.swift */; };
 		17034F112262B666004462A6 /* PTVMockDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17034F102262B666004462A6 /* PTVMockDataService.swift */; };
+		1739572D226D5549001744E3 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1739572C226D5549001744E3 /* Endpoint.swift */; };
 		1754CF3E226C53A80064DA4E /* URLComponents+PTVKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1754CF3D226C53A80064DA4E /* URLComponents+PTVKit.swift */; };
 		17574AB42259BB63007349BC /* PTVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17574AAA2259BB63007349BC /* PTVKit.framework */; };
 		17574ABB2259BB63007349BC /* PTVKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 17574AAD2259BB63007349BC /* PTVKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -66,6 +67,7 @@
 /* Begin PBXFileReference section */
 		17034F0D2262B630004462A6 /* PTVAPIAccessSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTVAPIAccessSpec.swift; sourceTree = "<group>"; };
 		17034F102262B666004462A6 /* PTVMockDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTVMockDataService.swift; sourceTree = "<group>"; };
+		1739572C226D5549001744E3 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		1754CF3D226C53A80064DA4E /* URLComponents+PTVKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLComponents+PTVKit.swift"; sourceTree = "<group>"; };
 		17574AAA2259BB63007349BC /* PTVKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PTVKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		17574AAD2259BB63007349BC /* PTVKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PTVKit.h; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				17B5CFB02262AD7D00B12975 /* PTVAPIConfigurationProvider.swift */,
+				1739572C226D5549001744E3 /* Endpoint.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -418,6 +421,7 @@
 				17C92D622259D21E0098EB2C /* StopGPS.swift in Sources */,
 				1754CF3E226C53A80064DA4E /* URLComponents+PTVKit.swift in Sources */,
 				17B5CFB12262AD7D00B12975 /* PTVAPIConfigurationProvider.swift in Sources */,
+				1739572D226D5549001744E3 /* Endpoint.swift in Sources */,
 				17B5CFB62262AF1000B12975 /* PTVAPIEnvironment.swift in Sources */,
 				17C92D6E2259DB2B0098EB2C /* StopLocation.swift in Sources */,
 				17C92D5A2259CA0F0098EB2C /* StopsByDistanceResponse.swift in Sources */,

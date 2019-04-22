@@ -16,10 +16,6 @@ internal class PTVAPIAccess {
         self.environment = PTVAPIEnvironment(configuration: configuration)
     }
 
-    internal func signedUrl(from url: URL?) -> URL? {
-        return url?.signedUrl(environment: environment)
-    }
-
     internal func apiRequest(endpoint: PTVEndpointConfigurer, parameters: [URLQueryItem]?) -> URLRequest? {
         switch endpoint.method {
         case .get: return generateGetRequest(for: endpoint, parameters: parameters)

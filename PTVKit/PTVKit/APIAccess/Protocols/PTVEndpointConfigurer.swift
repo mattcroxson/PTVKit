@@ -28,6 +28,9 @@ internal protocol PTVEndpointConfigurer {
 
     /// The caching policy for the request
     var cachePolicy: URLRequest.CachePolicy { get }
+
+    /// The API version that the endpoint configuration is for.
+    var version: String { get }
 }
 
 // MARK: - Default Implementations
@@ -55,5 +58,9 @@ extension PTVEndpointConfigurer {
         components.host = host
         components.path = path
         return components.url
+    }
+
+    var version: String {
+        return "v3"
     }
 }

@@ -9,19 +9,15 @@
 import Foundation
 @testable import PTVKit
 
-public final class PTVMockDataService {
-
-    // MARK: - Singleton
-
-    public static var shared: PTVMockDataService = PTVMockDataService()
+internal final class PTVMockDataService {
 
     // MARK: - Properties
 
-    public let mockConfiguration: PTVAPIConfigurationProvider
+    let mockConfiguration: PTVAPIConfigurationProvider
 
     // MARK - PTVMockDataService
     
-    private init() {
+    init() {
         class MockProvider: PTVAPIConfigurationProvider {
             let apiUserId = "MOCK_USER"
             let apiKey = "MOCK_KEY"

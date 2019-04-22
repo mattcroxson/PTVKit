@@ -10,39 +10,57 @@
 import Quick
 import Nimble
 
-public final class PTVAPIAccessSpec: QuickSpec {
+final class PTVAPIAccessSpec: QuickSpec {
 
-    private let mockDataService = PTVMockDataService.shared
 
-    public override func spec() {
+    override func spec() {
         describe("PTVAPIAccess") {
-            let apiAccess = PTVAPIAccess(configuration: mockDataService.mockConfiguration)
-            let requestUrlString = "https://timetableapi.ptv.vic.gov.au/v3/stops/location/-37.828408,144.988557?stop_disruptions=true&devid=MOCK_USER"
-            let requestUrl = URL(string: requestUrlString)
-            let expectedSignature = "F1097A99367CD03CE9AB10A0E2039F6949AB0652"
 
-            it("should generate correct signature for a valid URL") {
-                expect(apiAccess.signature(for: requestUrl)).to(equal(expectedSignature))
+            var mockDataService: PTVMockDataService!
+            var apiAccess: PTVAPIAccess!
+
+            beforeEach {
+                mockDataService = PTVMockDataService()
+                apiAccess = PTVAPIAccess(configuration: mockDataService.mockConfiguration)
             }
 
-            it("should fail if a url is not valid") {
-                expect(apiAccess.signature(for: nil)).to(beNil())
+            context("when provided with a valid URL") {
+                it("should generate a valid signature") {
+                    let requestUrl = URL(string: "https://timetableapi.ptv.vic.gov.au/v3/stops/location/-37.828408,144.988557?stop_disruptions=true&devid=MOCK_USER")
+                    expect(apiAccess.signature(for: requestUrl)).to(equal("F1097A99367CD03CE9AB10A0E2039F6949AB0652"))
+                }
+
+                it("should generate a valid signed url") {
+                    let requestUrl = URL(string: "https://timetableapi.ptv.vic.gov.au/v3/stops/location/-37.828408,144.988557?stop_disruptions=true")
+                    let signedUrl = apiAccess.signedUrl(from: requestUrl)
+                    let expectedSignedUrl = "https://timetableapi.ptv.vic.gov.au/v3/stops/location/-37.828408,144.988557?stop_disruptions=true&devid=MOCK_USER&signature=F1097A99367CD03CE9AB10A0E2039F6949AB0652"
+                    expect(signedUrl?.absoluteString).to(equal(expectedSignedUrl))
+                }
+
+                it("should contain expected components") {
+                    let requestUrl = URL(string: "https://timetableapi.ptv.vic.gov.au/v3/stops/location/-37.828408,144.988557?stop_disruptions=true")
+                    let signedUrl = apiAccess.signedUrl(from: requestUrl)
+                    let components = URLComponents(url: signedUrl!, resolvingAgainstBaseURL: false)
+
+                    let signatureQuery = URLQueryItem(name: "signature", value: "F1097A99367CD03CE9AB10A0E2039F6949AB0652")
+                    let devidQuery = URLQueryItem(name: "devid", value: "MOCK_USER")
+                    let stopDisruptionsQuery = URLQueryItem(name: "stop_disruptions", value: "true")
+
+                    expect(components?.queryItems).to(contain([signatureQuery, devidQuery, stopDisruptionsQuery]))
+                }
             }
 
-            it("should generate a correctly signed URL for a valid URL") {
-                let url = URL(string: "https://timetableapi.ptv.vic.gov.au/v3/stops/location/-37.828408,144.988557?stop_disruptions=true")
-                let signedUrl = apiAccess.signedUrl(from: url)
-                let urlString = signedUrl?.absoluteString ?? ""
-                let components = URLComponents(string: urlString)
+            context("when provided with an invalid URL") {
+                it("should return a nil signature") {
+                    let requestUrl = URL(string: "this is not a valid URL")
+                    expect(apiAccess.signature(for: requestUrl)).to(beNil())
+                }
 
-                let signatureQuery = URLQueryItem(name: "signature", value: expectedSignature)
-                let devidQuery = URLQueryItem(name: "devid", value: "MOCK_USER")
-                let stopDisruptionsQuery = URLQueryItem(name: "stop_disruptions", value: "true")
-
-                expect(url?.absoluteString).to(equal("https://timetableapi.ptv.vic.gov.au/v3/stops/location/-37.828408,144.988557?stop_disruptions=true"))
-                expect(signedUrl).toNot(beNil())
-                expect(signedUrl?.absoluteString).to(equal("\(requestUrlString)&signature=\(expectedSignature)"))
-                expect(components?.queryItems).to(contain([stopDisruptionsQuery, signatureQuery, devidQuery]))
+                it("should return a nil signed url") {
+                    let requestUrl = URL(string: "this is not a valid URL")
+                    let signedUrl = apiAccess.signedUrl(from: requestUrl)
+                    expect(signedUrl?.absoluteString).to(beNil())
+                }
             }
         }
     }

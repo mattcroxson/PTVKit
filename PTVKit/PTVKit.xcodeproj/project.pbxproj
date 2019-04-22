@@ -212,11 +212,11 @@
 		17B5CFAF2262AD6400B12975 /* APIAccess */ = {
 			isa = PBXGroup;
 			children = (
-				17B5CFB22262AE0300B12975 /* Protocols */,
 				17B5CFB32262AE3400B12975 /* PTVAPIAccess.swift */,
 				17B5CFB52262AF1000B12975 /* PTVAPIEnvironment.swift */,
 				1739572F226D78B6001744E3 /* PTVEndpoint.swift */,
 				17395731226D7BF0001744E3 /* PTVHTTPMethod.swift */,
+				17B5CFB22262AE0300B12975 /* Protocols */,
 			);
 			path = APIAccess;
 			sourceTree = "<group>";

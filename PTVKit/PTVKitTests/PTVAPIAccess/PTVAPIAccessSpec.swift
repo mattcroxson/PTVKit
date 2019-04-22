@@ -25,37 +25,28 @@ final class PTVAPIAccessSpec: QuickSpec {
             }
 
             context("when provided with a valid URL") {
-                it("should generate a valid signature") {
-                    let requestUrl = URL(string: "https://timetableapi.ptv.vic.gov.au/v3/stops/location/-37.828408,144.988557?stop_disruptions=true&devid=MOCK_USER")
-                    expect(apiAccess.signature(for: requestUrl)).to(equal("F1097A99367CD03CE9AB10A0E2039F6949AB0652"))
-                }
 
                 it("should generate a valid signed url") {
-                    let requestUrl = URL(string: "https://timetableapi.ptv.vic.gov.au/v3/stops/location/-37.828408,144.988557?stop_disruptions=true")
+                    let requestUrl = URL(string: "https://timetableapi.ptv.vic.gov.au/v3/route_types")
                     let signedUrl = apiAccess.signedUrl(from: requestUrl)
-                    let expectedSignedUrl = "https://timetableapi.ptv.vic.gov.au/v3/stops/location/-37.828408,144.988557?stop_disruptions=true&devid=MOCK_USER&signature=F1097A99367CD03CE9AB10A0E2039F6949AB0652"
+                    let expectedSignedUrl = "https://timetableapi.ptv.vic.gov.au/v3/route_types?devid=MOCK_USER&signature=8029E3AC00940E6E3C071477A11E86A340F43F3D"
                     expect(signedUrl?.absoluteString).to(equal(expectedSignedUrl))
                 }
 
                 it("should contain expected components") {
-                    let requestUrl = URL(string: "https://timetableapi.ptv.vic.gov.au/v3/stops/location/-37.828408,144.988557?stop_disruptions=true")
+                    let requestUrl = URL(string: "https://timetableapi.ptv.vic.gov.au/v3/route_types")
                     let signedUrl = apiAccess.signedUrl(from: requestUrl)
                     let components = URLComponents(url: signedUrl!, resolvingAgainstBaseURL: false)
 
-                    let signatureQuery = URLQueryItem(name: "signature", value: "F1097A99367CD03CE9AB10A0E2039F6949AB0652")
+                    let signatureQuery = URLQueryItem(name: "signature", value: "8029E3AC00940E6E3C071477A11E86A340F43F3D")
                     let devidQuery = URLQueryItem(name: "devid", value: "MOCK_USER")
-                    let stopDisruptionsQuery = URLQueryItem(name: "stop_disruptions", value: "true")
 
-                    expect(components?.queryItems).to(contain([signatureQuery, devidQuery, stopDisruptionsQuery]))
+                    expect(components?.queryItems).to(contain([signatureQuery, devidQuery]))
                 }
             }
 
             context("when provided with an invalid URL") {
-                it("should return a nil signature") {
-                    let requestUrl = URL(string: "this is not a valid URL")
-                    expect(apiAccess.signature(for: requestUrl)).to(beNil())
-                }
-
+                
                 it("should return a nil signed url") {
                     let requestUrl = URL(string: "this is not a valid URL")
                     let signedUrl = apiAccess.signedUrl(from: requestUrl)

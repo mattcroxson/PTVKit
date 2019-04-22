@@ -11,13 +11,14 @@ import CommonCrypto
 
 extension URL {
     
-    internal func signature(using configuration: PTVAPIConfigurationProvider) -> String? {
+    internal func signature(environment: PTVAPIEnvironment) -> String? {
+
         guard let components = URLComponents(url: self, resolvingAgainstBaseURL: false) else { return nil }
 
         let pathQuery = components.pathWithQuery
         let pathQueryData = pathQuery.cString(using: .utf8)
 
-        let key = configuration.apiKey
+        let key = environment.configuration.apiKey
         let keyData = key.cString(using: .utf8)
 
         guard let pathQueryString = pathQueryData, let keyString = keyData else { return nil }
@@ -40,10 +41,10 @@ extension URL {
         return hmacString
     }
 
-    internal func signed(using configuration: PTVAPIConfigurationProvider) -> URL? {
+    internal func signedUrl(environment: PTVAPIEnvironment) -> URL? {
 
         var components = URLComponents(url: self, resolvingAgainstBaseURL: false)
-        let devIdQueryItem = URLQueryItem(name: "devid", value: configuration.apiUserId)
+        let devIdQueryItem = URLQueryItem(name: "devid", value: environment.configuration.apiUserId)
 
         if components?.queryItems == nil {
             components?.queryItems = [devIdQueryItem]
@@ -51,10 +52,9 @@ extension URL {
             components?.queryItems?.append(devIdQueryItem)
         }
 
-        let querySignature = signature(using: configuration)
+        let querySignature = components?.url?.signature(environment: environment)
         let signatureQueryItem = URLQueryItem(name: "signature", value: querySignature)
 
         components?.queryItems?.append(signatureQueryItem)
         return components?.url
-    }
-}
+    }}

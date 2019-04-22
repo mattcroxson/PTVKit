@@ -42,7 +42,7 @@ internal class PTVAPIAccess {
         }
 
         request?.cachePolicy = endpoint.cachePolicy
-
+        request?.httpMethod = endpoint.method.rawValue
         return request
     }
 

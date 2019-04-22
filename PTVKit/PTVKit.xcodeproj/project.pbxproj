@@ -40,6 +40,7 @@
 		17C92D6C2259DAA70098EB2C /* StopDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C92D6B2259DAA70098EB2C /* StopDetails.swift */; };
 		17C92D6E2259DB2B0098EB2C /* StopLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C92D6D2259DB2B0098EB2C /* StopLocation.swift */; };
 		17C92D702259DC090098EB2C /* StopResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C92D6F2259DC090098EB2C /* StopResponse.swift */; };
+		17D136FC226D8D6000890E3B /* URLExtensionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D136FB226D8D6000890E3B /* URLExtensionSpec.swift */; };
 		17D22C1B226419080012589A /* Data+PTVKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D22C1A226419080012589A /* Data+PTVKit.swift */; };
 /* End PBXBuildFile section */
 
@@ -102,6 +103,7 @@
 		17C92D6B2259DAA70098EB2C /* StopDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopDetails.swift; sourceTree = "<group>"; };
 		17C92D6D2259DB2B0098EB2C /* StopLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopLocation.swift; sourceTree = "<group>"; };
 		17C92D6F2259DC090098EB2C /* StopResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopResponse.swift; sourceTree = "<group>"; };
+		17D136FB226D8D6000890E3B /* URLExtensionSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLExtensionSpec.swift; sourceTree = "<group>"; };
 		17D22C1A226419080012589A /* Data+PTVKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+PTVKit.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -175,6 +177,7 @@
 		17574AB72259BB63007349BC /* PTVKitTests */ = {
 			isa = PBXGroup;
 			children = (
+				17D136FA226D8D5300890E3B /* Extensions */,
 				17034F0F2262B637004462A6 /* MockData */,
 				17034F0C2262B617004462A6 /* PTVAPIAccess */,
 				17574ABA2259BB63007349BC /* Info.plist */,
@@ -283,6 +286,14 @@
 				17C92D5F2259D1090098EB2C /* StopsOnRouteResponse.swift */,
 			);
 			path = Route;
+			sourceTree = "<group>";
+		};
+		17D136FA226D8D5300890E3B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				17D136FB226D8D6000890E3B /* URLExtensionSpec.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		17D22C19226418FC0012589A /* Extensions */ = {
@@ -446,6 +457,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17D136FC226D8D6000890E3B /* URLExtensionSpec.swift in Sources */,
 				17034F112262B666004462A6 /* PTVMockDataService.swift in Sources */,
 				17034F0E2262B630004462A6 /* PTVAPIAccessSpec.swift in Sources */,
 			);

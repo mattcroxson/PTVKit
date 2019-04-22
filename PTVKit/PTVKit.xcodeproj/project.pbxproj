@@ -164,10 +164,10 @@
 		17574AAC2259BB63007349BC /* PTVKit */ = {
 			isa = PBXGroup;
 			children = (
-				17D8F17D2263F23F000EC5E0 /* Support */,
 				17B5CFAF2262AD6400B12975 /* APIAccess */,
 				1773FAA32259BE38002F96B5 /* DataModels */,
 				1773FAA42259BE40002F96B5 /* Resources */,
+				17D8F17D2263F23F000EC5E0 /* Support */,
 			);
 			path = PTVKit;
 			sourceTree = "<group>";
@@ -226,8 +226,8 @@
 		17B5CFB22262AE0300B12975 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				1739572C226D5549001744E3 /* PTVEndpointConfigurer.swift */,
 				17B5CFB02262AD7D00B12975 /* PTVAPIConfigurationProvider.swift */,
+				1739572C226D5549001744E3 /* PTVEndpointConfigurer.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -289,8 +289,8 @@
 			isa = PBXGroup;
 			children = (
 				17D22C1A226419080012589A /* Data+PTVKit.swift */,
-				1754CF3D226C53A80064DA4E /* URLComponents+PTVKit.swift */,
 				17395733226D7CCE001744E3 /* URL+PTVKit.swift */,
+				1754CF3D226C53A80064DA4E /* URLComponents+PTVKit.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";

@@ -14,6 +14,7 @@
 		1739572D226D5549001744E3 /* PTVEndpointConfigurer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1739572C226D5549001744E3 /* PTVEndpointConfigurer.swift */; };
 		17395730226D78B6001744E3 /* PTVEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1739572F226D78B6001744E3 /* PTVEndpoint.swift */; };
 		17395732226D7BF0001744E3 /* PTVHTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17395731226D7BF0001744E3 /* PTVHTTPMethod.swift */; };
+		17395734226D7CCE001744E3 /* URL+PTVKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17395733226D7CCE001744E3 /* URL+PTVKit.swift */; };
 		1754CF3E226C53A80064DA4E /* URLComponents+PTVKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1754CF3D226C53A80064DA4E /* URLComponents+PTVKit.swift */; };
 		17574AB42259BB63007349BC /* PTVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17574AAA2259BB63007349BC /* PTVKit.framework */; };
 		17574ABB2259BB63007349BC /* PTVKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 17574AAD2259BB63007349BC /* PTVKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -72,6 +73,7 @@
 		1739572C226D5549001744E3 /* PTVEndpointConfigurer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTVEndpointConfigurer.swift; sourceTree = "<group>"; };
 		1739572F226D78B6001744E3 /* PTVEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTVEndpoint.swift; sourceTree = "<group>"; };
 		17395731226D7BF0001744E3 /* PTVHTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTVHTTPMethod.swift; sourceTree = "<group>"; };
+		17395733226D7CCE001744E3 /* URL+PTVKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+PTVKit.swift"; sourceTree = "<group>"; };
 		1754CF3D226C53A80064DA4E /* URLComponents+PTVKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLComponents+PTVKit.swift"; sourceTree = "<group>"; };
 		17574AAA2259BB63007349BC /* PTVKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PTVKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		17574AAD2259BB63007349BC /* PTVKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PTVKit.h; sourceTree = "<group>"; };
@@ -288,6 +290,7 @@
 			children = (
 				17D22C1A226419080012589A /* Data+PTVKit.swift */,
 				1754CF3D226C53A80064DA4E /* URLComponents+PTVKit.swift */,
+				17395733226D7CCE001744E3 /* URL+PTVKit.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -411,6 +414,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				17C92D6A2259D9DF0098EB2C /* StopAmenityDetails.swift in Sources */,
+				17395734226D7CCE001744E3 /* URL+PTVKit.swift in Sources */,
 				17B5CFB42262AE3400B12975 /* PTVAPIAccess.swift in Sources */,
 				17C92D4F2259C2D90098EB2C /* RouteTypesResponse.swift in Sources */,
 				17D22C1B226419080012589A /* Data+PTVKit.swift in Sources */,

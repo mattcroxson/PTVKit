@@ -85,7 +85,7 @@ final class PTVAPIAccessSpec: QuickSpec {
             }
 
             context("requesting routes by route id") {
-                let endpoint = PTVEndpoint.route(routeId: "741")
+                let endpoint = PTVEndpoint.route(routeId: 741)
 
                 it("should have a valid url") {
                     let request = apiAccess.apiRequest(endpoint: endpoint, parameters: nil)

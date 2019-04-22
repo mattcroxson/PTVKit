@@ -36,7 +36,7 @@ extension PTVEndpointConfigurer {
     var scheme: String { return "https" }
 
     var host: String {
-        return "timetableapi.ptv.vic.gov.au/v3/"
+        return "timetableapi.ptv.vic.gov.au"
     }
 
     var headers: [String: String]? {
@@ -47,5 +47,13 @@ extension PTVEndpointConfigurer {
 
     var cachePolicy: URLRequest.CachePolicy {
         return URLRequest.CachePolicy.useProtocolCachePolicy
+    }
+
+    var url: URL? {
+        var components = URLComponents()
+        components.scheme = scheme
+        components.host = host
+        components.path = path
+        return components.url
     }
 }

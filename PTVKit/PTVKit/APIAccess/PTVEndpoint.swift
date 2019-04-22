@@ -12,13 +12,14 @@ internal enum PTVEndpoint: PTVEndpointConfigurer {
 
     // Endpoints
     case route(routeId: String)
-    case routes(routeTypes: [Int]?, routeName: String?)
+    case routes
     case routeTypes
 
     var path: String {
         switch self {
-        case .route, .routes: return "route"
-        case .routeTypes: return "route_types"
+        case let .route(routeId): return "/v3/routes/\(routeId)"
+        case .routes: return "/v3/routes"
+        case .routeTypes: return "/v3/route_types"
         }
     }
 }

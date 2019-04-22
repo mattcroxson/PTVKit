@@ -12,7 +12,7 @@ import Nimble
 
 final class URLExtensionSpec: QuickSpec {
     override func spec() {
-        let mockEnvironment = PTVMockDataService().mockEnvironment
+        let mockEnvironment = PTVMockDataService.mockEnvironment
 
         describe("URL+Extensions") {
             context("when the URL is valid") {

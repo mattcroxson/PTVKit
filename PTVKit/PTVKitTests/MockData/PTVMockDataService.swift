@@ -13,16 +13,13 @@ internal final class PTVMockDataService {
 
     // MARK: - Properties
 
-    let mockEnvironment: PTVAPIEnvironment
-
-    // MARK - PTVMockDataService
-    
-    init() {
+    static var mockEnvironment: PTVAPIEnvironment {
         class MockProvider: PTVAPIConfigurationProvider {
             let apiUserId = "MOCK_USER"
             let apiKey = "MOCK_KEY"
         }
         let mockConfiguration = MockProvider()
-        self.mockEnvironment = PTVAPIEnvironment(configuration: mockConfiguration)
+        return PTVAPIEnvironment(configuration: mockConfiguration)
     }
+
 }

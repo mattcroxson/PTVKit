@@ -11,6 +11,7 @@
 		17034F0B2262B5EF004462A6 /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1796BE192262B45C00980F2A /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		17034F0E2262B630004462A6 /* PTVAPIAccessSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17034F0D2262B630004462A6 /* PTVAPIAccessSpec.swift */; };
 		17034F112262B666004462A6 /* PTVMockDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17034F102262B666004462A6 /* PTVMockDataService.swift */; };
+		1754CF3E226C53A80064DA4E /* URLComponents+PTVKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1754CF3D226C53A80064DA4E /* URLComponents+PTVKit.swift */; };
 		17574AB42259BB63007349BC /* PTVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17574AAA2259BB63007349BC /* PTVKit.framework */; };
 		17574ABB2259BB63007349BC /* PTVKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 17574AAD2259BB63007349BC /* PTVKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1796BE1A2262B45C00980F2A /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1796BE182262B45C00980F2A /* Nimble.framework */; };
@@ -35,6 +36,7 @@
 		17C92D6C2259DAA70098EB2C /* StopDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C92D6B2259DAA70098EB2C /* StopDetails.swift */; };
 		17C92D6E2259DB2B0098EB2C /* StopLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C92D6D2259DB2B0098EB2C /* StopLocation.swift */; };
 		17C92D702259DC090098EB2C /* StopResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C92D6F2259DC090098EB2C /* StopResponse.swift */; };
+		17D22C1B226419080012589A /* Data+PTVKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D22C1A226419080012589A /* Data+PTVKit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +66,7 @@
 /* Begin PBXFileReference section */
 		17034F0D2262B630004462A6 /* PTVAPIAccessSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTVAPIAccessSpec.swift; sourceTree = "<group>"; };
 		17034F102262B666004462A6 /* PTVMockDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTVMockDataService.swift; sourceTree = "<group>"; };
+		1754CF3D226C53A80064DA4E /* URLComponents+PTVKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLComponents+PTVKit.swift"; sourceTree = "<group>"; };
 		17574AAA2259BB63007349BC /* PTVKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PTVKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		17574AAD2259BB63007349BC /* PTVKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PTVKit.h; sourceTree = "<group>"; };
 		17574AAE2259BB63007349BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -91,6 +94,7 @@
 		17C92D6B2259DAA70098EB2C /* StopDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopDetails.swift; sourceTree = "<group>"; };
 		17C92D6D2259DB2B0098EB2C /* StopLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopLocation.swift; sourceTree = "<group>"; };
 		17C92D6F2259DC090098EB2C /* StopResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopResponse.swift; sourceTree = "<group>"; };
+		17D22C1A226419080012589A /* Data+PTVKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+PTVKit.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +156,7 @@
 		17574AAC2259BB63007349BC /* PTVKit */ = {
 			isa = PBXGroup;
 			children = (
+				17D8F17D2263F23F000EC5E0 /* Support */,
 				17B5CFAF2262AD6400B12975 /* APIAccess */,
 				1773FAA32259BE38002F96B5 /* DataModels */,
 				1773FAA42259BE40002F96B5 /* Resources */,
@@ -269,6 +274,23 @@
 			path = Route;
 			sourceTree = "<group>";
 		};
+		17D22C19226418FC0012589A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				17D22C1A226419080012589A /* Data+PTVKit.swift */,
+				1754CF3D226C53A80064DA4E /* URLComponents+PTVKit.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		17D8F17D2263F23F000EC5E0 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				17D22C19226418FC0012589A /* Extensions */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -382,6 +404,7 @@
 				17C92D6A2259D9DF0098EB2C /* StopAmenityDetails.swift in Sources */,
 				17B5CFB42262AE3400B12975 /* PTVAPIAccess.swift in Sources */,
 				17C92D4F2259C2D90098EB2C /* RouteTypesResponse.swift in Sources */,
+				17D22C1B226419080012589A /* Data+PTVKit.swift in Sources */,
 				17C92D522259C3670098EB2C /* Route.swift in Sources */,
 				17C92D552259C3EF0098EB2C /* RouteResponse.swift in Sources */,
 				17C92D4B2259BFE50098EB2C /* Status.swift in Sources */,
@@ -393,6 +416,7 @@
 				17C92D702259DC090098EB2C /* StopResponse.swift in Sources */,
 				17C92D642259D3410098EB2C /* StopAccessibilityWheelchair.swift in Sources */,
 				17C92D622259D21E0098EB2C /* StopGPS.swift in Sources */,
+				1754CF3E226C53A80064DA4E /* URLComponents+PTVKit.swift in Sources */,
 				17B5CFB12262AD7D00B12975 /* PTVAPIConfigurationProvider.swift in Sources */,
 				17B5CFB62262AF1000B12975 /* PTVAPIEnvironment.swift in Sources */,
 				17C92D6E2259DB2B0098EB2C /* StopLocation.swift in Sources */,

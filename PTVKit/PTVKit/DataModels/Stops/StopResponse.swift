@@ -1,0 +1,21 @@
+//
+//  StopResponse.swift
+//  PTVKit
+//
+//  Created by Matt Croxson on 7/4/19.
+//  Copyright © 2019 Matt Croxson. All rights reserved.
+//
+
+import Foundation
+
+/// Represents the response to a stop detail request
+public struct StopResponse: Decodable {
+
+    /// Represents a metropolitan or V/Line train station
+    public let stop: StopDetails?
+
+//    public let disruptions: [Any]?
+
+    /// API system status
+    public let status: Status?
+}

@@ -30,6 +30,8 @@
 		17852A582271442F00687E08 /* DeparturesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17852A572271442F00687E08 /* DeparturesResponse.swift */; };
 		17852A5B2271475600687E08 /* Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17852A5A2271475600687E08 /* Direction.swift */; };
 		17852A5D227147A600687E08 /* DirectionsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17852A5C227147A600687E08 /* DirectionsResponse.swift */; };
+		17852A602271491400687E08 /* Outlet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17852A5F2271491400687E08 /* Outlet.swift */; };
+		17852A62227149D900687E08 /* OutletResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17852A61227149D900687E08 /* OutletResponse.swift */; };
 		1796BE1A2262B45C00980F2A /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1796BE182262B45C00980F2A /* Nimble.framework */; };
 		1796BE1B2262B45C00980F2A /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1796BE192262B45C00980F2A /* Quick.framework */; };
 		17B5CFB12262AD7D00B12975 /* PTVAPIConfigurationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B5CFB02262AD7D00B12975 /* PTVAPIConfigurationProvider.swift */; };
@@ -105,6 +107,8 @@
 		17852A572271442F00687E08 /* DeparturesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeparturesResponse.swift; sourceTree = "<group>"; };
 		17852A5A2271475600687E08 /* Direction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Direction.swift; sourceTree = "<group>"; };
 		17852A5C227147A600687E08 /* DirectionsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionsResponse.swift; sourceTree = "<group>"; };
+		17852A5F2271491400687E08 /* Outlet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Outlet.swift; sourceTree = "<group>"; };
+		17852A61227149D900687E08 /* OutletResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutletResponse.swift; sourceTree = "<group>"; };
 		1796BE182262B45C00980F2A /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		1796BE192262B45C00980F2A /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		17B5CFB02262AD7D00B12975 /* PTVAPIConfigurationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTVAPIConfigurationProvider.swift; sourceTree = "<group>"; };
@@ -216,6 +220,7 @@
 				17852A542271438500687E08 /* Departures */,
 				17852A592271473700687E08 /* Directions */,
 				17D136FD226DC2F900890E3B /* Disruptions */,
+				17852A5E2271490300687E08 /* Outlets */,
 				17C92D502259C35B0098EB2C /* Routes */,
 				17C92D492259BFD10098EB2C /* RouteTypes */,
 				17C92D562259C6D50098EB2C /* Stops */,
@@ -257,6 +262,15 @@
 				17852A5C227147A600687E08 /* DirectionsResponse.swift */,
 			);
 			path = Directions;
+			sourceTree = "<group>";
+		};
+		17852A5E2271490300687E08 /* Outlets */ = {
+			isa = PBXGroup;
+			children = (
+				17852A5F2271491400687E08 /* Outlet.swift */,
+				17852A61227149D900687E08 /* OutletResponse.swift */,
+			);
+			path = Outlets;
 			sourceTree = "<group>";
 		};
 		1796BE172262B45C00980F2A /* Frameworks */ = {
@@ -511,11 +525,13 @@
 				17C92D602259D1090098EB2C /* StopsOnRouteResponse.swift in Sources */,
 				17C92D702259DC090098EB2C /* StopResponse.swift in Sources */,
 				17C92D642259D3410098EB2C /* StopAccessibilityWheelchair.swift in Sources */,
+				17852A62227149D900687E08 /* OutletResponse.swift in Sources */,
 				17C92D622259D21E0098EB2C /* StopGPS.swift in Sources */,
 				17395730226D78B6001744E3 /* PTVEndpoint.swift in Sources */,
 				1754CF3E226C53A80064DA4E /* URLComponents+PTVKit.swift in Sources */,
 				17395732226D7BF0001744E3 /* PTVHTTPMethod.swift in Sources */,
 				17B5CFB12262AD7D00B12975 /* PTVAPIConfigurationProvider.swift in Sources */,
+				17852A602271491400687E08 /* Outlet.swift in Sources */,
 				1784C05222712C79005622D2 /* DisruptionModesResponse.swift in Sources */,
 				17852A562271439B00687E08 /* Departure.swift in Sources */,
 				1784C05822712E3A005622D2 /* DisruptionRoute.swift in Sources */,

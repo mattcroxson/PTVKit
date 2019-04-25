@@ -33,7 +33,7 @@ internal class PTVAPIAccess {
         components?.queryItems = parameters
 
         var request: URLRequest?
-        if let componentUrl = components?.url {
+        if let componentUrl = components?.url?.signedUrl(environment: environment) {
             request = URLRequest(url: componentUrl)
         }
 
@@ -52,7 +52,7 @@ internal class PTVAPIAccess {
         components?.queryItems = parameters
 
         var request: URLRequest?
-        if let componentUrl = components?.url {
+        if let componentUrl = components?.url?.signedUrl(environment: environment) {
             request = URLRequest(url: componentUrl)
         }
 

@@ -32,7 +32,7 @@ final class PTVAPIAccessSpec: QuickSpec {
                         it("should have a valid url") {
                             let request = apiAccess.apiRequest(endpoint: endpoint, parameters: nil)
                             expect(request?.httpMethod).to(equal("GET"))
-                            expect(request?.url?.absoluteString).to(equal("https://timetableapi.ptv.vic.gov.au/mock"))
+                            expect(request?.url?.absoluteString).to(equal("https://timetableapi.ptv.vic.gov.au/mock?devid=MOCK_USER&signature=8904DF2FBB92C2A2E3D33181FD73A3D9AFBEE180"))
                         }
                     }
 
@@ -41,7 +41,7 @@ final class PTVAPIAccessSpec: QuickSpec {
                             let parameters = [URLQueryItem(name: "mockItem", value: "mockValue")]
                             let request = apiAccess.apiRequest(endpoint: endpoint, parameters: parameters)
                             expect(request?.httpMethod).to(equal("GET"))
-                            expect(request?.url?.absoluteString).to(equal("https://timetableapi.ptv.vic.gov.au/mock?mockItem=mockValue"))
+                            expect(request?.url?.absoluteString).to(equal("https://timetableapi.ptv.vic.gov.au/mock?mockItem=mockValue&devid=MOCK_USER&signature=600CABEA20A33C63C6DE93627C8C2B3122BDB461"))
                         }
                     }
 
@@ -51,7 +51,7 @@ final class PTVAPIAccessSpec: QuickSpec {
                                               URLQueryItem(name: "secondMock", value: "mockValue")]
                             let request = apiAccess.apiRequest(endpoint: endpoint, parameters: parameters)
                             expect(request?.httpMethod).to(equal("GET"))
-                            expect(request?.url?.absoluteString).to(equal("https://timetableapi.ptv.vic.gov.au/mock?firstMock=mockValue&secondMock=mockValue"))
+                            expect(request?.url?.absoluteString).to(equal("https://timetableapi.ptv.vic.gov.au/mock?firstMock=mockValue&secondMock=mockValue&devid=MOCK_USER&signature=96CF1C3E39CCE0E69431B350E6D1EF39B1DDE6D2"))
                         }
                     }
                 }
@@ -64,7 +64,7 @@ final class PTVAPIAccessSpec: QuickSpec {
                         it("should have a valid url") {
                             let request = apiAccess.apiRequest(endpoint: endpoint, parameters: nil)
                             expect(request?.httpMethod).to(equal("GET"))
-                            expect(request?.url?.absoluteString).to(equal("https://timetableapi.ptv.vic.gov.au/mockWithSingleParameter/parameter/mock"))
+                            expect(request?.url?.absoluteString).to(equal("https://timetableapi.ptv.vic.gov.au/mockWithSingleParameter/parameter/mock?devid=MOCK_USER&signature=7306EB5C53B0A25264B841176C0F39AB1B2D2415"))
                         }
                     }
 
@@ -73,7 +73,7 @@ final class PTVAPIAccessSpec: QuickSpec {
                             let parameters = [URLQueryItem(name: "mockItem", value: "mockValue")]
                             let request = apiAccess.apiRequest(endpoint: endpoint, parameters: parameters)
                             expect(request?.httpMethod).to(equal("GET"))
-                            expect(request?.url?.absoluteString).to(equal("https://timetableapi.ptv.vic.gov.au/mockWithSingleParameter/parameter/mock?mockItem=mockValue"))
+                            expect(request?.url?.absoluteString).to(equal("https://timetableapi.ptv.vic.gov.au/mockWithSingleParameter/parameter/mock?mockItem=mockValue&devid=MOCK_USER&signature=3CBEE8F8929518942B9BB146E226EA174901F0D7"))
                         }
                     }
 
@@ -83,7 +83,7 @@ final class PTVAPIAccessSpec: QuickSpec {
                                               URLQueryItem(name: "secondMock", value: "mockValue")]
                             let request = apiAccess.apiRequest(endpoint: endpoint, parameters: parameters)
                             expect(request?.httpMethod).to(equal("GET"))
-                            expect(request?.url?.absoluteString).to(equal("https://timetableapi.ptv.vic.gov.au/mockWithSingleParameter/parameter/mock?firstMock=mockValue&secondMock=mockValue"))
+                            expect(request?.url?.absoluteString).to(equal("https://timetableapi.ptv.vic.gov.au/mockWithSingleParameter/parameter/mock?firstMock=mockValue&secondMock=mockValue&devid=MOCK_USER&signature=31F7EB21FBFCA7E13A95B7128CD726A83C7B70DD"))
                         }
                     }
                 }
@@ -96,7 +96,7 @@ final class PTVAPIAccessSpec: QuickSpec {
                         it("should have a valid url") {
                             let request = apiAccess.apiRequest(endpoint: endpoint, parameters: nil)
                             expect(request?.httpMethod).to(equal("GET"))
-                            expect(request?.url?.absoluteString).to(equal("https://timetableapi.ptv.vic.gov.au/mockWithMultiParameter/first/mock/second/mock"))
+                            expect(request?.url?.absoluteString).to(equal("https://timetableapi.ptv.vic.gov.au/mockWithMultiParameter/first/mock/second/mock?devid=MOCK_USER&signature=060D4D1DE52849A8C8B33A194682BD86579A266E"))
                         }
                     }
 
@@ -105,7 +105,7 @@ final class PTVAPIAccessSpec: QuickSpec {
                             let parameters = [URLQueryItem(name: "mockItem", value: "mockValue")]
                             let request = apiAccess.apiRequest(endpoint: endpoint, parameters: parameters)
                             expect(request?.httpMethod).to(equal("GET"))
-                            expect(request?.url?.absoluteString).to(equal("https://timetableapi.ptv.vic.gov.au/mockWithMultiParameter/first/mock/second/mock?mockItem=mockValue"))
+                            expect(request?.url?.absoluteString).to(equal("https://timetableapi.ptv.vic.gov.au/mockWithMultiParameter/first/mock/second/mock?mockItem=mockValue&devid=MOCK_USER&signature=E98726930B4FA2B33998A78200BC292C0F4D7E68"))
                         }
                     }
 
@@ -115,7 +115,7 @@ final class PTVAPIAccessSpec: QuickSpec {
                                               URLQueryItem(name: "secondMock", value: "mockValue")]
                             let request = apiAccess.apiRequest(endpoint: endpoint, parameters: parameters)
                             expect(request?.httpMethod).to(equal("GET"))
-                            expect(request?.url?.absoluteString).to(equal("https://timetableapi.ptv.vic.gov.au/mockWithMultiParameter/first/mock/second/mock?firstMock=mockValue&secondMock=mockValue"))
+                            expect(request?.url?.absoluteString).to(equal("https://timetableapi.ptv.vic.gov.au/mockWithMultiParameter/first/mock/second/mock?firstMock=mockValue&secondMock=mockValue&devid=MOCK_USER&signature=7C67B0DFC47F0321FCC5EF88635795EA43DFABCF"))
                         }
                     }
                 }
@@ -131,7 +131,7 @@ final class PTVAPIAccessSpec: QuickSpec {
                         it("should have a valid url") {
                             let request = apiAccess.apiRequest(endpoint: endpoint, parameters: nil)
                             expect(request?.httpMethod).to(equal("POST"))
-                            expect(request?.url?.absoluteString).to(equal("https://timetableapi.ptv.vic.gov.au/mock"))
+                            expect(request?.url?.absoluteString).to(equal("https://timetableapi.ptv.vic.gov.au/mock?devid=MOCK_USER&signature=8904DF2FBB92C2A2E3D33181FD73A3D9AFBEE180"))
                         }
                     }
 
@@ -140,7 +140,7 @@ final class PTVAPIAccessSpec: QuickSpec {
                             let parameters = [URLQueryItem(name: "mockItem", value: "mockValue")]
                             let request = apiAccess.apiRequest(endpoint: endpoint, parameters: parameters)
                             expect(request?.httpMethod).to(equal("POST"))
-                            expect(request?.url?.absoluteString).to(equal("https://timetableapi.ptv.vic.gov.au/mock?mockItem=mockValue"))
+                            expect(request?.url?.absoluteString).to(equal("https://timetableapi.ptv.vic.gov.au/mock?mockItem=mockValue&devid=MOCK_USER&signature=600CABEA20A33C63C6DE93627C8C2B3122BDB461"))
                         }
                     }
 
@@ -150,7 +150,7 @@ final class PTVAPIAccessSpec: QuickSpec {
                                               URLQueryItem(name: "secondMock", value: "mockValue")]
                             let request = apiAccess.apiRequest(endpoint: endpoint, parameters: parameters)
                             expect(request?.httpMethod).to(equal("POST"))
-                            expect(request?.url?.absoluteString).to(equal("https://timetableapi.ptv.vic.gov.au/mock?firstMock=mockValue&secondMock=mockValue"))
+                            expect(request?.url?.absoluteString).to(equal("https://timetableapi.ptv.vic.gov.au/mock?firstMock=mockValue&secondMock=mockValue&devid=MOCK_USER&signature=96CF1C3E39CCE0E69431B350E6D1EF39B1DDE6D2"))
                         }
                     }
                 }
@@ -163,7 +163,7 @@ final class PTVAPIAccessSpec: QuickSpec {
                         it("should have a valid url") {
                             let request = apiAccess.apiRequest(endpoint: endpoint, parameters: nil)
                             expect(request?.httpMethod).to(equal("POST"))
-                            expect(request?.url?.absoluteString).to(equal("https://timetableapi.ptv.vic.gov.au/mockWithSingleParameter/parameter/mock"))
+                            expect(request?.url?.absoluteString).to(equal("https://timetableapi.ptv.vic.gov.au/mockWithSingleParameter/parameter/mock?devid=MOCK_USER&signature=7306EB5C53B0A25264B841176C0F39AB1B2D2415"))
                         }
                     }
 
@@ -172,7 +172,7 @@ final class PTVAPIAccessSpec: QuickSpec {
                             let parameters = [URLQueryItem(name: "mockItem", value: "mockValue")]
                             let request = apiAccess.apiRequest(endpoint: endpoint, parameters: parameters)
                             expect(request?.httpMethod).to(equal("POST"))
-                            expect(request?.url?.absoluteString).to(equal("https://timetableapi.ptv.vic.gov.au/mockWithSingleParameter/parameter/mock?mockItem=mockValue"))
+                            expect(request?.url?.absoluteString).to(equal("https://timetableapi.ptv.vic.gov.au/mockWithSingleParameter/parameter/mock?mockItem=mockValue&devid=MOCK_USER&signature=3CBEE8F8929518942B9BB146E226EA174901F0D7"))
                         }
                     }
 
@@ -182,7 +182,7 @@ final class PTVAPIAccessSpec: QuickSpec {
                                               URLQueryItem(name: "secondMock", value: "mockValue")]
                             let request = apiAccess.apiRequest(endpoint: endpoint, parameters: parameters)
                             expect(request?.httpMethod).to(equal("POST"))
-                            expect(request?.url?.absoluteString).to(equal("https://timetableapi.ptv.vic.gov.au/mockWithSingleParameter/parameter/mock?firstMock=mockValue&secondMock=mockValue"))
+                            expect(request?.url?.absoluteString).to(equal("https://timetableapi.ptv.vic.gov.au/mockWithSingleParameter/parameter/mock?firstMock=mockValue&secondMock=mockValue&devid=MOCK_USER&signature=31F7EB21FBFCA7E13A95B7128CD726A83C7B70DD"))
                         }
                     }
                 }
@@ -195,7 +195,7 @@ final class PTVAPIAccessSpec: QuickSpec {
                         it("should have a valid url") {
                             let request = apiAccess.apiRequest(endpoint: endpoint, parameters: nil)
                             expect(request?.httpMethod).to(equal("POST"))
-                            expect(request?.url?.absoluteString).to(equal("https://timetableapi.ptv.vic.gov.au/mockWithMultiParameter/first/mock/second/mock"))
+                            expect(request?.url?.absoluteString).to(equal("https://timetableapi.ptv.vic.gov.au/mockWithMultiParameter/first/mock/second/mock?devid=MOCK_USER&signature=060D4D1DE52849A8C8B33A194682BD86579A266E"))
                         }
                     }
 
@@ -204,7 +204,7 @@ final class PTVAPIAccessSpec: QuickSpec {
                             let parameters = [URLQueryItem(name: "mockItem", value: "mockValue")]
                             let request = apiAccess.apiRequest(endpoint: endpoint, parameters: parameters)
                             expect(request?.httpMethod).to(equal("POST"))
-                            expect(request?.url?.absoluteString).to(equal("https://timetableapi.ptv.vic.gov.au/mockWithMultiParameter/first/mock/second/mock?mockItem=mockValue"))
+                            expect(request?.url?.absoluteString).to(equal("https://timetableapi.ptv.vic.gov.au/mockWithMultiParameter/first/mock/second/mock?mockItem=mockValue&devid=MOCK_USER&signature=E98726930B4FA2B33998A78200BC292C0F4D7E68"))
                         }
                     }
 
@@ -214,7 +214,7 @@ final class PTVAPIAccessSpec: QuickSpec {
                                               URLQueryItem(name: "secondMock", value: "mockValue")]
                             let request = apiAccess.apiRequest(endpoint: endpoint, parameters: parameters)
                             expect(request?.httpMethod).to(equal("POST"))
-                            expect(request?.url?.absoluteString).to(equal("https://timetableapi.ptv.vic.gov.au/mockWithMultiParameter/first/mock/second/mock?firstMock=mockValue&secondMock=mockValue"))
+                            expect(request?.url?.absoluteString).to(equal("https://timetableapi.ptv.vic.gov.au/mockWithMultiParameter/first/mock/second/mock?firstMock=mockValue&secondMock=mockValue&devid=MOCK_USER&signature=7C67B0DFC47F0321FCC5EF88635795EA43DFABCF"))
                         }
                     }
                 }

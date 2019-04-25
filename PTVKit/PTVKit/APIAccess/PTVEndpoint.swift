@@ -9,7 +9,7 @@
 import Foundation
 
 /// PTV timetable API endpoints
-internal enum PTVEndpoint {
+public enum PTVEndpoint {
 
     /// Get route name and number for specific route ID
     case route(routeId: Int)

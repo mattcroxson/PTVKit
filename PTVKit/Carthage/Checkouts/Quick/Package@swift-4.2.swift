@@ -1,12 +1,9 @@
-// swift-tools-version:5.0
+// swift-tools-version:4.2
 
 import PackageDescription
 
 let package = Package(
     name: "Quick",
-    platforms: [
-        .macOS(.v10_10), .iOS(.v8), .tvOS(.v9)
-    ],
     products: [
         .library(name: "Quick", targets: ["Quick"]),
     ],
@@ -41,5 +38,5 @@ let package = Package(
 #endif
         return targets
     }(),
-    swiftLanguageVersions: [.v5]
+    swiftLanguageVersions: [.v4_2]
 )

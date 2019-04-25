@@ -9,13 +9,69 @@
 import Foundation
 import CommonCrypto
 
-internal class PTVAPIAccess {
+/// Completion handler called when a URL request either receives a response or throws an error
+public typealias PTVAPIResponseCompletion<T: Decodable> = (Result<T, Error>) -> Void
+
+public class PTVAPIAccess {
+
+    // MARK: - Properties
+
     let environment: PTVAPIEnvironment
 
-    internal init(configuration: PTVAPIConfigurationProvider) {
+    // MARK: - PTVAPIAccess
+
+    public init(configuration: PTVAPIConfigurationProvider) {
         self.environment = PTVAPIEnvironment(configuration: configuration)
     }
 
+    /// Performs an API request and calls the completion handler once a response is received or an error is thrown.
+    ///
+    /// - Parameters:
+    ///   - endpoint: Endpoint to retrieve data from
+    ///   - parameters: Parameters to include in the request
+    ///   - completion: Completion handler to call when the request completes or an error is thrown
+    public func getResponse<T: Decodable>(from endpoint: PTVEndpoint, parameters: [URLQueryItem]?, completion: PTVAPIResponseCompletion<T>?) {
+
+        guard let request = apiRequest(endpoint: endpoint, parameters: parameters) else {
+            completion?(.failure(PTVAPIError.cannotGenerateRequest))
+            return
+        }
+
+        let sessionConfiguration = URLSessionConfiguration.default
+        sessionConfiguration.timeoutIntervalForRequest = environment.requestTimeout
+        sessionConfiguration.timeoutIntervalForResource = environment.resourceTimeout
+        sessionConfiguration.waitsForConnectivity = true
+
+        let urlSession = URLSession(configuration: sessionConfiguration)
+
+        let task = urlSession.dataTask(with: request) { (data, response, error) in
+            do {
+                guard let data = data,
+                    let response = response as? HTTPURLResponse, (200..<300) ~= response.statusCode, error == nil else {
+                        throw error ?? PTVAPIError.requestFailed(localisedDescription: "Unknown error occurred")
+                }
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                let apiResponse = try decoder.decode(T.self, from: data)
+                completion?(.success(apiResponse))
+            } catch {
+                completion?(.failure(error))
+            }
+        }
+        task.resume()
+    }
+}
+
+
+// MARK: - Non Public Functions
+extension PTVAPIAccess {
+
+    /// Generates a URL request for the provided endpoint and parameters
+    ///
+    /// - Parameters:
+    ///   - endpoint: Endpoint to generate the URL request from
+    ///   - parameters: Parameter to include in the request
+    /// - Returns: URLRequest, or nil if an error occurs
     internal func apiRequest(endpoint: PTVEndpointConfigurer, parameters: [URLQueryItem]?) -> URLRequest? {
         switch endpoint.method {
         case .get: return generateGetRequest(for: endpoint, parameters: parameters)
@@ -33,7 +89,7 @@ internal class PTVAPIAccess {
         components?.queryItems = parameters
 
         var request: URLRequest?
-        if let componentUrl = components?.url {
+        if let componentUrl = components?.url?.signedUrl(environment: environment) {
             request = URLRequest(url: componentUrl)
         }
 
@@ -52,7 +108,7 @@ internal class PTVAPIAccess {
         components?.queryItems = parameters
 
         var request: URLRequest?
-        if let componentUrl = components?.url {
+        if let componentUrl = components?.url?.signedUrl(environment: environment) {
             request = URLRequest(url: componentUrl)
         }
 

@@ -10,6 +10,8 @@ import Foundation
 
 internal class PTVAPIEnvironment {
     let configuration: PTVAPIConfigurationProvider
+    let requestTimeout: Double = 30.0
+    let resourceTimeout: Double = 30.0
 
     init(configuration: PTVAPIConfigurationProvider) {
         self.configuration = configuration

@@ -20,6 +20,12 @@
 		17574ABB2259BB63007349BC /* PTVKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 17574AAD2259BB63007349BC /* PTVKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1784C05022712C05005622D2 /* DisruptionMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1784C04F22712C05005622D2 /* DisruptionMode.swift */; };
 		1784C05222712C79005622D2 /* DisruptionModesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1784C05122712C79005622D2 /* DisruptionModesResponse.swift */; };
+		1784C05422712D3F005622D2 /* DisruptionDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1784C05322712D3F005622D2 /* DisruptionDirection.swift */; };
+		1784C05622712E01005622D2 /* DisruptionStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1784C05522712E01005622D2 /* DisruptionStop.swift */; };
+		1784C05822712E3A005622D2 /* DisruptionRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1784C05722712E3A005622D2 /* DisruptionRoute.swift */; };
+		1784C05A22712ECB005622D2 /* Disruption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1784C05922712ECB005622D2 /* Disruption.swift */; };
+		1784C05C2271312F005622D2 /* Disruptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1784C05B2271312F005622D2 /* Disruptions.swift */; };
+		1784C05E22713231005622D2 /* DisruptionsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1784C05D22713231005622D2 /* DisruptionsResponse.swift */; };
 		1796BE1A2262B45C00980F2A /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1796BE182262B45C00980F2A /* Nimble.framework */; };
 		1796BE1B2262B45C00980F2A /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1796BE192262B45C00980F2A /* Quick.framework */; };
 		17B5CFB12262AD7D00B12975 /* PTVAPIConfigurationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B5CFB02262AD7D00B12975 /* PTVAPIConfigurationProvider.swift */; };
@@ -85,6 +91,12 @@
 		17574ABA2259BB63007349BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1784C04F22712C05005622D2 /* DisruptionMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisruptionMode.swift; sourceTree = "<group>"; };
 		1784C05122712C79005622D2 /* DisruptionModesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisruptionModesResponse.swift; sourceTree = "<group>"; };
+		1784C05322712D3F005622D2 /* DisruptionDirection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisruptionDirection.swift; sourceTree = "<group>"; };
+		1784C05522712E01005622D2 /* DisruptionStop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisruptionStop.swift; sourceTree = "<group>"; };
+		1784C05722712E3A005622D2 /* DisruptionRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisruptionRoute.swift; sourceTree = "<group>"; };
+		1784C05922712ECB005622D2 /* Disruption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Disruption.swift; sourceTree = "<group>"; };
+		1784C05B2271312F005622D2 /* Disruptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Disruptions.swift; sourceTree = "<group>"; };
+		1784C05D22713231005622D2 /* DisruptionsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisruptionsResponse.swift; sourceTree = "<group>"; };
 		1796BE182262B45C00980F2A /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		1796BE192262B45C00980F2A /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		17B5CFB02262AD7D00B12975 /* PTVAPIConfigurationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTVAPIConfigurationProvider.swift; sourceTree = "<group>"; };
@@ -313,7 +325,13 @@
 		17D136FD226DC2F900890E3B /* Disruptions */ = {
 			isa = PBXGroup;
 			children = (
+				1784C05922712ECB005622D2 /* Disruption.swift */,
+				1784C05322712D3F005622D2 /* DisruptionDirection.swift */,
+				1784C05722712E3A005622D2 /* DisruptionRoute.swift */,
+				1784C05B2271312F005622D2 /* Disruptions.swift */,
+				1784C05522712E01005622D2 /* DisruptionStop.swift */,
 				1784C04E22712BF6005622D2 /* Modes */,
+				1784C05D22713231005622D2 /* DisruptionsResponse.swift */,
 			);
 			path = Disruptions;
 			sourceTree = "<group>";
@@ -453,10 +471,13 @@
 				17D22C1B226419080012589A /* Data+PTVKit.swift in Sources */,
 				17C92D522259C3670098EB2C /* Route.swift in Sources */,
 				17C92D552259C3EF0098EB2C /* RouteResponse.swift in Sources */,
+				1784C05422712D3F005622D2 /* DisruptionDirection.swift in Sources */,
 				17C92D4B2259BFE50098EB2C /* Status.swift in Sources */,
 				17C92D6C2259DAA70098EB2C /* StopDetails.swift in Sources */,
+				1784C05622712E01005622D2 /* DisruptionStop.swift in Sources */,
 				17C92D4D2259C1360098EB2C /* RouteType.swift in Sources */,
 				17C92D662259D6180098EB2C /* StopStaffing.swift in Sources */,
+				1784C05E22713231005622D2 /* DisruptionsResponse.swift in Sources */,
 				17C92D682259D75C0098EB2C /* StopAccessibility.swift in Sources */,
 				17C92D602259D1090098EB2C /* StopsOnRouteResponse.swift in Sources */,
 				17C92D702259DC090098EB2C /* StopResponse.swift in Sources */,
@@ -467,12 +488,15 @@
 				17395732226D7BF0001744E3 /* PTVHTTPMethod.swift in Sources */,
 				17B5CFB12262AD7D00B12975 /* PTVAPIConfigurationProvider.swift in Sources */,
 				1784C05222712C79005622D2 /* DisruptionModesResponse.swift in Sources */,
+				1784C05822712E3A005622D2 /* DisruptionRoute.swift in Sources */,
 				1784C05022712C05005622D2 /* DisruptionMode.swift in Sources */,
 				1739572D226D5549001744E3 /* PTVEndpointConfigurer.swift in Sources */,
 				17B5CFB62262AF1000B12975 /* PTVAPIEnvironment.swift in Sources */,
 				17C92D6E2259DB2B0098EB2C /* StopLocation.swift in Sources */,
+				1784C05A22712ECB005622D2 /* Disruption.swift in Sources */,
 				17C92D5A2259CA0F0098EB2C /* StopsByDistanceResponse.swift in Sources */,
 				17C92D5E2259D09C0098EB2C /* StopOnRoute.swift in Sources */,
+				1784C05C2271312F005622D2 /* Disruptions.swift in Sources */,
 				17C92D582259C6E10098EB2C /* StopGeosearch.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

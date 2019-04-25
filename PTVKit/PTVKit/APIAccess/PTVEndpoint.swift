@@ -11,7 +11,7 @@ import Foundation
 internal enum PTVEndpoint: PTVEndpointConfigurer {
 
     // MARK: Endpoints
-    
+
     case route(routeId: Int)
     case routes
     case routeTypes
@@ -29,6 +29,10 @@ internal enum PTVEndpoint: PTVEndpointConfigurer {
 
     case departuresByRouteTypeAndStop(routeType: Int, stopId: Int)
     case departuresByRouteTypeStopAndRoute(routeType: Int, stopId: Int, routeId: Int)
+
+    case directionsByRoute(routeId: Int)
+    case directions(directionId: Int)
+    case directionsByRouteType(directionId: Int, routeType: Int)
 
     var path: String {
         switch self {
@@ -58,6 +62,11 @@ internal enum PTVEndpoint: PTVEndpointConfigurer {
 
         case let .departuresByRouteTypeAndStop(routeType, stopId): return "/\(version)/departures/route_type/\(routeType)/stop/\(stopId)"
         case let .departuresByRouteTypeStopAndRoute(routeType, stopId, routeId): return "/\(version)/departures/route_type/\(routeType)/stop/\(stopId)/route/\(routeId)"
+
+            // MARK: - Directions
+        case let .directions(directionId): return "/\(version)/directions/\(directionId)"
+        case let .directionsByRoute(routeId): return "/\(version)/directions/route/\(routeId)"
+        case let .directionsByRouteType(directionId, routeType): return "/\(version)/directions/\(directionId)/route_type/\(routeType)"
         }
     }
 }

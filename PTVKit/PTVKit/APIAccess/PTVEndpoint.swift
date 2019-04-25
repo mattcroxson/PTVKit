@@ -8,9 +8,8 @@
 
 import Foundation
 
-internal enum PTVEndpoint: PTVEndpointConfigurer {
-
-    // MARK: Endpoints
+/// PTV timetable API endpoints
+internal enum PTVEndpoint {
 
     /// Get route name and number for specific route ID
     case route(routeId: Int)
@@ -86,6 +85,9 @@ internal enum PTVEndpoint: PTVEndpointConfigurer {
 
     /// View stops, routes and myki ticket outlets that match the search term
     case search(searchTerm: String)
+}
+
+extension PTVEndpoint: PTVEndpointConfigurer {
 
     var path: String {
 
@@ -132,7 +134,6 @@ internal enum PTVEndpoint: PTVEndpointConfigurer {
 
         case let .stoppingPatternByRunAndRouteType(runId, routeType): return "/\(version)/pattern/run/\(runId)/route_type/\(routeType)"
 
-
         // MARK: Runs
 
         case let .runsOnRoute(routeId): return "/\(version)/runs/route/\(routeId)"
@@ -143,6 +144,7 @@ internal enum PTVEndpoint: PTVEndpointConfigurer {
         // MARK: Search
             
         case let .search(searchTerm): return "/\(version)/search/\(searchTerm)"
+
         }
     }
 }

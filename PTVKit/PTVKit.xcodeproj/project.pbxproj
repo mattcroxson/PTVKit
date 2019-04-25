@@ -33,6 +33,10 @@
 		17852A602271491400687E08 /* Outlet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17852A5F2271491400687E08 /* Outlet.swift */; };
 		17852A62227149D900687E08 /* OutletResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17852A61227149D900687E08 /* OutletResponse.swift */; };
 		17852A65227158C100687E08 /* StoppingPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17852A64227158C100687E08 /* StoppingPattern.swift */; };
+		17852A6822715AE400687E08 /* VehicleDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17852A6722715AE400687E08 /* VehicleDescriptor.swift */; };
+		17852A6A22715BB400687E08 /* VehiclePosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17852A6922715BB400687E08 /* VehiclePosition.swift */; };
+		17852A6C22715C5500687E08 /* Run.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17852A6B22715C5500687E08 /* Run.swift */; };
+		17852A6E22715D3C00687E08 /* RunsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17852A6D22715D3C00687E08 /* RunsResponse.swift */; };
 		1796BE1A2262B45C00980F2A /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1796BE182262B45C00980F2A /* Nimble.framework */; };
 		1796BE1B2262B45C00980F2A /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1796BE192262B45C00980F2A /* Quick.framework */; };
 		17B5CFB12262AD7D00B12975 /* PTVAPIConfigurationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B5CFB02262AD7D00B12975 /* PTVAPIConfigurationProvider.swift */; };
@@ -111,6 +115,10 @@
 		17852A5F2271491400687E08 /* Outlet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Outlet.swift; sourceTree = "<group>"; };
 		17852A61227149D900687E08 /* OutletResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutletResponse.swift; sourceTree = "<group>"; };
 		17852A64227158C100687E08 /* StoppingPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoppingPattern.swift; sourceTree = "<group>"; };
+		17852A6722715AE400687E08 /* VehicleDescriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDescriptor.swift; sourceTree = "<group>"; };
+		17852A6922715BB400687E08 /* VehiclePosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehiclePosition.swift; sourceTree = "<group>"; };
+		17852A6B22715C5500687E08 /* Run.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Run.swift; sourceTree = "<group>"; };
+		17852A6D22715D3C00687E08 /* RunsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunsResponse.swift; sourceTree = "<group>"; };
 		1796BE182262B45C00980F2A /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		1796BE192262B45C00980F2A /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		17B5CFB02262AD7D00B12975 /* PTVAPIConfigurationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTVAPIConfigurationProvider.swift; sourceTree = "<group>"; };
@@ -218,6 +226,7 @@
 		1773FAA32259BE38002F96B5 /* DataModels */ = {
 			isa = PBXGroup;
 			children = (
+				17C92D4A2259BFE50098EB2C /* Status.swift */,
 				17852A542271438500687E08 /* Departures */,
 				17852A592271473700687E08 /* Directions */,
 				17D136FD226DC2F900890E3B /* Disruptions */,
@@ -225,7 +234,7 @@
 				17852A63227158A600687E08 /* Patterns */,
 				17C92D502259C35B0098EB2C /* Routes */,
 				17C92D492259BFD10098EB2C /* RouteTypes */,
-				17C92D4A2259BFE50098EB2C /* Status.swift */,
+				17852A6622715ACF00687E08 /* Runs */,
 				17C92D562259C6D50098EB2C /* Stops */,
 			);
 			path = DataModels;
@@ -282,6 +291,17 @@
 				17852A64227158C100687E08 /* StoppingPattern.swift */,
 			);
 			path = Patterns;
+			sourceTree = "<group>";
+		};
+		17852A6622715ACF00687E08 /* Runs */ = {
+			isa = PBXGroup;
+			children = (
+				17852A6B22715C5500687E08 /* Run.swift */,
+				17852A6D22715D3C00687E08 /* RunsResponse.swift */,
+				17852A6722715AE400687E08 /* VehicleDescriptor.swift */,
+				17852A6922715BB400687E08 /* VehiclePosition.swift */,
+			);
+			path = Runs;
 			sourceTree = "<group>";
 		};
 		1796BE172262B45C00980F2A /* Frameworks */ = {
@@ -526,6 +546,7 @@
 				17C92D552259C3EF0098EB2C /* RouteResponse.swift in Sources */,
 				1784C05422712D3F005622D2 /* DisruptionDirection.swift in Sources */,
 				17C92D4B2259BFE50098EB2C /* Status.swift in Sources */,
+				17852A6C22715C5500687E08 /* Run.swift in Sources */,
 				17C92D6C2259DAA70098EB2C /* StopDetails.swift in Sources */,
 				1784C05622712E01005622D2 /* DisruptionStop.swift in Sources */,
 				17C92D4D2259C1360098EB2C /* RouteType.swift in Sources */,
@@ -536,6 +557,7 @@
 				17C92D602259D1090098EB2C /* StopsOnRouteResponse.swift in Sources */,
 				17C92D702259DC090098EB2C /* StopResponse.swift in Sources */,
 				17C92D642259D3410098EB2C /* StopAccessibilityWheelchair.swift in Sources */,
+				17852A6A22715BB400687E08 /* VehiclePosition.swift in Sources */,
 				17852A62227149D900687E08 /* OutletResponse.swift in Sources */,
 				17C92D622259D21E0098EB2C /* StopGPS.swift in Sources */,
 				17395730226D78B6001744E3 /* PTVEndpoint.swift in Sources */,
@@ -550,10 +572,12 @@
 				1739572D226D5549001744E3 /* PTVEndpointConfigurer.swift in Sources */,
 				17B5CFB62262AF1000B12975 /* PTVAPIEnvironment.swift in Sources */,
 				17852A65227158C100687E08 /* StoppingPattern.swift in Sources */,
+				17852A6822715AE400687E08 /* VehicleDescriptor.swift in Sources */,
 				17C92D6E2259DB2B0098EB2C /* StopLocation.swift in Sources */,
 				1784C05A22712ECB005622D2 /* Disruption.swift in Sources */,
 				17852A5D227147A600687E08 /* DirectionsResponse.swift in Sources */,
 				17C92D5A2259CA0F0098EB2C /* StopsByDistanceResponse.swift in Sources */,
+				17852A6E22715D3C00687E08 /* RunsResponse.swift in Sources */,
 				17C92D5E2259D09C0098EB2C /* StopOnRoute.swift in Sources */,
 				17852A5B2271475600687E08 /* Direction.swift in Sources */,
 				1784C05C2271312F005622D2 /* Disruptions.swift in Sources */,

@@ -69,8 +69,20 @@ internal enum PTVEndpoint: PTVEndpointConfigurer {
     /// List ticket outlets near a specific location
     case outletsByLocation(latitude: Double, longitude: Double)
 
-    /// View the stopping pattern for a specific trip/service run
+    /// Get the stopping pattern for a specific trip/service run
     case stoppingPatternByRunAndRouteType(runId: Int, routeType: Int)
+
+    /// List all trip/service runs for a specific route ID
+    case runsOnRoute(routeId: Int)
+
+    /// List all trip/service runs for a specific route ID and route type
+    case runsOnRouteByType(routeId: Int, routeType: Int)
+
+    /// View all trip/service runs for a specific run ID
+    case runs(runId: Int)
+
+    /// View the trip/service run for a specific run ID and route type
+    case runsByRouteType(runId: Int, routeType: Int)
 
     var path: String {
 
@@ -117,6 +129,13 @@ internal enum PTVEndpoint: PTVEndpointConfigurer {
 
         case let .stoppingPatternByRunAndRouteType(runId, routeType): return "/\(version)/pattern/run/\(runId)/route_type/\(routeType)"
 
+
+        // MARK: Runs
+
+        case let .runsOnRoute(routeId): return "/\(version)/runs/route/\(routeId)"
+        case let .runsOnRouteByType(routeId, routeType): return "/\(version)/runs/route/\(routeId)/route_type/\(routeType)"
+        case let .runs(runId): return "/\(version)/runs/\(runId)"
+        case let .runsByRouteType(runId, routeType): return "/\(version)/runs/\(runId)/route_type/\(routeType)"
         }
     }
 }

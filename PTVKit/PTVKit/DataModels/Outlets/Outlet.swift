@@ -20,10 +20,10 @@ public struct Outlet: Decodable {
     /// The business name of the outlet
     public let outletBusiness: String?
 
-    /// Geographic coordinate of latitude at outlet
+    /// Geographic coordinate (latitude) of outlet
     public let outletLatitude: Double?
 
-    /// Geographic coordinate of longitude at outlet
+    /// Geographic coordinate (latitude) of outlet
     public let outletLongitude: Double?
 
     /// The city/municipality the outlet is in

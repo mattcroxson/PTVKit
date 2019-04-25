@@ -22,6 +22,7 @@
 		17806FB32271C0F900916717 /* PTVAPIParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17806FB22271C0F900916717 /* PTVAPIParameters.swift */; };
 		17806FB52271CB4E00916717 /* OutletGeolocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17806FB42271CB4E00916717 /* OutletGeolocation.swift */; };
 		17806FB72271CBA900916717 /* OutletGeolocationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17806FB62271CBA900916717 /* OutletGeolocationResponse.swift */; };
+		17806FB92271CCCA00916717 /* RunResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17806FB82271CCCA00916717 /* RunResponse.swift */; };
 		1784C05022712C05005622D2 /* DisruptionMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1784C04F22712C05005622D2 /* DisruptionMode.swift */; };
 		1784C05222712C79005622D2 /* DisruptionModesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1784C05122712C79005622D2 /* DisruptionModesResponse.swift */; };
 		1784C05422712D3F005622D2 /* DisruptionDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1784C05322712D3F005622D2 /* DisruptionDirection.swift */; };
@@ -113,6 +114,7 @@
 		17806FB22271C0F900916717 /* PTVAPIParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTVAPIParameters.swift; sourceTree = "<group>"; };
 		17806FB42271CB4E00916717 /* OutletGeolocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutletGeolocation.swift; sourceTree = "<group>"; };
 		17806FB62271CBA900916717 /* OutletGeolocationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutletGeolocationResponse.swift; sourceTree = "<group>"; };
+		17806FB82271CCCA00916717 /* RunResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunResponse.swift; sourceTree = "<group>"; };
 		1784C04F22712C05005622D2 /* DisruptionMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisruptionMode.swift; sourceTree = "<group>"; };
 		1784C05122712C79005622D2 /* DisruptionModesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisruptionModesResponse.swift; sourceTree = "<group>"; };
 		1784C05322712D3F005622D2 /* DisruptionDirection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisruptionDirection.swift; sourceTree = "<group>"; };
@@ -319,6 +321,7 @@
 			isa = PBXGroup;
 			children = (
 				17852A6B22715C5500687E08 /* Run.swift */,
+				17806FB82271CCCA00916717 /* RunResponse.swift */,
 				17852A6D22715D3C00687E08 /* RunsResponse.swift */,
 				17852A6722715AE400687E08 /* VehicleDescriptor.swift */,
 				17852A6922715BB400687E08 /* VehiclePosition.swift */,
@@ -584,6 +587,7 @@
 				17852A6C22715C5500687E08 /* Run.swift in Sources */,
 				17C92D6C2259DAA70098EB2C /* StopDetails.swift in Sources */,
 				1784C05622712E01005622D2 /* DisruptionStop.swift in Sources */,
+				17806FB92271CCCA00916717 /* RunResponse.swift in Sources */,
 				17C92D4D2259C1360098EB2C /* RouteType.swift in Sources */,
 				17C92D662259D6180098EB2C /* StopStaffing.swift in Sources */,
 				17852A582271442F00687E08 /* DeparturesResponse.swift in Sources */,

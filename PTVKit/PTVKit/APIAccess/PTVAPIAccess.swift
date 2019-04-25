@@ -30,9 +30,9 @@ public class PTVAPIAccess {
     ///   - endpoint: Endpoint to retrieve data from
     ///   - parameters: Parameters to include in the request
     ///   - completion: Completion handler to call when the request completes or an error is thrown
-    public func getResponse<T: Decodable>(from endpoint: PTVEndpoint, parameters: [URLQueryItem]?, completion: PTVAPIResponseCompletion<T>?) {
+    public func getResponse<T: Decodable>(from endpoint: PTVEndpoint, parameters: PTVAPIParameters? = nil, completion: PTVAPIResponseCompletion<T>?) {
 
-        guard let request = apiRequest(endpoint: endpoint, parameters: parameters) else {
+        guard let request = apiRequest(endpoint: endpoint, parameters: parameters?.urlQueryItems) else {
             completion?(.failure(PTVAPIError.cannotGenerateRequest))
             return
         }

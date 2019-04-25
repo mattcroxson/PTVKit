@@ -20,21 +20,47 @@ internal enum PTVEndpoint: PTVEndpointConfigurer {
     case stopsOnRoute(routeId: Int, routeType: Int)
     case stop(stopId: Int, routeType: Int)
 
+    /// List all disruptions for all route types
     case disruptions
+
+    /// List all disruptions for a particular route
     case disruptionsByRoute(routeId: Int)
+
+    /// List all disruptions for a particular route and stop
     case disruptionsByRouteAndStop(routeId: Int, stopId: Int)
+
+    /// List all disruptions for a particular stop
     case disruptionsByStop(stopId: Int)
+
+    /// Retrieve a specific disruption
     case disruption(disruptionId: Int)
+
+    /// List all disruption modes
     case disruptionModes
 
+    /// List departures for all routes from a stop
     case departuresByRouteTypeAndStop(routeType: Int, stopId: Int)
+
+    /// List departures for a specific route from a stop
     case departuresByRouteTypeStopAndRoute(routeType: Int, stopId: Int, routeId: Int)
 
+    /// List directions that a route travels in
     case directionsByRoute(routeId: Int)
+
+    /// List all routes for a direction of travel
     case directions(directionId: Int)
+
+    /// List all routes of a particular type for a direction of travel
     case directionsByRouteType(directionId: Int, routeType: Int)
 
+    /// List all ticket outlets
+    case outlets
+
+    /// List ticket outlets near a specific location
+    case outletsByLocation(latitude: Double, longitude: Double)
+
     var path: String {
+
         switch self {
 
         // MARK: Routes
@@ -63,10 +89,14 @@ internal enum PTVEndpoint: PTVEndpointConfigurer {
         case let .departuresByRouteTypeAndStop(routeType, stopId): return "/\(version)/departures/route_type/\(routeType)/stop/\(stopId)"
         case let .departuresByRouteTypeStopAndRoute(routeType, stopId, routeId): return "/\(version)/departures/route_type/\(routeType)/stop/\(stopId)/route/\(routeId)"
 
-            // MARK: - Directions
+        // MARK: Directions
         case let .directions(directionId): return "/\(version)/directions/\(directionId)"
         case let .directionsByRoute(routeId): return "/\(version)/directions/route/\(routeId)"
         case let .directionsByRouteType(directionId, routeType): return "/\(version)/directions/\(directionId)/route_type/\(routeType)"
+
+            // MARK: Outlets
+        case .outlets: return "/\(version)/outlets"
+        case let .outletsByLocation(latitude, longitude): return "/\(version)/outlets/\(latitude),\(longitude)"
         }
     }
 }

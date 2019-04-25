@@ -32,6 +32,11 @@ public class PTVAPIAccess {
     ///   - completion: Completion handler to call when the request completes or an error is thrown
     public func getResponse<T: Decodable>(from endpoint: PTVEndpoint, parameters: PTVAPIParameters? = nil, completion: PTVAPIResponseCompletion<T>?) {
 
+        guard T.self == endpoint.responseType else {
+            completion?(.failure(PTVAPIError.incompatibleEndpoint))
+            return
+        }
+
         guard let request = apiRequest(endpoint: endpoint, parameters: parameters?.urlQueryItems) else {
             completion?(.failure(PTVAPIError.cannotGenerateRequest))
             return

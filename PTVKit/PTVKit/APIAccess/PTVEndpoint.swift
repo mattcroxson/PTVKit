@@ -147,4 +147,24 @@ extension PTVEndpoint: PTVEndpointConfigurer {
 
         }
     }
+
+    var responseType: Decodable.Type {
+        switch self {
+        case .departuresByRouteTypeAndStop, .departuresByRouteTypeStopAndRoute: return DeparturesResponse.self
+        case .directions, .directionsByRoute, .directionsByRouteType: return DirectionsResponse.self
+        case .disruption, .disruptions, .disruptionsByStop, .disruptionsByRoute, .disruptionsByRouteAndStop: return DisruptionsResponse.self
+        case .disruptionModes: return DisruptionModesResponse.self
+        case .route, .routes: return RouteResponse.self
+        case .routeTypes: return RouteTypesResponse.self
+        case .stopsByLocation: return StopsByDistanceResponse.self
+        case .stopsOnRoute: return StopsOnRouteResponse.self
+        case .stop: return StopResponse.self
+        case .outlets: return OutletResponse.self
+        case .outletsByLocation: return OutletGeolocationResponse.self
+        case .stoppingPatternByRunAndRouteType: return StoppingPattern.self
+        case .runs, .runsOnRouteByType, .runsOnRoute: return RunsResponse.self
+        case .runsByRouteType: return RunResponse.self
+        case .search: return SearchResult.self
+        }
+    }
 }

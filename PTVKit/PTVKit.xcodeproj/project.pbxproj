@@ -65,6 +65,7 @@
 		17C92D702259DC090098EB2C /* StopResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C92D6F2259DC090098EB2C /* StopResponse.swift */; };
 		17D136FC226D8D6000890E3B /* URLExtensionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D136FB226D8D6000890E3B /* URLExtensionSpec.swift */; };
 		17D22C1B226419080012589A /* Data+PTVKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D22C1A226419080012589A /* Data+PTVKit.swift */; };
+		17EEE2702271837D007B1B62 /* PTVMockEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17EEE26F2271837D007B1B62 /* PTVMockEndpoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -151,6 +152,7 @@
 		17C92D6F2259DC090098EB2C /* StopResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopResponse.swift; sourceTree = "<group>"; };
 		17D136FB226D8D6000890E3B /* URLExtensionSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLExtensionSpec.swift; sourceTree = "<group>"; };
 		17D22C1A226419080012589A /* Data+PTVKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+PTVKit.swift"; sourceTree = "<group>"; };
+		17EEE26F2271837D007B1B62 /* PTVMockEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTVMockEndpoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				17034F102262B666004462A6 /* PTVMockDataService.swift */,
+				17EEE26F2271837D007B1B62 /* PTVMockEndpoint.swift */,
 			);
 			path = MockData;
 			sourceTree = "<group>";
@@ -614,6 +617,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				17D136FC226D8D6000890E3B /* URLExtensionSpec.swift in Sources */,
+				17EEE2702271837D007B1B62 /* PTVMockEndpoint.swift in Sources */,
 				17034F112262B666004462A6 /* PTVMockDataService.swift in Sources */,
 				17034F0E2262B630004462A6 /* PTVAPIAccessSpec.swift in Sources */,
 			);

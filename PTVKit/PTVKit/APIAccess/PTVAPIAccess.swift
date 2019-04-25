@@ -48,6 +48,16 @@ internal class PTVAPIAccess {
     /// - Returns: URLRequest, or nil if the configuration is invalid.
     private func generatePostRequest(for endpoint: PTVEndpointConfigurer, parameters: [URLQueryItem]?) -> URLRequest? {
         guard let endpointUrl = endpoint.url else { return nil }
-        return URLRequest(url: endpointUrl)
+        var components = URLComponents(url: endpointUrl, resolvingAgainstBaseURL: false)
+        components?.queryItems = parameters
+
+        var request: URLRequest?
+        if let componentUrl = components?.url {
+            request = URLRequest(url: componentUrl)
+        }
+
+        request?.cachePolicy = endpoint.cachePolicy
+        request?.httpMethod = endpoint.method.rawValue
+        return request
     }
 }

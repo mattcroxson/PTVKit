@@ -15,6 +15,7 @@
 		17395730226D78B6001744E3 /* PTVEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1739572F226D78B6001744E3 /* PTVEndpoint.swift */; };
 		17395732226D7BF0001744E3 /* PTVHTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17395731226D7BF0001744E3 /* PTVHTTPMethod.swift */; };
 		17395734226D7CCE001744E3 /* URL+PTVKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17395733226D7CCE001744E3 /* URL+PTVKit.swift */; };
+		174850A82271B2F900CFE5B1 /* PTVAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174850A72271B2F900CFE5B1 /* PTVAPIError.swift */; };
 		1754CF3E226C53A80064DA4E /* URLComponents+PTVKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1754CF3D226C53A80064DA4E /* URLComponents+PTVKit.swift */; };
 		17574AB42259BB63007349BC /* PTVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17574AAA2259BB63007349BC /* PTVKit.framework */; };
 		17574ABB2259BB63007349BC /* PTVKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 17574AAD2259BB63007349BC /* PTVKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -99,6 +100,7 @@
 		1739572F226D78B6001744E3 /* PTVEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTVEndpoint.swift; sourceTree = "<group>"; };
 		17395731226D7BF0001744E3 /* PTVHTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTVHTTPMethod.swift; sourceTree = "<group>"; };
 		17395733226D7CCE001744E3 /* URL+PTVKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+PTVKit.swift"; sourceTree = "<group>"; };
+		174850A72271B2F900CFE5B1 /* PTVAPIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTVAPIError.swift; sourceTree = "<group>"; };
 		1754CF3D226C53A80064DA4E /* URLComponents+PTVKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLComponents+PTVKit.swift"; sourceTree = "<group>"; };
 		17574AAA2259BB63007349BC /* PTVKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PTVKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		17574AAD2259BB63007349BC /* PTVKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PTVKit.h; sourceTree = "<group>"; };
@@ -341,6 +343,7 @@
 			children = (
 				17B5CFB32262AE3400B12975 /* PTVAPIAccess.swift */,
 				17B5CFB52262AF1000B12975 /* PTVAPIEnvironment.swift */,
+				174850A72271B2F900CFE5B1 /* PTVAPIError.swift */,
 				1739572F226D78B6001744E3 /* PTVEndpoint.swift */,
 				17395731226D7BF0001744E3 /* PTVHTTPMethod.swift */,
 				17B5CFB22262AE0300B12975 /* Protocols */,
@@ -602,6 +605,7 @@
 				17C92D6E2259DB2B0098EB2C /* StopLocation.swift in Sources */,
 				1784C05A22712ECB005622D2 /* Disruption.swift in Sources */,
 				17852A5D227147A600687E08 /* DirectionsResponse.swift in Sources */,
+				174850A82271B2F900CFE5B1 /* PTVAPIError.swift in Sources */,
 				17C92D5A2259CA0F0098EB2C /* StopsByDistanceResponse.swift in Sources */,
 				17852A6E22715D3C00687E08 /* RunsResponse.swift in Sources */,
 				17C92D5E2259D09C0098EB2C /* StopOnRoute.swift in Sources */,

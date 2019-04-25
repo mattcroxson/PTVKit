@@ -20,6 +20,8 @@
 		17574AB42259BB63007349BC /* PTVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17574AAA2259BB63007349BC /* PTVKit.framework */; };
 		17574ABB2259BB63007349BC /* PTVKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 17574AAD2259BB63007349BC /* PTVKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		17806FB32271C0F900916717 /* PTVAPIParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17806FB22271C0F900916717 /* PTVAPIParameters.swift */; };
+		17806FB52271CB4E00916717 /* OutletGeolocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17806FB42271CB4E00916717 /* OutletGeolocation.swift */; };
+		17806FB72271CBA900916717 /* OutletGeolocationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17806FB62271CBA900916717 /* OutletGeolocationResponse.swift */; };
 		1784C05022712C05005622D2 /* DisruptionMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1784C04F22712C05005622D2 /* DisruptionMode.swift */; };
 		1784C05222712C79005622D2 /* DisruptionModesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1784C05122712C79005622D2 /* DisruptionModesResponse.swift */; };
 		1784C05422712D3F005622D2 /* DisruptionDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1784C05322712D3F005622D2 /* DisruptionDirection.swift */; };
@@ -109,6 +111,8 @@
 		17574AB32259BB63007349BC /* PTVKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PTVKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		17574ABA2259BB63007349BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17806FB22271C0F900916717 /* PTVAPIParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTVAPIParameters.swift; sourceTree = "<group>"; };
+		17806FB42271CB4E00916717 /* OutletGeolocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutletGeolocation.swift; sourceTree = "<group>"; };
+		17806FB62271CBA900916717 /* OutletGeolocationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutletGeolocationResponse.swift; sourceTree = "<group>"; };
 		1784C04F22712C05005622D2 /* DisruptionMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisruptionMode.swift; sourceTree = "<group>"; };
 		1784C05122712C79005622D2 /* DisruptionModesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisruptionModesResponse.swift; sourceTree = "<group>"; };
 		1784C05322712D3F005622D2 /* DisruptionDirection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisruptionDirection.swift; sourceTree = "<group>"; };
@@ -296,6 +300,8 @@
 			isa = PBXGroup;
 			children = (
 				17852A5F2271491400687E08 /* Outlet.swift */,
+				17806FB42271CB4E00916717 /* OutletGeolocation.swift */,
+				17806FB62271CBA900916717 /* OutletGeolocationResponse.swift */,
 				17852A61227149D900687E08 /* OutletResponse.swift */,
 			);
 			path = Outlets;
@@ -583,6 +589,7 @@
 				17852A582271442F00687E08 /* DeparturesResponse.swift in Sources */,
 				1784C05E22713231005622D2 /* DisruptionsResponse.swift in Sources */,
 				17852A7522715FC900687E08 /* ResultStop.swift in Sources */,
+				17806FB72271CBA900916717 /* OutletGeolocationResponse.swift in Sources */,
 				17C92D682259D75C0098EB2C /* StopAccessibility.swift in Sources */,
 				17C92D602259D1090098EB2C /* StopsOnRouteResponse.swift in Sources */,
 				17852A7322715F7700687E08 /* ResultRoute.swift in Sources */,
@@ -605,6 +612,7 @@
 				17B5CFB62262AF1000B12975 /* PTVAPIEnvironment.swift in Sources */,
 				17852A77227161C400687E08 /* SearchResult.swift in Sources */,
 				17852A65227158C100687E08 /* StoppingPattern.swift in Sources */,
+				17806FB52271CB4E00916717 /* OutletGeolocation.swift in Sources */,
 				17852A6822715AE400687E08 /* VehicleDescriptor.swift in Sources */,
 				17C92D6E2259DB2B0098EB2C /* StopLocation.swift in Sources */,
 				1784C05A22712ECB005622D2 /* Disruption.swift in Sources */,

@@ -37,6 +37,10 @@
 		17852A6A22715BB400687E08 /* VehiclePosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17852A6922715BB400687E08 /* VehiclePosition.swift */; };
 		17852A6C22715C5500687E08 /* Run.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17852A6B22715C5500687E08 /* Run.swift */; };
 		17852A6E22715D3C00687E08 /* RunsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17852A6D22715D3C00687E08 /* RunsResponse.swift */; };
+		17852A7122715F1D00687E08 /* ResultOutlet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17852A7022715F1D00687E08 /* ResultOutlet.swift */; };
+		17852A7322715F7700687E08 /* ResultRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17852A7222715F7700687E08 /* ResultRoute.swift */; };
+		17852A7522715FC900687E08 /* ResultStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17852A7422715FC900687E08 /* ResultStop.swift */; };
+		17852A77227161C400687E08 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17852A76227161C400687E08 /* SearchResult.swift */; };
 		1796BE1A2262B45C00980F2A /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1796BE182262B45C00980F2A /* Nimble.framework */; };
 		1796BE1B2262B45C00980F2A /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1796BE192262B45C00980F2A /* Quick.framework */; };
 		17B5CFB12262AD7D00B12975 /* PTVAPIConfigurationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B5CFB02262AD7D00B12975 /* PTVAPIConfigurationProvider.swift */; };
@@ -119,6 +123,10 @@
 		17852A6922715BB400687E08 /* VehiclePosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehiclePosition.swift; sourceTree = "<group>"; };
 		17852A6B22715C5500687E08 /* Run.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Run.swift; sourceTree = "<group>"; };
 		17852A6D22715D3C00687E08 /* RunsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunsResponse.swift; sourceTree = "<group>"; };
+		17852A7022715F1D00687E08 /* ResultOutlet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultOutlet.swift; sourceTree = "<group>"; };
+		17852A7222715F7700687E08 /* ResultRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultRoute.swift; sourceTree = "<group>"; };
+		17852A7422715FC900687E08 /* ResultStop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultStop.swift; sourceTree = "<group>"; };
+		17852A76227161C400687E08 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		1796BE182262B45C00980F2A /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		1796BE192262B45C00980F2A /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		17B5CFB02262AD7D00B12975 /* PTVAPIConfigurationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTVAPIConfigurationProvider.swift; sourceTree = "<group>"; };
@@ -235,6 +243,7 @@
 				17C92D502259C35B0098EB2C /* Routes */,
 				17C92D492259BFD10098EB2C /* RouteTypes */,
 				17852A6622715ACF00687E08 /* Runs */,
+				17852A6F22715EF100687E08 /* Search */,
 				17C92D562259C6D50098EB2C /* Stops */,
 			);
 			path = DataModels;
@@ -302,6 +311,17 @@
 				17852A6922715BB400687E08 /* VehiclePosition.swift */,
 			);
 			path = Runs;
+			sourceTree = "<group>";
+		};
+		17852A6F22715EF100687E08 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				17852A7022715F1D00687E08 /* ResultOutlet.swift */,
+				17852A7222715F7700687E08 /* ResultRoute.swift */,
+				17852A7422715FC900687E08 /* ResultStop.swift */,
+				17852A76227161C400687E08 /* SearchResult.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 		1796BE172262B45C00980F2A /* Frameworks */ = {
@@ -553,8 +573,10 @@
 				17C92D662259D6180098EB2C /* StopStaffing.swift in Sources */,
 				17852A582271442F00687E08 /* DeparturesResponse.swift in Sources */,
 				1784C05E22713231005622D2 /* DisruptionsResponse.swift in Sources */,
+				17852A7522715FC900687E08 /* ResultStop.swift in Sources */,
 				17C92D682259D75C0098EB2C /* StopAccessibility.swift in Sources */,
 				17C92D602259D1090098EB2C /* StopsOnRouteResponse.swift in Sources */,
+				17852A7322715F7700687E08 /* ResultRoute.swift in Sources */,
 				17C92D702259DC090098EB2C /* StopResponse.swift in Sources */,
 				17C92D642259D3410098EB2C /* StopAccessibilityWheelchair.swift in Sources */,
 				17852A6A22715BB400687E08 /* VehiclePosition.swift in Sources */,
@@ -571,6 +593,7 @@
 				1784C05022712C05005622D2 /* DisruptionMode.swift in Sources */,
 				1739572D226D5549001744E3 /* PTVEndpointConfigurer.swift in Sources */,
 				17B5CFB62262AF1000B12975 /* PTVAPIEnvironment.swift in Sources */,
+				17852A77227161C400687E08 /* SearchResult.swift in Sources */,
 				17852A65227158C100687E08 /* StoppingPattern.swift in Sources */,
 				17852A6822715AE400687E08 /* VehicleDescriptor.swift in Sources */,
 				17C92D6E2259DB2B0098EB2C /* StopLocation.swift in Sources */,
@@ -582,6 +605,7 @@
 				17852A5B2271475600687E08 /* Direction.swift in Sources */,
 				1784C05C2271312F005622D2 /* Disruptions.swift in Sources */,
 				17C92D582259C6E10098EB2C /* StopGeosearch.swift in Sources */,
+				17852A7122715F1D00687E08 /* ResultOutlet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

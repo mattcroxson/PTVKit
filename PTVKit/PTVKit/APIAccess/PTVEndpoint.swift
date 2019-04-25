@@ -84,6 +84,9 @@ internal enum PTVEndpoint: PTVEndpointConfigurer {
     /// View the trip/service run for a specific run ID and route type
     case runsByRouteType(runId: Int, routeType: Int)
 
+    /// View stops, routes and myki ticket outlets that match the search term
+    case search(searchTerm: String)
+
     var path: String {
 
         switch self {
@@ -136,6 +139,10 @@ internal enum PTVEndpoint: PTVEndpointConfigurer {
         case let .runsOnRouteByType(routeId, routeType): return "/\(version)/runs/route/\(routeId)/route_type/\(routeType)"
         case let .runs(runId): return "/\(version)/runs/\(runId)"
         case let .runsByRouteType(runId, routeType): return "/\(version)/runs/\(runId)/route_type/\(routeType)"
+
+        // MARK: Search
+            
+        case let .search(searchTerm): return "/\(version)/search/\(searchTerm)"
         }
     }
 }

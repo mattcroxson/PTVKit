@@ -32,6 +32,7 @@
 		17852A5D227147A600687E08 /* DirectionsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17852A5C227147A600687E08 /* DirectionsResponse.swift */; };
 		17852A602271491400687E08 /* Outlet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17852A5F2271491400687E08 /* Outlet.swift */; };
 		17852A62227149D900687E08 /* OutletResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17852A61227149D900687E08 /* OutletResponse.swift */; };
+		17852A65227158C100687E08 /* StoppingPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17852A64227158C100687E08 /* StoppingPattern.swift */; };
 		1796BE1A2262B45C00980F2A /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1796BE182262B45C00980F2A /* Nimble.framework */; };
 		1796BE1B2262B45C00980F2A /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1796BE192262B45C00980F2A /* Quick.framework */; };
 		17B5CFB12262AD7D00B12975 /* PTVAPIConfigurationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B5CFB02262AD7D00B12975 /* PTVAPIConfigurationProvider.swift */; };
@@ -109,6 +110,7 @@
 		17852A5C227147A600687E08 /* DirectionsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionsResponse.swift; sourceTree = "<group>"; };
 		17852A5F2271491400687E08 /* Outlet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Outlet.swift; sourceTree = "<group>"; };
 		17852A61227149D900687E08 /* OutletResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutletResponse.swift; sourceTree = "<group>"; };
+		17852A64227158C100687E08 /* StoppingPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoppingPattern.swift; sourceTree = "<group>"; };
 		1796BE182262B45C00980F2A /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		1796BE192262B45C00980F2A /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		17B5CFB02262AD7D00B12975 /* PTVAPIConfigurationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTVAPIConfigurationProvider.swift; sourceTree = "<group>"; };
@@ -216,13 +218,14 @@
 		1773FAA32259BE38002F96B5 /* DataModels */ = {
 			isa = PBXGroup;
 			children = (
-				17C92D4A2259BFE50098EB2C /* Status.swift */,
 				17852A542271438500687E08 /* Departures */,
 				17852A592271473700687E08 /* Directions */,
 				17D136FD226DC2F900890E3B /* Disruptions */,
 				17852A5E2271490300687E08 /* Outlets */,
+				17852A63227158A600687E08 /* Patterns */,
 				17C92D502259C35B0098EB2C /* Routes */,
 				17C92D492259BFD10098EB2C /* RouteTypes */,
+				17C92D4A2259BFE50098EB2C /* Status.swift */,
 				17C92D562259C6D50098EB2C /* Stops */,
 			);
 			path = DataModels;
@@ -271,6 +274,14 @@
 				17852A61227149D900687E08 /* OutletResponse.swift */,
 			);
 			path = Outlets;
+			sourceTree = "<group>";
+		};
+		17852A63227158A600687E08 /* Patterns */ = {
+			isa = PBXGroup;
+			children = (
+				17852A64227158C100687E08 /* StoppingPattern.swift */,
+			);
+			path = Patterns;
 			sourceTree = "<group>";
 		};
 		1796BE172262B45C00980F2A /* Frameworks */ = {
@@ -538,6 +549,7 @@
 				1784C05022712C05005622D2 /* DisruptionMode.swift in Sources */,
 				1739572D226D5549001744E3 /* PTVEndpointConfigurer.swift in Sources */,
 				17B5CFB62262AF1000B12975 /* PTVAPIEnvironment.swift in Sources */,
+				17852A65227158C100687E08 /* StoppingPattern.swift in Sources */,
 				17C92D6E2259DB2B0098EB2C /* StopLocation.swift in Sources */,
 				1784C05A22712ECB005622D2 /* Disruption.swift in Sources */,
 				17852A5D227147A600687E08 /* DirectionsResponse.swift in Sources */,

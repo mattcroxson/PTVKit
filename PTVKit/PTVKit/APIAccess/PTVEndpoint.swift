@@ -12,12 +12,22 @@ internal enum PTVEndpoint: PTVEndpointConfigurer {
 
     // MARK: Endpoints
 
+    /// Get route name and number for specific route ID
     case route(routeId: Int)
+
+    /// List route names and numbers for all routes
     case routes
+
+    /// List all route types and their names
     case routeTypes
 
+    /// View all stops near a specific location
     case stopsByLocation(latitude: Double, longitude: Double)
+
+    /// View all stops on a specific route
     case stopsOnRoute(routeId: Int, routeType: Int)
+
+    /// View facilities at a specific stop (Metro and V/Line stations only)
     case stop(stopId: Int, routeType: Int)
 
     /// List all disruptions for all route types
@@ -59,6 +69,9 @@ internal enum PTVEndpoint: PTVEndpointConfigurer {
     /// List ticket outlets near a specific location
     case outletsByLocation(latitude: Double, longitude: Double)
 
+    /// View the stopping pattern for a specific trip/service run
+    case stoppingPatternByRunAndRouteType(runId: Int, routeType: Int)
+
     var path: String {
 
         switch self {
@@ -90,13 +103,20 @@ internal enum PTVEndpoint: PTVEndpointConfigurer {
         case let .departuresByRouteTypeStopAndRoute(routeType, stopId, routeId): return "/\(version)/departures/route_type/\(routeType)/stop/\(stopId)/route/\(routeId)"
 
         // MARK: Directions
+            
         case let .directions(directionId): return "/\(version)/directions/\(directionId)"
         case let .directionsByRoute(routeId): return "/\(version)/directions/route/\(routeId)"
         case let .directionsByRouteType(directionId, routeType): return "/\(version)/directions/\(directionId)/route_type/\(routeType)"
 
-            // MARK: Outlets
+        // MARK: Outlets
+
         case .outlets: return "/\(version)/outlets"
         case let .outletsByLocation(latitude, longitude): return "/\(version)/outlets/\(latitude),\(longitude)"
+
+        // MARK: Stopping Pattern
+
+        case let .stoppingPatternByRunAndRouteType(runId, routeType): return "/\(version)/pattern/run/\(runId)/route_type/\(routeType)"
+
         }
     }
 }

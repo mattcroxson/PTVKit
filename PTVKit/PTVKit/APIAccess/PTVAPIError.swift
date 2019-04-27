@@ -23,6 +23,7 @@ public enum PTVAPIError: Swift.Error {
     /// An unknown error has occurred
     case unknown
 
+    /// Localized description of the error that has occured
     public var localizedDescription: String {
         switch self {
         case .cannotGenerateRequest: return "An error occurred generating the URL request"

@@ -47,7 +47,12 @@ public struct Disruption: Decodable {
     /// Stop relevant to a disruption (if applicable)
     public let stops: [DisruptionStop]?
 
+    /// Currently unknown usage.
     public let colour: String?
+
+    /// Currently unknown usage.
     public let displayOnBoard: Bool?
+
+    /// Currently unknown usage.
     public let displayStatus: Bool?
 }

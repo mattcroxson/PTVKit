@@ -8,57 +8,37 @@
 
 import Foundation
 
+/// Represents URL query parameters passed into the API request.
 public struct PTVEndpointParameter {
 
+    /// Parameter name
     private let name: PTVEndpointParameterName
+
+    /// Array of parameter values
     private let values: [CustomStringConvertible]
 
+    /// Initialises an endpoint parameter with a single value
+    ///
+    /// - Parameters:
+    ///   - name: Name of the parameter
+    ///   - value: Value of the parameter
     public init(name: PTVEndpointParameterName, value: CustomStringConvertible) {
         self.name = name
         self.values = [value]
     }
 
+    /// Initialises endpoint parameters with multiple values
+    ///
+    /// - Parameters:
+    ///   - name: Name of the parameters
+    ///   - values: Values of the parameters
     public init(name: PTVEndpointParameterName, values: [CustomStringConvertible]) {
         self.name = name
         self.values = values
     }
 
+    /// Array of URL query items based on the name and values
     internal var urlQueryItems: [URLQueryItem] {
         return values.map { URLQueryItem(name: name.rawValue, value: $0.description ) }
     }
-}
-
-public enum PTVEndpointParameterName: String {
-    case dateUtc = "date_utc"
-    case directionId = "direction_id"
-    case disruptionModes = "disruption_modes"
-    case disruptionStatus = "disruption_status"
-    case expand
-    case gtfs
-    case includeAddresses = "include_addresses"
-    case includeCancelled = "include_cancelled"
-    case includeOutlets = "include_outlets"
-    case latitude
-    case longitude
-    case lookBackwards = "look_backwards"
-    case matchRouteBySuburb = "match_route_by_suburb"
-    case matchStopByGtfsStopId = "match_stop_by_gtfs_stop_id"
-    case matchStopBySuburb = "match_stop_by_suburb"
-    case maxDistance = "max_distance"
-    case maxResults = "max_results"
-    case platformNumbers = "platform_numbers"
-    case routeId = "route_id"
-    case routeName = "route_name"
-    case routeType = "route_type"
-    case routeTypes = "route_types"
-    case runId = "run_id"
-    case searchTerm = "search_term"
-    case stopId = "stop_id"
-    case stopAccessibility = "stop_accessibility"
-    case stopAmenities = "stop_amenities"
-    case stopContact = "stop_contact"
-    case stopDisruptions = "stop_disruptions"
-    case stopLocation = "stop_location"
-    case stopStaffing = "stop_staffing"
-    case stopTicket = "stop_ticket"
 }

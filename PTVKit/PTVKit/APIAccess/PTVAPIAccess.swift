@@ -12,6 +12,7 @@ import CommonCrypto
 /// Completion handler called when a URL request either receives a response or throws an error
 public typealias PTVAPIResponseCompletion<T: Decodable> = (Result<T, PTVAPIError>) -> Void
 
+/// Primary access point to the API
 public class PTVAPIAccess {
 
     // MARK: - Properties
@@ -20,6 +21,10 @@ public class PTVAPIAccess {
 
     // MARK: - PTVAPIAccess
 
+    /// Initialises the PTV API access object
+    ///
+    /// - Parameters:
+    ///   - configuration: Configuration provider to initialise the access object
     public init(configuration: PTVAPIConfigurationProvider) {
         self.environment = PTVAPIEnvironment(configuration: configuration)
     }

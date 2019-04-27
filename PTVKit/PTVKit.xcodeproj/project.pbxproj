@@ -11,6 +11,7 @@
 		17034F0B2262B5EF004462A6 /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1796BE192262B45C00980F2A /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		17034F0E2262B630004462A6 /* PTVAPIAccessSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17034F0D2262B630004462A6 /* PTVAPIAccessSpec.swift */; };
 		17034F112262B666004462A6 /* PTVMockDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17034F102262B666004462A6 /* PTVMockDataService.swift */; };
+		172750A2227413E200B60326 /* PTVEndpointParameterName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172750A1227413E200B60326 /* PTVEndpointParameterName.swift */; };
 		1739572D226D5549001744E3 /* PTVEndpointConfigurer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1739572C226D5549001744E3 /* PTVEndpointConfigurer.swift */; };
 		17395730226D78B6001744E3 /* PTVEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1739572F226D78B6001744E3 /* PTVEndpoint.swift */; };
 		17395732226D7BF0001744E3 /* PTVHTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17395731226D7BF0001744E3 /* PTVHTTPMethod.swift */; };
@@ -100,6 +101,7 @@
 /* Begin PBXFileReference section */
 		17034F0D2262B630004462A6 /* PTVAPIAccessSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTVAPIAccessSpec.swift; sourceTree = "<group>"; };
 		17034F102262B666004462A6 /* PTVMockDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTVMockDataService.swift; sourceTree = "<group>"; };
+		172750A1227413E200B60326 /* PTVEndpointParameterName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTVEndpointParameterName.swift; sourceTree = "<group>"; };
 		1739572C226D5549001744E3 /* PTVEndpointConfigurer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTVEndpointConfigurer.swift; sourceTree = "<group>"; };
 		1739572F226D78B6001744E3 /* PTVEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTVEndpoint.swift; sourceTree = "<group>"; };
 		17395731226D7BF0001744E3 /* PTVHTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTVHTTPMethod.swift; sourceTree = "<group>"; };
@@ -357,6 +359,7 @@
 				174850A72271B2F900CFE5B1 /* PTVAPIError.swift */,
 				1739572F226D78B6001744E3 /* PTVEndpoint.swift */,
 				17806FB22271C0F900916717 /* PTVEndpointParameter.swift */,
+				172750A1227413E200B60326 /* PTVEndpointParameterName.swift */,
 				17395731226D7BF0001744E3 /* PTVHTTPMethod.swift */,
 				17B5CFB22262AE0300B12975 /* Protocols */,
 			);
@@ -581,6 +584,7 @@
 				17C92D4F2259C2D90098EB2C /* RouteTypesResponse.swift in Sources */,
 				17D22C1B226419080012589A /* Data+PTVKit.swift in Sources */,
 				17C92D522259C3670098EB2C /* Route.swift in Sources */,
+				172750A2227413E200B60326 /* PTVEndpointParameterName.swift in Sources */,
 				17C92D552259C3EF0098EB2C /* RouteResponse.swift in Sources */,
 				1784C05422712D3F005622D2 /* DisruptionDirection.swift in Sources */,
 				17C92D4B2259BFE50098EB2C /* Status.swift in Sources */,

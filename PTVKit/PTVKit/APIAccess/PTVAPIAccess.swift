@@ -12,6 +12,7 @@ import CommonCrypto
 /// Completion handler called when a URL request either receives a response or throws an error
 public typealias PTVAPIResponseCompletion<T: Decodable> = (Result<T, PTVAPIError>) -> Void
 
+/// Primary access point to the API
 public class PTVAPIAccess {
 
     // MARK: - Properties

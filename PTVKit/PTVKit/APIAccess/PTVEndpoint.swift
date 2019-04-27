@@ -148,7 +148,8 @@ extension PTVEndpoint: PTVEndpointConfigurer {
         }
     }
 
-    var responseType: Decodable.Type {
+    /// The type of object the API is expecting to return
+    internal var responseType: Decodable.Type {
         switch self {
         case .departuresByRouteTypeAndStop, .departuresByRouteTypeStopAndRoute: return DeparturesResponse.self
         case .directions, .directionsByRoute, .directionsByRouteType: return DirectionsResponse.self

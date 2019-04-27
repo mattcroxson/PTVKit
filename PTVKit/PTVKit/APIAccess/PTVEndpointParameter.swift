@@ -1,5 +1,5 @@
 //
-//  PTVAPIParameters.swift
+//  PTVEndpointParameter.swift
 //  PTVKit
 //
 //  Created by Matt Croxson on 25/4/19.
@@ -8,17 +8,17 @@
 
 import Foundation
 
-public struct PTVAPIParameters {
+public struct PTVEndpointParameter {
 
-    private let name: PTVAPIParameterName
+    private let name: PTVEndpointParameterName
     private let values: [CustomStringConvertible]
 
-    public init(name: PTVAPIParameterName, value: CustomStringConvertible) {
+    public init(name: PTVEndpointParameterName, value: CustomStringConvertible) {
         self.name = name
         self.values = [value]
     }
 
-    public init(name: PTVAPIParameterName, values: [CustomStringConvertible]) {
+    public init(name: PTVEndpointParameterName, values: [CustomStringConvertible]) {
         self.name = name
         self.values = values
     }
@@ -28,7 +28,7 @@ public struct PTVAPIParameters {
     }
 }
 
-public enum PTVAPIParameterName: String {
+public enum PTVEndpointParameterName: String {
     case dateUtc = "date_utc"
     case directionId = "direction_id"
     case disruptionModes = "disruption_modes"

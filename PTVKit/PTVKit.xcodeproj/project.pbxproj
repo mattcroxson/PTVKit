@@ -19,7 +19,7 @@
 		1754CF3E226C53A80064DA4E /* URLComponents+PTVKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1754CF3D226C53A80064DA4E /* URLComponents+PTVKit.swift */; };
 		17574AB42259BB63007349BC /* PTVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17574AAA2259BB63007349BC /* PTVKit.framework */; };
 		17574ABB2259BB63007349BC /* PTVKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 17574AAD2259BB63007349BC /* PTVKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		17806FB32271C0F900916717 /* PTVAPIParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17806FB22271C0F900916717 /* PTVAPIParameters.swift */; };
+		17806FB32271C0F900916717 /* PTVEndpointParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17806FB22271C0F900916717 /* PTVEndpointParameter.swift */; };
 		17806FB52271CB4E00916717 /* OutletGeolocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17806FB42271CB4E00916717 /* OutletGeolocation.swift */; };
 		17806FB72271CBA900916717 /* OutletGeolocationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17806FB62271CBA900916717 /* OutletGeolocationResponse.swift */; };
 		17806FB92271CCCA00916717 /* RunResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17806FB82271CCCA00916717 /* RunResponse.swift */; };
@@ -111,7 +111,7 @@
 		17574AAE2259BB63007349BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17574AB32259BB63007349BC /* PTVKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PTVKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		17574ABA2259BB63007349BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		17806FB22271C0F900916717 /* PTVAPIParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTVAPIParameters.swift; sourceTree = "<group>"; };
+		17806FB22271C0F900916717 /* PTVEndpointParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTVEndpointParameter.swift; sourceTree = "<group>"; };
 		17806FB42271CB4E00916717 /* OutletGeolocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutletGeolocation.swift; sourceTree = "<group>"; };
 		17806FB62271CBA900916717 /* OutletGeolocationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutletGeolocationResponse.swift; sourceTree = "<group>"; };
 		17806FB82271CCCA00916717 /* RunResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunResponse.swift; sourceTree = "<group>"; };
@@ -355,7 +355,7 @@
 				17B5CFB32262AE3400B12975 /* PTVAPIAccess.swift */,
 				17B5CFB52262AF1000B12975 /* PTVAPIEnvironment.swift */,
 				174850A72271B2F900CFE5B1 /* PTVAPIError.swift */,
-				17806FB22271C0F900916717 /* PTVAPIParameters.swift */,
+				17806FB22271C0F900916717 /* PTVEndpointParameter.swift */,
 				1739572F226D78B6001744E3 /* PTVEndpoint.swift */,
 				17395731226D7BF0001744E3 /* PTVHTTPMethod.swift */,
 				17B5CFB22262AE0300B12975 /* Protocols */,
@@ -605,7 +605,7 @@
 				17395730226D78B6001744E3 /* PTVEndpoint.swift in Sources */,
 				1754CF3E226C53A80064DA4E /* URLComponents+PTVKit.swift in Sources */,
 				17395732226D7BF0001744E3 /* PTVHTTPMethod.swift in Sources */,
-				17806FB32271C0F900916717 /* PTVAPIParameters.swift in Sources */,
+				17806FB32271C0F900916717 /* PTVEndpointParameter.swift in Sources */,
 				17B5CFB12262AD7D00B12975 /* PTVAPIConfigurationProvider.swift in Sources */,
 				17852A602271491400687E08 /* Outlet.swift in Sources */,
 				1784C05222712C79005622D2 /* DisruptionModesResponse.swift in Sources */,

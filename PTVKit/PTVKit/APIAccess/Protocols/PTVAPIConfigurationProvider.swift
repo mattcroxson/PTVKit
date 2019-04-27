@@ -8,7 +8,12 @@
 
 import Foundation
 
+/// Provides required configuration information for the PTV API access object.
 public protocol PTVAPIConfigurationProvider {
+
+    /// API User ID, provided by PTV
     var apiUserId: String { get }
+
+    /// API Key, provided by PTV
     var apiKey: String { get }
 }

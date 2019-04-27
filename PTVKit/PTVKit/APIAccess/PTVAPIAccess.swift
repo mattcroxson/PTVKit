@@ -10,8 +10,9 @@ import Foundation
 import CommonCrypto
 
 /// Completion handler called when a URL request either receives a response or throws an error
-public typealias PTVAPIResponseCompletion<T: Decodable> = (Result<T, Error>) -> Void
+public typealias PTVAPIResponseCompletion<T: Decodable> = (Result<T, PTVAPIError>) -> Void
 
+/// Primary access point to the API
 public class PTVAPIAccess {
 
     // MARK: - Properties
@@ -20,6 +21,10 @@ public class PTVAPIAccess {
 
     // MARK: - PTVAPIAccess
 
+    /// Initialises the PTV API access object
+    ///
+    /// - Parameters:
+    ///   - configuration: Configuration provider to initialise the access object
     public init(configuration: PTVAPIConfigurationProvider) {
         self.environment = PTVAPIEnvironment(configuration: configuration)
     }
@@ -30,9 +35,14 @@ public class PTVAPIAccess {
     ///   - endpoint: Endpoint to retrieve data from
     ///   - parameters: Parameters to include in the request
     ///   - completion: Completion handler to call when the request completes or an error is thrown
-    public func getResponse<T: Decodable>(from endpoint: PTVEndpoint, parameters: [URLQueryItem]?, completion: PTVAPIResponseCompletion<T>?) {
+    public func getResponse<T: Decodable>(from endpoint: PTVEndpoint, parameters: PTVEndpointParameter? = nil, completion: PTVAPIResponseCompletion<T>?) {
 
-        guard let request = apiRequest(endpoint: endpoint, parameters: parameters) else {
+        guard T.self == endpoint.responseType else {
+            completion?(.failure(PTVAPIError.incompatibleEndpoint))
+            return
+        }
+
+        guard let request = apiRequest(endpoint: endpoint, parameters: parameters?.urlQueryItems) else {
             completion?(.failure(PTVAPIError.cannotGenerateRequest))
             return
         }
@@ -48,14 +58,14 @@ public class PTVAPIAccess {
             do {
                 guard let data = data,
                     let response = response as? HTTPURLResponse, (200..<300) ~= response.statusCode, error == nil else {
-                        throw error ?? PTVAPIError.requestFailed(localisedDescription: "Unknown error occurred")
+                        throw error ?? PTVAPIError.unknown
                 }
                 let decoder = JSONDecoder()
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
                 let apiResponse = try decoder.decode(T.self, from: data)
                 completion?(.success(apiResponse))
             } catch {
-                completion?(.failure(error))
+                completion?(.failure(.requestFailed(baseError: error)))
             }
         }
         task.resume()

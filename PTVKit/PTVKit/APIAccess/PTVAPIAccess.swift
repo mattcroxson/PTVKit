@@ -73,7 +73,8 @@ public class PTVAPIAccess {
 }
 
 
-// MARK: - Non Public Functions
+// MARK: - Non-Public Functions
+
 extension PTVAPIAccess {
 
     /// Generates a URL request for the provided endpoint and parameters

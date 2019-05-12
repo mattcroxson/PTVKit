@@ -9,7 +9,7 @@
 import Foundation
 
 extension URLComponents {
-    internal var pathWithQuery: String {
+    var pathWithQuery: String {
         guard let urlQuery = query else { return path }
         let queryPath = path + "?" + urlQuery
         return queryPath

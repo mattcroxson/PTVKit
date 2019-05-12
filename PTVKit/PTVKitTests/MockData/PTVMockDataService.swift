@@ -9,10 +9,10 @@
 import Foundation
 @testable import PTVKit
 
-internal final class PTVMockDataService {
-
+final class PTVMockDataService {
+    
     // MARK: - Properties
-
+    
     static var mockEnvironment: PTVAPIEnvironment {
         class MockProvider: PTVAPIConfigurationProvider {
             let apiUserId = "MOCK_USER"
@@ -21,5 +21,5 @@ internal final class PTVMockDataService {
         let mockConfiguration = MockProvider()
         return PTVAPIEnvironment(configuration: mockConfiguration)
     }
-
+    
 }

@@ -38,7 +38,7 @@ public struct PTVEndpointParameter {
     }
 
     /// Array of URL query items based on the name and values
-    internal var urlQueryItems: [URLQueryItem] {
+    var urlQueryItems: [URLQueryItem] {
         return values.map { URLQueryItem(name: name.rawValue, value: $0.description ) }
     }
 }

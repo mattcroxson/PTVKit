@@ -82,7 +82,7 @@ extension PTVAPIAccess {
     ///   - endpoint: Endpoint to generate the URL request from
     ///   - parameters: Parameter to include in the request
     /// - Returns: URLRequest, or nil if an error occurs
-    internal func apiRequest(endpoint: PTVEndpointConfigurer, parameters: [URLQueryItem]?) -> URLRequest? {
+    func apiRequest(endpoint: PTVEndpointConfigurer, parameters: [URLQueryItem]?) -> URLRequest? {
         switch endpoint.method {
         case .get: return generateGetRequest(for: endpoint, parameters: parameters)
         case .post: return generatePostRequest(for: endpoint, parameters: parameters)

@@ -8,7 +8,7 @@
 
 import Foundation
 
-internal enum PTVHTTPMethod: String {
+enum PTVHTTPMethod: String {
     case post = "POST"
     case get = "GET"
 }

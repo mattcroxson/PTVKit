@@ -9,7 +9,7 @@
 import Foundation
 
 /// Provides API access configuration.
-internal protocol PTVEndpointConfigurer {
+protocol PTVEndpointConfigurer {
 
     /// The URL scheme for the endpoint (e.g. `https`)
     var scheme: String { get }

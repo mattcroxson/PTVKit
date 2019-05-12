@@ -8,7 +8,7 @@
 
 @testable import PTVKit
 
-internal enum PTVMockEndpoint {
+enum PTVMockEndpoint {
     case mock
     case mockWithSingleParameter(parameter: String)
     case mockWithMultiParameter(first: String, second: String)

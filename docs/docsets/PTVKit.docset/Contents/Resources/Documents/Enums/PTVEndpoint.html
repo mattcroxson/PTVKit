@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>PTVEndpoint Enumeration Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset="utf-8">
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+
+    <a name="//apple_ref/swift/Enum/PTVEndpoint" class="dashAnchor"></a>
+
+    <a title="PTVEndpoint Enumeration Reference"></a>
+
+    <header class="header">
+      <p class="header-col header-col--primary">
+        <a class="header-link" href="../index.html">
+          PTVKit Docs
+        </a>
+         (100% documented)
+      </p>
+    
+      <p class="header-col--secondary">
+        <form role="search" action="../search.json">
+          <input type="text" placeholder="Search documentation" data-typeahead>
+        </form>
+      </p>
+    
+        <p class="header-col header-col--secondary">
+          <a class="header-link" href="https://github.com/Lumus/PTVKit">
+            <img class="header-icon" src="../img/gh.png"/>
+            View on GitHub
+          </a>
+        </p>
+    
+    </header>
+
+    <p class="breadcrumbs">
+      <a class="breadcrumb" href="../index.html">PTVKit Reference</a>
+      <img class="carat" src="../img/carat.png" />
+      PTVEndpoint Enumeration Reference
+    </p>
+
+    <div class="content-wrapper">
+      <nav class="navigation">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/PTVAPIAccess.html">PTVAPIAccess</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/PTVAPIError.html">PTVAPIError</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/PTVEndpoint.html">PTVEndpoint</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/PTVEndpointParameterName.html">PTVEndpointParameterName</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/PTVAPIConfigurationProvider.html">PTVAPIConfigurationProvider</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/Departure.html">Departure</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/DeparturesResponse.html">DeparturesResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/Direction.html">Direction</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/DirectionsResponse.html">DirectionsResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/Disruption.html">Disruption</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/DisruptionDirection.html">DisruptionDirection</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/DisruptionMode.html">DisruptionMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/DisruptionModesResponse.html">DisruptionModesResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/DisruptionRoute.html">DisruptionRoute</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/DisruptionStop.html">DisruptionStop</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/Disruptions.html">Disruptions</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/DisruptionsResponse.html">DisruptionsResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/Outlet.html">Outlet</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/OutletGeolocation.html">OutletGeolocation</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/OutletGeolocationResponse.html">OutletGeolocationResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/OutletResponse.html">OutletResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/PTVEndpointParameter.html">PTVEndpointParameter</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/ResultOutlet.html">ResultOutlet</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/ResultStop.html">ResultStop</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/Route.html">Route</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/RouteResponse.html">RouteResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/RouteType.html">RouteType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/RouteTypesResponse.html">RouteTypesResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/Run.html">Run</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/RunResponse.html">RunResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/RunsResponse.html">RunsResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/SearchResult.html">SearchResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/Status.html">Status</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/StopAccessibility.html">StopAccessibility</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/StopAccessibilityWheelchair.html">StopAccessibilityWheelchair</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/StopAmenityDetails.html">StopAmenityDetails</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/StopDetails.html">StopDetails</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/StopGPS.html">StopGPS</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/StopLocation.html">StopLocation</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/StopOnRoute.html">StopOnRoute</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/StopResponse.html">StopResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/StopStaffing.html">StopStaffing</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/StoppingPattern.html">StoppingPattern</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/StopsByDistanceResponse.html">StopsByDistanceResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/StopsGeosearch.html">StopsGeosearch</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/StopsOnRouteResponse.html">StopsOnRouteResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/VehicleDescriptor.html">VehicleDescriptor</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/VehiclePosition.html">VehiclePosition</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Typealiases.html">Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:6PTVKit24PTVAPIResponseCompletiona">PTVAPIResponseCompletion</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:6PTVKit11ResultRoutea">ResultRoute</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+
+        <section class="section">
+          <div class="section-content">
+            <h1>PTVEndpoint</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">PTVEndpoint</span></code></pre>
+
+                </div>
+              </div>
+            <p>PTV timetable API endpoints</p>
+
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-content">
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6PTVKit11PTVEndpointO5routeyACSi_tcACmF"></a>
+                    <a name="//apple_ref/swift/Element/route(routeId:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6PTVKit11PTVEndpointO5routeyACSi_tcACmF">route(routeId:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Get route name and number for specific route ID</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="nf">route</span><span class="p">(</span><span class="nv">routeId</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6PTVKit11PTVEndpointO6routesyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/routes" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6PTVKit11PTVEndpointO6routesyA2CmF">routes</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>List route names and numbers for all routes</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">routes</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6PTVKit11PTVEndpointO10routeTypesyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/routeTypes" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6PTVKit11PTVEndpointO10routeTypesyA2CmF">routeTypes</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>List all route types and their names</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">routeTypes</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6PTVKit11PTVEndpointO15stopsByLocationyACSd_SdtcACmF"></a>
+                    <a name="//apple_ref/swift/Element/stopsByLocation(latitude:longitude:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6PTVKit11PTVEndpointO15stopsByLocationyACSd_SdtcACmF">stopsByLocation(latitude:longitude:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>View all stops near a specific location</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="nf">stopsByLocation</span><span class="p">(</span><span class="nv">latitude</span><span class="p">:</span> <span class="kt">Double</span><span class="p">,</span> <span class="nv">longitude</span><span class="p">:</span> <span class="kt">Double</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6PTVKit11PTVEndpointO12stopsOnRouteyACSi_SitcACmF"></a>
+                    <a name="//apple_ref/swift/Element/stopsOnRoute(routeId:routeType:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6PTVKit11PTVEndpointO12stopsOnRouteyACSi_SitcACmF">stopsOnRoute(routeId:routeType:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>View all stops on a specific route</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="nf">stopsOnRoute</span><span class="p">(</span><span class="nv">routeId</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">routeType</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6PTVKit11PTVEndpointO4stopyACSi_SitcACmF"></a>
+                    <a name="//apple_ref/swift/Element/stop(stopId:routeType:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6PTVKit11PTVEndpointO4stopyACSi_SitcACmF">stop(stopId:routeType:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>View facilities at a specific stop (Metro and V/Line stations only)</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="nf">stop</span><span class="p">(</span><span class="nv">stopId</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">routeType</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6PTVKit11PTVEndpointO11disruptionsyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/disruptions" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6PTVKit11PTVEndpointO11disruptionsyA2CmF">disruptions</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>List all disruptions for all route types</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">disruptions</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6PTVKit11PTVEndpointO18disruptionsByRouteyACSi_tcACmF"></a>
+                    <a name="//apple_ref/swift/Element/disruptionsByRoute(routeId:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6PTVKit11PTVEndpointO18disruptionsByRouteyACSi_tcACmF">disruptionsByRoute(routeId:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>List all disruptions for a particular route</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="nf">disruptionsByRoute</span><span class="p">(</span><span class="nv">routeId</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6PTVKit11PTVEndpointO25disruptionsByRouteAndStopyACSi_SitcACmF"></a>
+                    <a name="//apple_ref/swift/Element/disruptionsByRouteAndStop(routeId:stopId:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6PTVKit11PTVEndpointO25disruptionsByRouteAndStopyACSi_SitcACmF">disruptionsByRouteAndStop(routeId:stopId:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>List all disruptions for a particular route and stop</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="nf">disruptionsByRouteAndStop</span><span class="p">(</span><span class="nv">routeId</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">stopId</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6PTVKit11PTVEndpointO17disruptionsByStopyACSi_tcACmF"></a>
+                    <a name="//apple_ref/swift/Element/disruptionsByStop(stopId:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6PTVKit11PTVEndpointO17disruptionsByStopyACSi_tcACmF">disruptionsByStop(stopId:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>List all disruptions for a particular stop</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="nf">disruptionsByStop</span><span class="p">(</span><span class="nv">stopId</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6PTVKit11PTVEndpointO10disruptionyACSi_tcACmF"></a>
+                    <a name="//apple_ref/swift/Element/disruption(disruptionId:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6PTVKit11PTVEndpointO10disruptionyACSi_tcACmF">disruption(disruptionId:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Retrieve a specific disruption</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="nf">disruption</span><span class="p">(</span><span class="nv">disruptionId</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6PTVKit11PTVEndpointO15disruptionModesyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/disruptionModes" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6PTVKit11PTVEndpointO15disruptionModesyA2CmF">disruptionModes</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>List all disruption modes</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">disruptionModes</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6PTVKit11PTVEndpointO28departuresByRouteTypeAndStopyACSi_SitcACmF"></a>
+                    <a name="//apple_ref/swift/Element/departuresByRouteTypeAndStop(routeType:stopId:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6PTVKit11PTVEndpointO28departuresByRouteTypeAndStopyACSi_SitcACmF">departuresByRouteTypeAndStop(routeType:stopId:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>List departures for all routes from a stop</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="nf">departuresByRouteTypeAndStop</span><span class="p">(</span><span class="nv">routeType</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">stopId</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6PTVKit11PTVEndpointO028departuresByRouteTypeStopAndE0yACSi_S2itcACmF"></a>
+                    <a name="//apple_ref/swift/Element/departuresByRouteTypeStopAndRoute(routeType:stopId:routeId:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6PTVKit11PTVEndpointO028departuresByRouteTypeStopAndE0yACSi_S2itcACmF">departuresByRouteTypeStopAndRoute(routeType:stopId:routeId:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>List departures for a specific route from a stop</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="nf">departuresByRouteTypeStopAndRoute</span><span class="p">(</span><span class="nv">routeType</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">stopId</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">routeId</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6PTVKit11PTVEndpointO17directionsByRouteyACSi_tcACmF"></a>
+                    <a name="//apple_ref/swift/Element/directionsByRoute(routeId:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6PTVKit11PTVEndpointO17directionsByRouteyACSi_tcACmF">directionsByRoute(routeId:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>List directions that a route travels in</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="nf">directionsByRoute</span><span class="p">(</span><span class="nv">routeId</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6PTVKit11PTVEndpointO10directionsyACSi_tcACmF"></a>
+                    <a name="//apple_ref/swift/Element/directions(directionId:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6PTVKit11PTVEndpointO10directionsyACSi_tcACmF">directions(directionId:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>List all routes for a direction of travel</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="nf">directions</span><span class="p">(</span><span class="nv">directionId</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6PTVKit11PTVEndpointO21directionsByRouteTypeyACSi_SitcACmF"></a>
+                    <a name="//apple_ref/swift/Element/directionsByRouteType(directionId:routeType:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6PTVKit11PTVEndpointO21directionsByRouteTypeyACSi_SitcACmF">directionsByRouteType(directionId:routeType:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>List all routes of a particular type for a direction of travel</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="nf">directionsByRouteType</span><span class="p">(</span><span class="nv">directionId</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">routeType</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6PTVKit11PTVEndpointO7outletsyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/outlets" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6PTVKit11PTVEndpointO7outletsyA2CmF">outlets</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>List all ticket outlets</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">outlets</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6PTVKit11PTVEndpointO17outletsByLocationyACSd_SdtcACmF"></a>
+                    <a name="//apple_ref/swift/Element/outletsByLocation(latitude:longitude:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6PTVKit11PTVEndpointO17outletsByLocationyACSd_SdtcACmF">outletsByLocation(latitude:longitude:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>List ticket outlets near a specific location</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="nf">outletsByLocation</span><span class="p">(</span><span class="nv">latitude</span><span class="p">:</span> <span class="kt">Double</span><span class="p">,</span> <span class="nv">longitude</span><span class="p">:</span> <span class="kt">Double</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6PTVKit11PTVEndpointO32stoppingPatternByRunAndRouteTypeyACSi_SitcACmF"></a>
+                    <a name="//apple_ref/swift/Element/stoppingPatternByRunAndRouteType(runId:routeType:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6PTVKit11PTVEndpointO32stoppingPatternByRunAndRouteTypeyACSi_SitcACmF">stoppingPatternByRunAndRouteType(runId:routeType:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Get the stopping pattern for a specific trip/service run</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="nf">stoppingPatternByRunAndRouteType</span><span class="p">(</span><span class="nv">runId</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">routeType</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6PTVKit11PTVEndpointO11runsOnRouteyACSi_tcACmF"></a>
+                    <a name="//apple_ref/swift/Element/runsOnRoute(routeId:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6PTVKit11PTVEndpointO11runsOnRouteyACSi_tcACmF">runsOnRoute(routeId:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>List all trip/service runs for a specific route ID</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="nf">runsOnRoute</span><span class="p">(</span><span class="nv">routeId</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6PTVKit11PTVEndpointO17runsOnRouteByTypeyACSi_SitcACmF"></a>
+                    <a name="//apple_ref/swift/Element/runsOnRouteByType(routeId:routeType:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6PTVKit11PTVEndpointO17runsOnRouteByTypeyACSi_SitcACmF">runsOnRouteByType(routeId:routeType:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>List all trip/service runs for a specific route ID and route type</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="nf">runsOnRouteByType</span><span class="p">(</span><span class="nv">routeId</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">routeType</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6PTVKit11PTVEndpointO4runsyACSi_tcACmF"></a>
+                    <a name="//apple_ref/swift/Element/runs(runId:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6PTVKit11PTVEndpointO4runsyACSi_tcACmF">runs(runId:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>View all trip/service runs for a specific run ID</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="nf">runs</span><span class="p">(</span><span class="nv">runId</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6PTVKit11PTVEndpointO15runsByRouteTypeyACSi_SitcACmF"></a>
+                    <a name="//apple_ref/swift/Element/runsByRouteType(runId:routeType:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6PTVKit11PTVEndpointO15runsByRouteTypeyACSi_SitcACmF">runsByRouteType(runId:routeType:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>View the trip/service run for a specific run ID and route type</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="nf">runsByRouteType</span><span class="p">(</span><span class="nv">runId</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">routeType</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6PTVKit11PTVEndpointO6searchyACSS_tcACmF"></a>
+                    <a name="//apple_ref/swift/Element/search(searchTerm:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6PTVKit11PTVEndpointO6searchyACSS_tcACmF">search(searchTerm:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>View stops, routes and myki ticket outlets that match the search term</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="nf">search</span><span class="p">(</span><span class="nv">searchTerm</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+      </article>
+    </div>
+    <section class="footer">
+      <p>© 2019 Matt Croxson</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+    </section>
+  </body>
+</div>
+</html>

@@ -17,7 +17,7 @@ public class PTVAPIAccess {
 
     // MARK: - Properties
 
-    let environment: PTVAPIEnvironment
+    private let environment: PTVAPIEnvironment
 
     // MARK: - PTVAPIAccess
 

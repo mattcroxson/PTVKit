@@ -4,7 +4,7 @@
 //
 //  Created by Matt Croxson on 14/4/19.
 //  Copyright © 2019 Matt Croxson. All rights reserved.
-//
+// swiftlint:disable all
 
 @testable import PTVKit
 import Quick

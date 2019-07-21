@@ -208,10 +208,10 @@
 		17574AA02259BB63007349BC = {
 			isa = PBXGroup;
 			children = (
-				17574AAC2259BB63007349BC /* PTVKit */,
-				17574AB72259BB63007349BC /* PTVKitTests */,
-				17574AAB2259BB63007349BC /* Products */,
 				1796BE172262B45C00980F2A /* Frameworks */,
+				17574AAB2259BB63007349BC /* Products */,
+				17574AB72259BB63007349BC /* PTVKitTests */,
+				17574AAC2259BB63007349BC /* Source */,
 			);
 			sourceTree = "<group>";
 		};
@@ -224,7 +224,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		17574AAC2259BB63007349BC /* PTVKit */ = {
+		17574AAC2259BB63007349BC /* Source */ = {
 			isa = PBXGroup;
 			children = (
 				17B5CFAF2262AD6400B12975 /* APIAccess */,
@@ -232,7 +232,7 @@
 				1773FAA42259BE40002F96B5 /* Resources */,
 				17D8F17D2263F23F000EC5E0 /* Support */,
 			);
-			path = PTVKit;
+			path = Source;
 			sourceTree = "<group>";
 		};
 		17574AB72259BB63007349BC /* PTVKitTests */ = {

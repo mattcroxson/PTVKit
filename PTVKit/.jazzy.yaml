@@ -5,7 +5,8 @@ author: Matt Croxson
 github_url: https://github.com/Lumus/PTVKit
 copyright: © 2019 Matt Croxson
 
-swift_version: 5.0
+swift_version: 5.0.1
+sdk: iphone os
 
 output: ../docs
 clean: true

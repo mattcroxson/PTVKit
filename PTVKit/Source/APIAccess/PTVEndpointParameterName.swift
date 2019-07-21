@@ -23,7 +23,8 @@ public enum PTVEndpointParameterName: String {
     /// Filter by status of disruption
     case disruptionStatus = "disruption_status"
 
-    /// List objects to be returned in full (i.e. expanded) - options include: all, stop, route, run, direction, disruption
+    /// List objects to be returned in full (i.e. expanded) - options include: all, stop, route, run, direction,
+    /// disruption
     case expand
 
     /// Incdicates whether the `stopId` is a GTFS ID or not
@@ -44,7 +45,8 @@ public enum PTVEndpointParameterName: String {
     /// Geographic coordinate of longitude
     case longitude
 
-    /// Indicates if filtering runs (and their departures) to those that arrive at destination before `dateUtc` (default = false). Requires `maxResults` > 0.
+    /// Indicates if filtering runs (and their departures) to those that arrive at destination before `dateUtc`
+    /// (default = false). Requires `maxResults` > 0.
     case lookBackwards = "look_backwards"
 
     /// Indicates whether to find routes by suburbs in the search term (default = true)
@@ -56,7 +58,8 @@ public enum PTVEndpointParameterName: String {
     /// Indicates whether to find stops by suburbs in the search term (default = true)
     case matchStopBySuburb = "match_stop_by_suburb"
 
-    /// Filter by maximum distance (in metres) from location specified via latitude and longitude parameters (default = 300)
+    /// Filter by maximum distance (in metres) from location specified via latitude and longitude parameters
+    /// (default = 300)
     case maxDistance = "max_distance"
 
     /// Maximum number of results returned

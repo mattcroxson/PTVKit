@@ -15,7 +15,7 @@ public struct VehicleDescriptor: Decodable {
     public let `operator`: String?
 
     /// Operator identifier of the vehicle. Only available for some tram and bus runs.
-    public let id: String?
+    public let identifier: String?
 
     /// Indicator if vehicle has a low floor. Only available for some tram runs
     public let lowFloor: Bool?
@@ -28,4 +28,8 @@ public struct VehicleDescriptor: Decodable {
 
     /// Supplier of vehicle descriptor data
     public let supplier: String?
+
+    private enum CodingKeys: String, CodingKey {
+        case `operator`, identifier = "id", lowFloor, airConditioned, description, supplier
+    }
 }

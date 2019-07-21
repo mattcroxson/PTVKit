@@ -32,15 +32,19 @@ public struct Departure: Decodable {
     /// Real-time estimate of departure time and date in ISO 8601 UTC format
     public let estimatedDepartureUtc: String?
 
-    /// Indicates if the metropolitan train service is at the platform at the time of query; returns false for other modes
+    /// Indicates if the metropolitan train service is at the platform at the time of query; returns false for other
+    /// modes
     public let atPlatform: Bool?
 
     /// Platform number at stop (metropolitan train only). Nil for other modes
     public let platformNumber: String?
 
-    /// Flag indicating special condition for run (e.g. RR Reservations Required, GC Guaranteed Connection, DOO Drop Off Only, PUO Pick Up Only, MO Mondays only, TU Tuesdays only, WE Wednesdays only, TH Thursdays only, FR Fridays only, SS School days only; ignore E flag)
+    /// Flag indicating special condition for run (e.g. RR Reservations Required, GC Guaranteed Connection, DOO Drop Off
+    /// Only, PUO Pick Up Only, MO Mondays only, TU Tuesdays only, WE Wednesdays only, TH Thursdays only, FR Fridays
+    /// only, SS School days only; ignore E flag)
     public let flags: String?
 
-    /// Chronological sequence of the departure for the run on the route. Order ascendingly by this field to get chronological order (earliest first) of departures with the same routeId and runId
+    /// Chronological sequence of the departure for the run on the route. Order ascendingly by this field to get
+    /// chronological order (earliest first) of departures with the same routeId and runId
     public let departureSequence: Int?
 }

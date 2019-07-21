@@ -32,6 +32,7 @@ public struct ResultStop: Decodable {
     /// Geographic coordinate (longitude)
     public let stopLongitude: Double?
 
-    /// Sequence of the stop on the route/run; return 0 when routeId or runId not specified. Order ascendingly by this field (when non zero) to get physical order (earliest first) of stops on the routeId/runId
+    /// Sequence of the stop on the route/run; return 0 when routeId or runId not specified. Order ascendingly by this
+    /// field (when non zero) to get physical order (earliest first) of stops on the routeId/runId
     public let stopSequence: Int?
 }

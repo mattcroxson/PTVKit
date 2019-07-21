@@ -32,7 +32,8 @@ public struct Run: Decodable {
     /// Direction of travel identifier
     public let directionId: Int?
 
-    /// Chronological sequence of the trip/service run on the route in direction. Order ascendingly by this field to get chronological order (earliest first) of runs with the same routeId and directionId
+    /// Chronological sequence of the trip/service run on the route in direction. Order ascendingly by this field to get
+    /// chronological order (earliest first) of runs with the same routeId and directionId
     public let runSequence: Int?
 
     /// The number of remaining skipped/express stations for the run/service from a stop

@@ -109,21 +109,25 @@ extension PTVEndpoint: PTVEndpointConfigurer {
 
         case .disruptions: return "/\(version)/disruptions/"
         case let .disruptionsByRoute(routeId): return "/\(version)/disruptions/route/\(routeId)"
-        case let .disruptionsByRouteAndStop(routeId, stopId): return "/\(version)/disruptions/route/\(routeId)/stop/\(stopId)"
+        case let .disruptionsByRouteAndStop(routeId, stopId):
+            return "/\(version)/disruptions/route/\(routeId)/stop/\(stopId)"
         case let .disruptionsByStop(stopId): return "/\(version)/disruptions/stop/\(stopId)"
         case let .disruption(disruptionId): return   "/\(version)/disruptions/\(disruptionId)"
         case .disruptionModes: return "/\(version)/disruptions/modes"
 
         // MARK: Departures
 
-        case let .departuresByRouteTypeAndStop(routeType, stopId): return "/\(version)/departures/route_type/\(routeType)/stop/\(stopId)"
-        case let .departuresByRouteTypeStopAndRoute(routeType, stopId, routeId): return "/\(version)/departures/route_type/\(routeType)/stop/\(stopId)/route/\(routeId)"
+        case let .departuresByRouteTypeAndStop(routeType, stopId):
+            return "/\(version)/departures/route_type/\(routeType)/stop/\(stopId)"
+        case let .departuresByRouteTypeStopAndRoute(routeType, stopId, routeId):
+            return "/\(version)/departures/route_type/\(routeType)/stop/\(stopId)/route/\(routeId)"
 
         // MARK: Directions
 
         case let .directions(directionId): return "/\(version)/directions/\(directionId)"
         case let .directionsByRoute(routeId): return "/\(version)/directions/route/\(routeId)"
-        case let .directionsByRouteType(directionId, routeType): return "/\(version)/directions/\(directionId)/route_type/\(routeType)"
+        case let .directionsByRouteType(directionId, routeType):
+            return "/\(version)/directions/\(directionId)/route_type/\(routeType)"
 
         // MARK: Outlets
 
@@ -132,12 +136,14 @@ extension PTVEndpoint: PTVEndpointConfigurer {
 
         // MARK: Stopping Pattern
 
-        case let .stoppingPatternByRunAndRouteType(runId, routeType): return "/\(version)/pattern/run/\(runId)/route_type/\(routeType)"
+        case let .stoppingPatternByRunAndRouteType(runId, routeType):
+            return "/\(version)/pattern/run/\(runId)/route_type/\(routeType)"
 
         // MARK: Runs
 
         case let .runsOnRoute(routeId): return "/\(version)/runs/route/\(routeId)"
-        case let .runsOnRouteByType(routeId, routeType): return "/\(version)/runs/route/\(routeId)/route_type/\(routeType)"
+        case let .runsOnRouteByType(routeId, routeType):
+            return "/\(version)/runs/route/\(routeId)/route_type/\(routeType)"
         case let .runs(runId): return "/\(version)/runs/\(runId)"
         case let .runsByRouteType(runId, routeType): return "/\(version)/runs/\(runId)/route_type/\(routeType)"
 
@@ -153,7 +159,8 @@ extension PTVEndpoint: PTVEndpointConfigurer {
         switch self {
         case .departuresByRouteTypeAndStop, .departuresByRouteTypeStopAndRoute: return DeparturesResponse.self
         case .directions, .directionsByRoute, .directionsByRouteType: return DirectionsResponse.self
-        case .disruption, .disruptions, .disruptionsByStop, .disruptionsByRoute, .disruptionsByRouteAndStop: return DisruptionsResponse.self
+        case .disruption, .disruptions, .disruptionsByStop, .disruptionsByRoute, .disruptionsByRouteAndStop:
+            return DisruptionsResponse.self
         case .disruptionModes: return DisruptionModesResponse.self
         case .route, .routes: return RouteResponse.self
         case .routeTypes: return RouteTypesResponse.self

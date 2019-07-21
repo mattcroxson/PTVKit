@@ -17,7 +17,8 @@ public enum PTVAPIError: Swift.Error {
     /// An error that occurs while the request is being performed, including a description
     case requestFailed(baseError: Error)
 
-    /// An error that occurs when an API call is requested with an endpoint that does not match the expected result response type
+    /// An error that occurs when an API call is requested with an endpoint that does not match the expected result
+    /// response type
     case incompatibleEndpoint
 
     /// An unknown error has occurred

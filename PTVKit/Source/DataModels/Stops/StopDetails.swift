@@ -14,7 +14,8 @@ public struct StopDetails: Decodable {
     /// Array of disruption information identifiers
     public let disruptionIds: [Int]?
 
-    /// Type of metropolitan train station (i.e. "Premium", "Host" or "Unstaffed" station); returns null for V/Line train
+    /// Type of metropolitan train station (i.e. "Premium", "Host" or "Unstaffed" station); returns null for V/Line
+    /// train
     public let stationType: String?
 
     /// The definition applicable to the station_type; returns null for V/Line train

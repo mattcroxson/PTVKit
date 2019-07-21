@@ -20,6 +20,7 @@ public struct DisruptionDirection: Decodable {
     /// Name of direction of travel
     public let directionName: String?
 
-    /// Time of service to which disruption applies, in 24 hour clock format (HH:MM:SS) AEDT/AEST, or nil if disruption applies to multiple (or no) services
+    /// Time of service to which disruption applies, in 24 hour clock format (HH:MM:SS) AEDT/AEST, or nil if disruption
+    /// applies to multiple (or no) services
     public let serviceTime: String?
 }

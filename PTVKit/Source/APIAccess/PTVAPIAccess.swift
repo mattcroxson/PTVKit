@@ -35,7 +35,9 @@ public class PTVAPIAccess {
     ///   - endpoint: Endpoint to retrieve data from
     ///   - parameters: Parameters to include in the request
     ///   - completion: Completion handler to call when the request completes or an error is thrown
-    public func getResponse<T: Decodable>(from endpoint: PTVEndpoint, parameters: PTVEndpointParameter? = nil, completion: PTVAPIResponseCompletion<T>?) {
+    public func getResponse<T: Decodable>(from endpoint: PTVEndpoint,
+                                          parameters: PTVEndpointParameter? = nil,
+                                          completion: PTVAPIResponseCompletion<T>?) {
 
         guard T.self == endpoint.responseType else {
             completion?(.failure(PTVAPIError.incompatibleEndpoint))

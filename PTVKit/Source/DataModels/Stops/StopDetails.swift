@@ -37,7 +37,7 @@ public struct StopDetails: Decodable {
 
     /// Stop identifier
     public let stopId: Int?
-    
+
     /// Name of stop
     public let stopName: String?
 }

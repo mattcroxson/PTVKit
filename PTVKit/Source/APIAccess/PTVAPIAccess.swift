@@ -72,7 +72,6 @@ public class PTVAPIAccess {
     }
 }
 
-
 // MARK: - Non-Public Functions
 
 extension PTVAPIAccess {

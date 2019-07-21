@@ -10,7 +10,7 @@ import Foundation
 
 /// Represents a response to requesting stops by route
 public struct StopOnRoute: Decodable {
-    
+
     /// Array of disruption information identifiers
     public let disruptionIds: [Int]?
 

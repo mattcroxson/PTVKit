@@ -156,7 +156,7 @@ final class PTVAPIAccessSpec: QuickSpec {
                 }
 
                 context("with a single path parameter") {
-                    
+
                     let endpoint = PTVMockEndpoint.mockPostWithSingleParameter(parameter: "mock")
 
                     context("with no query parameters") {

@@ -120,7 +120,7 @@ extension PTVEndpoint: PTVEndpointConfigurer {
         case let .departuresByRouteTypeStopAndRoute(routeType, stopId, routeId): return "/\(version)/departures/route_type/\(routeType)/stop/\(stopId)/route/\(routeId)"
 
         // MARK: Directions
-            
+
         case let .directions(directionId): return "/\(version)/directions/\(directionId)"
         case let .directionsByRoute(routeId): return "/\(version)/directions/route/\(routeId)"
         case let .directionsByRouteType(directionId, routeType): return "/\(version)/directions/\(directionId)/route_type/\(routeType)"
@@ -142,7 +142,7 @@ extension PTVEndpoint: PTVEndpointConfigurer {
         case let .runsByRouteType(runId, routeType): return "/\(version)/runs/\(runId)/route_type/\(routeType)"
 
         // MARK: Search
-            
+
         case let .search(searchTerm): return "/\(version)/search/\(searchTerm)"
 
         }

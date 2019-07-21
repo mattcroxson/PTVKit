@@ -31,7 +31,7 @@ public struct StopStaffing: Decodable {
 
     /// Stop Staffing Hours (Monday Afternoon Start)
     public let monPmFrom: String?
-    
+
     /// Stop Staffing Hours (Monday Afternoon End)
     public let monPmTo: String?
 

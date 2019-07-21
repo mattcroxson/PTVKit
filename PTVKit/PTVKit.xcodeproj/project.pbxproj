@@ -210,9 +210,9 @@
 			children = (
 				1796BE172262B45C00980F2A /* Frameworks */,
 				17574AAB2259BB63007349BC /* Products */,
-				17574AB72259BB63007349BC /* PTVKitTests */,
 				1773FAA42259BE40002F96B5 /* Resources */,
 				17574AAC2259BB63007349BC /* Source */,
+				17574AB72259BB63007349BC /* Tests */,
 			);
 			sourceTree = "<group>";
 		};
@@ -235,7 +235,7 @@
 			path = Source;
 			sourceTree = "<group>";
 		};
-		17574AB72259BB63007349BC /* PTVKitTests */ = {
+		17574AB72259BB63007349BC /* Tests */ = {
 			isa = PBXGroup;
 			children = (
 				17D136FA226D8D5300890E3B /* Extensions */,
@@ -243,7 +243,7 @@
 				17034F0C2262B617004462A6 /* PTVAPIAccess */,
 				17574ABA2259BB63007349BC /* Info.plist */,
 			);
-			path = PTVKitTests;
+			path = Tests;
 			sourceTree = "<group>";
 		};
 		1773FAA32259BE38002F96B5 /* DataModels */ = {

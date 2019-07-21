@@ -208,10 +208,11 @@
 		17574AA02259BB63007349BC = {
 			isa = PBXGroup;
 			children = (
-				17574AAC2259BB63007349BC /* PTVKit */,
-				17574AB72259BB63007349BC /* PTVKitTests */,
-				17574AAB2259BB63007349BC /* Products */,
 				1796BE172262B45C00980F2A /* Frameworks */,
+				17574AAB2259BB63007349BC /* Products */,
+				1773FAA42259BE40002F96B5 /* Resources */,
+				17574AAC2259BB63007349BC /* Source */,
+				17574AB72259BB63007349BC /* Tests */,
 			);
 			sourceTree = "<group>";
 		};
@@ -224,18 +225,17 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		17574AAC2259BB63007349BC /* PTVKit */ = {
+		17574AAC2259BB63007349BC /* Source */ = {
 			isa = PBXGroup;
 			children = (
 				17B5CFAF2262AD6400B12975 /* APIAccess */,
 				1773FAA32259BE38002F96B5 /* DataModels */,
-				1773FAA42259BE40002F96B5 /* Resources */,
 				17D8F17D2263F23F000EC5E0 /* Support */,
 			);
-			path = PTVKit;
+			path = Source;
 			sourceTree = "<group>";
 		};
-		17574AB72259BB63007349BC /* PTVKitTests */ = {
+		17574AB72259BB63007349BC /* Tests */ = {
 			isa = PBXGroup;
 			children = (
 				17D136FA226D8D5300890E3B /* Extensions */,
@@ -243,7 +243,7 @@
 				17034F0C2262B617004462A6 /* PTVAPIAccess */,
 				17574ABA2259BB63007349BC /* Info.plist */,
 			);
-			path = PTVKitTests;
+			path = Tests;
 			sourceTree = "<group>";
 		};
 		1773FAA32259BE38002F96B5 /* DataModels */ = {
@@ -490,6 +490,7 @@
 				17574AA62259BB63007349BC /* Sources */,
 				17574AA72259BB63007349BC /* Frameworks */,
 				17574AA82259BB63007349BC /* Resources */,
+				17DFF03D22E405D900644956 /* Swiftlint */,
 			);
 			buildRules = (
 			);
@@ -572,6 +573,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		17DFF03D22E405D900644956 /* Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Swiftlint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		17574AA62259BB63007349BC /* Sources */ = {
@@ -793,7 +815,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GCC_TREAT_INCOMPATIBLE_POINTER_TYPE_WARNINGS_AS_ERRORS = YES;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
-				INFOPLIST_FILE = PTVKit/Resources/Info.plist;
+				INFOPLIST_FILE = Resources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -824,7 +846,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GCC_TREAT_INCOMPATIBLE_POINTER_TYPE_WARNINGS_AS_ERRORS = YES;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
-				INFOPLIST_FILE = PTVKit/Resources/Info.plist;
+				INFOPLIST_FILE = Resources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -851,7 +873,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = PTVKitTests/Info.plist;
+				INFOPLIST_FILE = Tests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -875,7 +897,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = PTVKitTests/Info.plist;
+				INFOPLIST_FILE = Tests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

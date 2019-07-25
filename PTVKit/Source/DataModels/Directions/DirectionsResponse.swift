@@ -9,7 +9,7 @@
 import Foundation
 
 /// Represents the response to a directions request
-public struct DirectionsResponse: Decodable {
+public struct DirectionsResponse: Codable {
 
     /// Directions of travel of route
     public let directions: [Direction]?

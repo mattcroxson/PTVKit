@@ -9,7 +9,7 @@
 import Foundation
 
 /// API system health status
-public struct Status: Decodable {
+public struct Status: Codable {
 
     /// API version number
     public let version: String?

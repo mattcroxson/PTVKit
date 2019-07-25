@@ -9,7 +9,7 @@
 import Foundation
 
 /// Reprents a response to a myki ticket outlet request
-public struct OutletResponse: Decodable {
+public struct OutletResponse: Codable {
 
     /// Myki ticket outlets
     public let outlets: [Outlet]?

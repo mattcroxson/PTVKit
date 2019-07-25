@@ -9,7 +9,7 @@
 import Foundation
 
 /// Represents a response to requesting stops by location
-public struct StopsGeosearch: Decodable {
+public struct StopsGeosearch: Codable {
 
     /// Array of disruption information identifiers
     public let disruptionIds: [Int]?

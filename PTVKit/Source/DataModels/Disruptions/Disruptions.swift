@@ -9,7 +9,7 @@
 import Foundation
 
 /// Disruption information applicable to relevant routes or stops
-public struct Disruptions: Decodable {
+public struct Disruptions: Codable {
 
     /// Subset of disruption information applicable to multiple route types
     public let general: [Disruption]?

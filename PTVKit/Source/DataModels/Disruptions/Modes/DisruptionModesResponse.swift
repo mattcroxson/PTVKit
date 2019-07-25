@@ -9,7 +9,7 @@
 import Foundation
 
 /// Represents the response to a disruption modes request
-public struct DisruptionModesResponse: Decodable {
+public struct DisruptionModesResponse: Codable {
 
     /// An array of transport mode identifiers
     public let disruptionModes: [DisruptionMode]?

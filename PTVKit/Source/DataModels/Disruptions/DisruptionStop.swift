@@ -9,7 +9,7 @@
 import Foundation
 
 /// Represents a stop related to a disruption
-public struct DisruptionStop: Decodable {
+public struct DisruptionStop: Codable {
 
     /// Stop identifier
     public let stopId: Int?

@@ -9,7 +9,7 @@
 import Foundation
 
 /// Represents a response to a stops by distance request
-public struct StopsByDistanceResponse: Decodable {
+public struct StopsByDistanceResponse: Codable {
 
     /// Array of stops
     public let stops: [StopsGeosearch]?

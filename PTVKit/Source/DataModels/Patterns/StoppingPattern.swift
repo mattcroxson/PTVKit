@@ -9,7 +9,7 @@
 import Foundation
 
 /// The stopping pattern of the specified trip/service run and route type
-public struct StoppingPattern: Decodable {
+public struct StoppingPattern: Codable {
 
     /// Disruption information applicable to relevant routes or stops
     public let disruptions: [Disruption]?

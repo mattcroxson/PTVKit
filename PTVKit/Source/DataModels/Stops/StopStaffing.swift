@@ -9,7 +9,7 @@
 import Foundation
 
 /// Represents staffing details for the stop
-public struct StopStaffing: Decodable {
+public struct StopStaffing: Codable {
 
     /// Stop Staffing Hours (Friday AM Start)
     public let friAmFrom: String?

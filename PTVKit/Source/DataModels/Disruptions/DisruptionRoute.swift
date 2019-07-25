@@ -9,7 +9,7 @@
 import Foundation
 
 /// Represents a route related to a disruption
-public struct DisruptionRoute: Decodable {
+public struct DisruptionRoute: Codable {
 
     /// Transport mode identifier
     public let routeType: Int?

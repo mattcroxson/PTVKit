@@ -9,7 +9,7 @@
 import Foundation
 
 /// Train stations, tram stops, bus stops, regional coach stops or Night Bus stops
-public struct ResultStop: Decodable {
+public struct ResultStop: Codable {
 
     /// Distance of stop from input location (in metres); returns 0 if no location is input
     public let stopDistance: Double?

@@ -9,7 +9,7 @@
 import Foundation
 
 /// Represents details of a stop
-public struct StopDetails: Decodable {
+public struct StopDetails: Codable {
 
     /// Array of disruption information identifiers
     public let disruptionIds: [Int]?

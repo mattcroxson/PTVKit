@@ -9,7 +9,7 @@
 import Foundation
 
 /// Represents a response to request for routes
-public struct RouteResponse: Decodable {
+public struct RouteResponse: Codable {
 
     /// Single route if only 1 is available
     public let route: Route?

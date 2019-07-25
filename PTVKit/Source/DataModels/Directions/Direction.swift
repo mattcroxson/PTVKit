@@ -9,7 +9,7 @@
 import Foundation
 
 /// Represents a direction of travel on a route
-public struct Direction: Decodable {
+public struct Direction: Codable {
 
     /// Direction of travel identifier
     public let directionId: Int?

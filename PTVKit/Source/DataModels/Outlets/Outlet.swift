@@ -9,7 +9,7 @@
 import Foundation
 
 /// Myki ticket outlet
-public struct Outlet: Decodable {
+public struct Outlet: Codable {
 
     /// The SLID/SPID
     public let outletSlidSpid: String?

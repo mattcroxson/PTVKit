@@ -9,7 +9,7 @@
 import Foundation
 
 /// Represents a transport mode for a disruption
-public struct DisruptionMode: Decodable, Equatable, Hashable {
+public struct DisruptionMode: Codable, Equatable, Hashable {
 
     /// Name of disruption mode
     public let disruptionModeName: String?

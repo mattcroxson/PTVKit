@@ -9,7 +9,7 @@
 import Foundation
 
 /// Represents facilities relating to the accessibility of the stop by wheelchair
-public struct StopAccessibilityWheelchair: Decodable {
+public struct StopAccessibilityWheelchair: Codable {
 
     /// Has accessible ramp
     public let accessibleRamp: Bool?

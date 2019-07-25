@@ -9,7 +9,7 @@
 import Foundation
 
 /// Represents a response to a request for trip/service run details.
-public struct RunResponse: Decodable {
+public struct RunResponse: Codable {
 
     /// Trips/services of a route
     public let run: Run?

@@ -9,7 +9,7 @@
 import Foundation
 
 /// Myki ticket outlet
-public struct ResultOutlet: Decodable {
+public struct ResultOutlet: Codable {
 
     /// Distance of outlet from input location (in metres). 0 if no location is input.
     public let outletDistance: Double?

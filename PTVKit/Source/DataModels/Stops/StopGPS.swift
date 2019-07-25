@@ -9,7 +9,7 @@
 import Foundation
 
 /// Represents geographic coordinates for a stop
-public struct StopGPS: Decodable {
+public struct StopGPS: Codable {
 
     /// Geographic coordinate (latitude)
     public let latitude: Double?

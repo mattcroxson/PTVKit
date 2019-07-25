@@ -9,7 +9,7 @@
 import Foundation
 
 /// Represents amenity and facility details at the stop
-public struct StopAmenityDetails: Decodable {
+public struct StopAmenityDetails: Codable {
 
     /// Indicates if there is a public toilet at or near the stop
     public let toilet: Bool?

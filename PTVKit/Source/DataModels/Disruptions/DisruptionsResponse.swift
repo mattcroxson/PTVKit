@@ -9,7 +9,7 @@
 import Foundation
 
 /// Represents a response to request for disruptions
-public struct DisruptionsResponse: Decodable {
+public struct DisruptionsResponse: Codable {
 
     /// Disruption information applicable to relevant routes or stops
     public let disruptions: Disruptions?

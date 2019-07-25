@@ -9,7 +9,7 @@
 import Foundation
 
 /// Represents the response to a stop detail request
-public struct StopResponse: Decodable {
+public struct StopResponse: Codable {
 
     /// Represents a metropolitan or V/Line train station
     public let stop: StopDetails?

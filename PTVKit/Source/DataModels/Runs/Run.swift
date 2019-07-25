@@ -9,7 +9,7 @@
 import Foundation
 
 /// Individual trips/service of a route
-public struct Run: Decodable {
+public struct Run: Codable {
 
     /// Trip/service run identifier
     public let runId: Int?

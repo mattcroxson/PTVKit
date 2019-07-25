@@ -9,7 +9,7 @@
 import Foundation
 
 /// Stops, routes and myki ticket outlets that contain the search term
-public struct SearchResult: Decodable {
+public struct SearchResult: Codable {
 
     /// Train stations, tram stops, bus stops, regional coach stops or Night Bus stops
     public let stops: [ResultStop]?

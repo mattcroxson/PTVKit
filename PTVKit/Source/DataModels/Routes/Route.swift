@@ -9,7 +9,7 @@
 import Foundation
 
 /// Represents a route
-public struct Route: Decodable {
+public struct Route: Codable {
 
     /// Transport mode identifier
     public let routeType: Int?

@@ -9,7 +9,7 @@
 import Foundation
 
 /// Vehicle position of a trip/service run
-public struct VehiclePosition: Decodable {
+public struct VehiclePosition: Codable {
 
     /// Geographic coordinate (latitude)
     public let latitude: Double?

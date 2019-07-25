@@ -9,7 +9,7 @@
 import Foundation
 
 /// Reprents a response to a myki ticket outlet geolocation request
-public struct OutletGeolocationResponse: Decodable {
+public struct OutletGeolocationResponse: Codable {
 
     /// Myki ticket outlets
     public let outlets: [OutletGeolocation]?

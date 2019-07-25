@@ -9,7 +9,7 @@
 import Foundation
 
 /// Represents the location of a stop
-public struct StopLocation: Decodable {
+public struct StopLocation: Codable {
 
     /// GPS coordinates of the stop
     public let gps: StopGPS?

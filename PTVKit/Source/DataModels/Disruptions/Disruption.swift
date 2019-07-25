@@ -9,7 +9,7 @@
 import Foundation
 
 /// Represents disruption information
-public struct Disruption: Decodable {
+public struct Disruption: Codable {
 
     /// Disruption information identifier
     public let disruptionId: Int?

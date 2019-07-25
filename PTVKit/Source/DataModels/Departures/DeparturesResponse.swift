@@ -9,7 +9,7 @@
 import Foundation
 
 /// Represents a request for departures
-public struct DeparturesResponse: Decodable {
+public struct DeparturesResponse: Codable {
 
     /// Timetabled and real-time service departures
     public let departures: [Departure]?

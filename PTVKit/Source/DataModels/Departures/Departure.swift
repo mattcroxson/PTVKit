@@ -9,7 +9,7 @@
 import Foundation
 
 /// Timetabled and real-time service departures
-public struct Departure: Decodable {
+public struct Departure: Codable {
 
     /// Stop identifier
     public let stopId: Int?

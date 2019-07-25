@@ -9,7 +9,7 @@
 import Foundation
 
 /// Represents a direction of travel relevant to a disruption
-public struct DisruptionDirection: Decodable {
+public struct DisruptionDirection: Codable {
 
     /// Route and direction of travel combination identifier
     public let routeDirectionId: Int?

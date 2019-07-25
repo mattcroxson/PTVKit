@@ -9,7 +9,7 @@
 import Foundation
 
 /// Represents facilities relating to the accessibility of the stop
-public struct StopAccessibility: Decodable {
+public struct StopAccessibility: Codable {
 
     /// Indicates if there is lighting at the stop
     public let lighting: Bool?

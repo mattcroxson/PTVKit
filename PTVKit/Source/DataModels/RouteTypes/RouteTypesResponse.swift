@@ -9,7 +9,7 @@
 import Foundation
 
 /// Represents a response to a route types request
-public struct RouteTypesResponse: Decodable {
+public struct RouteTypesResponse: Codable {
 
     /// Array of route type identifiers
     public let routeTypes: [RouteType]?

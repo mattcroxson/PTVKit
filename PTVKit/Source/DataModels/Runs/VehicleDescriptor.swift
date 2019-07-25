@@ -9,7 +9,7 @@
 import Foundation
 
 /// Vehicle descriptor of a trip/service run
-public struct VehicleDescriptor: Decodable {
+public struct VehicleDescriptor: Codable {
 
     /// Operator name of the vehicle. Only available for train, tram, v/line and some bus runs
     public let `operator`: String?

@@ -9,7 +9,7 @@
 import Foundation
 
 /// Errors that can be thrown by the PTV API
-public enum PTVAPIError: Swift.Error {
+public enum PTVAPIError: LocalizedError {
 
     /// An error that occurs generating the API URL request
     case cannotGenerateRequest
@@ -25,7 +25,7 @@ public enum PTVAPIError: Swift.Error {
     case unknown
 
     /// Localized description of the error that has occured
-    public var localizedDescription: String {
+    public var errorDescription: String? {
         switch self {
         case .cannotGenerateRequest: return "An error occurred generating the URL request"
         case let .requestFailed(baseError): return baseError.localizedDescription

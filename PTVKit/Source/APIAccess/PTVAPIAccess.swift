@@ -40,7 +40,8 @@ public class PTVAPIAccess {
                                           completion: PTVAPIResponseCompletion<T>?) {
 
         guard T.self == endpoint.responseType else {
-            completion?(.failure(PTVAPIError.incompatibleEndpoint))
+            completion?(.failure(PTVAPIError.incompatibleEndpoint(response: T.self,
+                                                                  endpoint: endpoint.responseType)))
             return
         }
 

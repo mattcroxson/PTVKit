@@ -19,7 +19,7 @@ public enum PTVAPIError: Swift.Error {
 
     /// An error that occurs when an API call is requested with an endpoint that does not match the expected result
     /// response type
-    case incompatibleEndpoint
+    case incompatibleEndpoint(response: Decodable.Type, endpoint: Decodable.Type)
 
     /// An unknown error has occurred
     case unknown
@@ -29,7 +29,8 @@ public enum PTVAPIError: Swift.Error {
         switch self {
         case .cannotGenerateRequest: return "An error occurred generating the URL request"
         case let .requestFailed(baseError): return baseError.localizedDescription
-        case .incompatibleEndpoint: return "The API response selected does not match the endpoint"
+        case let .incompatibleEndpoint(response, endpoint):
+            return "The API response \(response) selected does not match the endpoint response \(endpoint)"
         case .unknown: return "An unknown error has occurre"
         }
     }

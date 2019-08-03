@@ -30,7 +30,7 @@ public struct Outlet: Codable {
     public let outletSuburb: String?
 
     /// The postcode for the outlet
-    public let outletPostcode: String?
+    public let outletPostcode: Int?
 
     /// The business hours on Monday
     public let outletBusinessHourMon: String?

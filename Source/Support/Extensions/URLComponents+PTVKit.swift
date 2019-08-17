@@ -10,8 +10,9 @@ import Foundation
 
 extension URLComponents {
     var pathWithQuery: String {
-        guard let urlQuery = query else { return path }
-        let queryPath = path + "?" + urlQuery
+        guard let encodedPath = path.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) else { return path }
+        guard let urlQuery = query else { return encodedPath }
+        let queryPath = encodedPath + "?" + urlQuery
         return queryPath
     }
 }

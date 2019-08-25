@@ -71,6 +71,7 @@
 		17C92D702259DC090098EB2C /* StopResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C92D6F2259DC090098EB2C /* StopResponse.swift */; };
 		17D136FC226D8D6000890E3B /* URLExtensionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D136FB226D8D6000890E3B /* URLExtensionSpec.swift */; };
 		17D22C1B226419080012589A /* Data+PTVKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D22C1A226419080012589A /* Data+PTVKit.swift */; };
+		17E4D6782312777C002E6B43 /* DisruptionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E4D6772312777C002E6B43 /* DisruptionResponse.swift */; };
 		17EEE2702271837D007B1B62 /* PTVMockEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17EEE26F2271837D007B1B62 /* PTVMockEndpoint.swift */; };
 /* End PBXBuildFile section */
 
@@ -164,6 +165,7 @@
 		17C92D6F2259DC090098EB2C /* StopResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopResponse.swift; sourceTree = "<group>"; };
 		17D136FB226D8D6000890E3B /* URLExtensionSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLExtensionSpec.swift; sourceTree = "<group>"; };
 		17D22C1A226419080012589A /* Data+PTVKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+PTVKit.swift"; sourceTree = "<group>"; };
+		17E4D6772312777C002E6B43 /* DisruptionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisruptionResponse.swift; sourceTree = "<group>"; };
 		17EEE26F2271837D007B1B62 /* PTVMockEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTVMockEndpoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -441,6 +443,7 @@
 			children = (
 				1784C05922712ECB005622D2 /* Disruption.swift */,
 				1784C05322712D3F005622D2 /* DisruptionDirection.swift */,
+				17E4D6772312777C002E6B43 /* DisruptionResponse.swift */,
 				1784C05722712E3A005622D2 /* DisruptionRoute.swift */,
 				1784C05B2271312F005622D2 /* Disruptions.swift */,
 				1784C05D22713231005622D2 /* DisruptionsResponse.swift */,
@@ -612,6 +615,7 @@
 				1784C05422712D3F005622D2 /* DisruptionDirection.swift in Sources */,
 				17C92D4B2259BFE50098EB2C /* Status.swift in Sources */,
 				17852A6C22715C5500687E08 /* Run.swift in Sources */,
+				17E4D6782312777C002E6B43 /* DisruptionResponse.swift in Sources */,
 				17C92D6C2259DAA70098EB2C /* StopDetails.swift in Sources */,
 				1784C05622712E01005622D2 /* DisruptionStop.swift in Sources */,
 				17806FB92271CCCA00916717 /* RunResponse.swift in Sources */,

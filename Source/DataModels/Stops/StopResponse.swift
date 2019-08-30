@@ -14,7 +14,8 @@ public struct StopResponse: Codable {
     /// Represents a metropolitan or V/Line train station
     public let stop: StopDetails?
 
-//    public let disruptions: [Any]?
+    /// Disruption information applicable to relevant routes or stops
+    public let disruptions: [Int: Disruption]?
 
     /// API system status
     public let status: Status?

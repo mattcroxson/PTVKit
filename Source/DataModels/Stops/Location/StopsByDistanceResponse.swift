@@ -12,10 +12,10 @@ import Foundation
 public struct StopsByDistanceResponse: Codable {
 
     /// Array of stops
-    public let stops: [StopsGeosearch]?
+    public let stops: [StopGeosearch]?
 
-    /// Array of disruption objects
-//    public let disruptions: [Any]?
+    /// Disruption information applicable to relevant routes or stops
+    public let disruptions: [Int: Disruption]?
 
     /// API system status
     public let status: Status?

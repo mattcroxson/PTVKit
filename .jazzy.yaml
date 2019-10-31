@@ -1,11 +1,11 @@
 module: PTVKit
-module_version: 0.1.2
+module_version: 0.2.3
 
 author: Matt Croxson
 github_url: https://github.com/Lumus/PTVKit
 copyright: © 2019 Matt Croxson
 
-swift_version: 5.0.1
+swift_version: 5.1.1
 sdk: iphone os
 
 output: ../docs

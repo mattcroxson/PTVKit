@@ -7,6 +7,13 @@
 
 `PTVKit` is a Swift framework for accessing the Public Transport Victora (PTV) open data API.
 
+## Compatibility
+
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+![Swift version 5.0](https://img.shields.io/badge/Swift-5.0+-blue.svg?style=flat)
+![iOS version 11.0](https://img.shields.io/badge/iOS-11.0+-blue.svg?style=flat)
+![macOS version 10.15](https://img.shields.io/badge/macOS-10.15+-blue.svg?style=flat)
+
 ## Documentation
 
 Click [here](https://lumus.github.io/PTVKit/docs/index.html) to view documenation for PTVKit.

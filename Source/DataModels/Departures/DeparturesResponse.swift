@@ -14,20 +14,20 @@ public struct DeparturesResponse: Codable {
     /// Timetabled and real-time service departures
     public let departures: [Departure]?
 
-//    /// A train station, tram stop, bus stop, regional coach stop or Night Bus stop
-//    public let stops: Any?
+    /// A train station, tram stop, bus stop, regional coach stop or Night Bus stop
+    public let stops: [Int: ResultStop]?
 
-//    /// Train lines, tram routes, bus routes, regional coach routes, Night Bus routes
-//    public let routes: Any?
+    /// Train lines, tram routes, bus routes, regional coach routes, Night Bus routes
+    public let routes: [Int: Route]?
 
-//    /// Individual trips/services of a route
-//    public let runs: Any?
+    /// Individual trips/services of a route
+    public let runs: [Int: Run]?
 
-//    /// Directions of travel of route
-//    public let directions: Any?
+    /// Directions of travel of route
+    public let directions: [Int: Direction]?
 
-//    /// Disruption information applicable to relevant routes or stops
-//    public let disruptions: Any?
+    /// Disruption information applicable to relevant routes or stops
+    public let disruptions: [Int: Disruption]?
 
     /// API system status
     public let status: Status?

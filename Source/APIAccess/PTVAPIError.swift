@@ -31,7 +31,7 @@ public enum PTVAPIError: LocalizedError {
         case let .requestFailed(baseError): return baseError.localizedDescription
         case let .incompatibleEndpoint(response, endpoint):
             return "The API response \(response) selected does not match the endpoint response \(endpoint)"
-        case .unknown: return "An unknown error has occurre"
+        case .unknown: return "An unknown error has occurred"
         }
     }
 }

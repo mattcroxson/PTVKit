@@ -23,3 +23,9 @@ public struct Direction: Codable {
     /// Transport mode identifier
     public let routeType: Int?
 }
+
+extension Direction: Comparable {
+    public static func < (lhs: Direction, rhs: Direction) -> Bool {
+        return (lhs.directionName ?? "") < (rhs.directionName ?? "")
+    }
+}

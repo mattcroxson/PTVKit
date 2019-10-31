@@ -1,5 +1,5 @@
 //
-//  StopsGeosearch.swift
+//  StopGeosearch.swift
 //  PTVKit
 //
 //  Created by Matt Croxson on 7/4/19.
@@ -9,7 +9,7 @@
 import Foundation
 
 /// Represents a response to requesting stops by location
-public struct StopsGeosearch: Codable {
+public struct StopGeosearch: Codable {
 
     /// Array of disruption information identifiers
     public let disruptionIds: [Int]?

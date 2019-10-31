@@ -8,6 +8,6 @@ copyright: © 2019 Matt Croxson
 swift_version: 5.1.1
 sdk: iphone os
 
-output: ../docs
+output: ./docs
 clean: true
-readme: ../README.MD
+readme: ./README.MD

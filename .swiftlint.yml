@@ -1,4 +1,0 @@
-excluded:
-- Carthage
-
-reporter: "xcode"

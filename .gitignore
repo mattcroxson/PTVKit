@@ -36,3 +36,6 @@ playground.xcworkspace
 # Package.resolved
 .build/## User settings
 /PTVKit.xcodeproj/project.xcworkspace/xcuserdata/mattcroxson.xcuserdatad/UserInterfaceState.xcuserstate
+.DS_Store
+.swiftpm
+.build

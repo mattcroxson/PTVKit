@@ -213,7 +213,7 @@
 				1796BE172262B45C00980F2A /* Frameworks */,
 				17574AAB2259BB63007349BC /* Products */,
 				1773FAA42259BE40002F96B5 /* Resources */,
-				17574AAC2259BB63007349BC /* Source */,
+				17574AAC2259BB63007349BC /* Sources */,
 				17574AB72259BB63007349BC /* Tests */,
 			);
 			sourceTree = "<group>";
@@ -227,22 +227,18 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		17574AAC2259BB63007349BC /* Source */ = {
+		17574AAC2259BB63007349BC /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				17B5CFAF2262AD6400B12975 /* APIAccess */,
-				1773FAA32259BE38002F96B5 /* DataModels */,
-				17D8F17D2263F23F000EC5E0 /* Support */,
+				178C917E24BEC1B9009A7F31 /* PTVKit */,
 			);
-			path = Source;
+			path = Sources;
 			sourceTree = "<group>";
 		};
 		17574AB72259BB63007349BC /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				17D136FA226D8D5300890E3B /* Extensions */,
-				17034F0F2262B637004462A6 /* MockData */,
-				17034F0C2262B617004462A6 /* PTVAPIAccess */,
+				178C917F24BEC205009A7F31 /* PTVKitTests */,
 				17574ABA2259BB63007349BC /* Info.plist */,
 			);
 			path = Tests;
@@ -342,6 +338,26 @@
 				17852A76227161C400687E08 /* SearchResult.swift */,
 			);
 			path = Search;
+			sourceTree = "<group>";
+		};
+		178C917E24BEC1B9009A7F31 /* PTVKit */ = {
+			isa = PBXGroup;
+			children = (
+				17B5CFAF2262AD6400B12975 /* APIAccess */,
+				1773FAA32259BE38002F96B5 /* DataModels */,
+				17D8F17D2263F23F000EC5E0 /* Support */,
+			);
+			path = PTVKit;
+			sourceTree = "<group>";
+		};
+		178C917F24BEC205009A7F31 /* PTVKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				17D136FA226D8D5300890E3B /* Extensions */,
+				17034F0F2262B637004462A6 /* MockData */,
+				17034F0C2262B617004462A6 /* PTVAPIAccess */,
+			);
+			path = PTVKitTests;
 			sourceTree = "<group>";
 		};
 		1796BE172262B45C00980F2A /* Frameworks */ = {

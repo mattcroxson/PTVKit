@@ -7,6 +7,7 @@
 // swiftlint:disable all
 
 @testable import PTVKit
+import Foundation
 import Quick
 import Nimble
 

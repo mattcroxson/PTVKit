@@ -50,4 +50,8 @@ public enum PTVAPIError: LocalizedError {
         case .unknown: return "An unknown error has occurred"
         }
     }
+
+    static func map(_ error: Error) -> PTVAPIError {
+        return error as? PTVAPIError ?? .requestFailed(baseError: error)
+    }
 }

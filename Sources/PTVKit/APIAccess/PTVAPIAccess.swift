@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import CommonCrypto
 
 /// Completion handler called when a URL request either receives a response or throws an error
 public typealias PTVAPIResponseCompletion<T: Decodable> = (Result<T, PTVAPIError>) -> Void

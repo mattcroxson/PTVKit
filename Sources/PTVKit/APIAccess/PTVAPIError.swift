@@ -43,7 +43,7 @@ public enum PTVAPIError: LocalizedError {
         case .cannotGenerateRequest: return "An error occurred generating the URL request"
         case let .incompatibleEndpoint(response, endpoint):
             return "The API response \(response) selected does not match the endpoint response \(endpoint)"
-        case .invalidRequest: return "The request could not be completed by the API. Please confirm the configuration. (HTTP 400)"
+        case .invalidRequest: return "The request could not be completed by the API. Please confirm the request configuration is correct. (HTTP 400)"
         case .invalidResponse: return "An unexpected response was returned by the API."
         case let .requestFailed(baseError): return baseError.localizedDescription
         case let .unexpectedStatus(statusCode): return "The API returned an unexpected response: (HTTP \(statusCode))"

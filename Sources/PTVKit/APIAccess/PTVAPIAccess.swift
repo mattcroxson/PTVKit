@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import CommonCrypto
 
 /// Completion handler called when a URL request either receives a response or throws an error
 public typealias PTVAPIResponseCompletion<T: Decodable> = (Result<T, PTVAPIError>) -> Void
@@ -130,5 +129,64 @@ extension PTVAPIAccess {
         request?.cachePolicy = endpoint.cachePolicy
         request?.httpMethod = endpoint.method.rawValue
         return request
+    }
+}
+
+// MARK: - Combine
+
+import Combine
+
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+extension PTVAPIAccess {
+
+    public func apiRequestPublisher<T>(using endpoint: PTVEndpoint,
+                                       parameters: [PTVEndpointParameter]? = nil) -> AnyPublisher<T, PTVAPIError> where T: Decodable {
+
+        guard T.self == endpoint.responseType else {
+            return Fail(outputType: T.self,
+                        failure: .incompatibleEndpoint(response: T.self,
+                                                       endpoint: endpoint.responseType))
+                .eraseToAnyPublisher()
+        }
+
+        let parameterQueryItems = parameters?.flatMap { $0.urlQueryItems }
+
+        guard let request = apiRequest(endpoint: endpoint, parameters: parameterQueryItems) else {
+            return Fail(outputType: T.self,
+                        failure: .cannotGenerateRequest)
+            .eraseToAnyPublisher()
+        }
+
+        let sessionConfiguration = URLSessionConfiguration.default
+        sessionConfiguration.timeoutIntervalForRequest = environment.requestTimeout
+        sessionConfiguration.timeoutIntervalForResource = environment.resourceTimeout
+        sessionConfiguration.waitsForConnectivity = true
+
+        let urlSession = URLSession(configuration: sessionConfiguration)
+
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+
+        return urlSession
+            .dataTaskPublisher(for: request)
+            .tryMap { response in
+                guard let httpUrlResponse = response.response as? HTTPURLResponse else {
+                    throw PTVAPIError.invalidResponse
+                }
+
+                let statusCode = httpUrlResponse.statusCode
+
+                guard statusCode == 200 else {
+                    switch statusCode  {
+                    case 400: throw PTVAPIError.invalidRequest
+                    case 403: throw PTVAPIError.accessDenied
+                    default: throw PTVAPIError.unexpectedStatus(statusCode)
+                    }
+                }
+
+                return response.data }
+            .decode(type: T.self, decoder: decoder)
+            .mapError { return PTVAPIError.map($0) }
+            .eraseToAnyPublisher()
     }
 }

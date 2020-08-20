@@ -57,4 +57,5 @@ extension URL {
 
         components?.queryItems?.append(signatureQueryItem)
         return components?.url
-    }}
+    }
+}

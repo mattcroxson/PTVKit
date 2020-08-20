@@ -139,6 +139,12 @@ import Combine
 @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
 extension PTVAPIAccess {
 
+    /// Returns a publisher that performs an API request and emits the response, or an error if one is thrown
+    ///
+    /// - Parameters:
+    ///   - endpoint: Endpoint to retreive data from
+    ///   - parameters: Paramters to include in the request
+    /// - Returns: `AnyPublisher` object that emits once the request completes or if an error is thrown.
     public func apiRequestPublisher<T>(using endpoint: PTVEndpoint,
                                        parameters: [PTVEndpointParameter]? = nil) -> AnyPublisher<T, PTVAPIError> where T: Decodable {
 

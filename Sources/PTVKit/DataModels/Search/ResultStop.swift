@@ -36,3 +36,9 @@ public struct ResultStop: Codable {
     /// field (when non zero) to get physical order (earliest first) of stops on the routeId/runId
     public let stopSequence: Int?
 }
+
+// MARK: - Combine Extensions
+
+extension ResultStop: Identifiable {
+    public var id: Int? { stopId }
+}

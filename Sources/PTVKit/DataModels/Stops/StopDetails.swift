@@ -42,3 +42,9 @@ public struct StopDetails: Codable {
     /// Name of stop
     public let stopName: String?
 }
+
+// MARK: - Combine Extensions
+
+extension StopDetails: Identifiable {
+    public var id: Int? { stopId }
+}

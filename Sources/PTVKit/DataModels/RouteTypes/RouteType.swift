@@ -17,3 +17,9 @@ public struct RouteType: Codable {
     /// Identifier for the transport mode
     public let routeType: Int?
 }
+
+// MARK: - Combine Extensions
+
+extension RouteType: Identifiable {
+    public var id: Int? { routeType }
+}

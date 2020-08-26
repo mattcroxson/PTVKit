@@ -26,3 +26,9 @@ public struct Route: Codable, Hashable {
     /// GTFS identifier of the route
     public let routeGtfsId: String?
 }
+
+// MARK: - Combine Extensions
+
+extension Route: Identifiable {
+    public var id: Int? { routeId }
+}

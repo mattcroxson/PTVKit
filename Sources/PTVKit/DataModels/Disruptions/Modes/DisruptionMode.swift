@@ -17,3 +17,9 @@ public struct DisruptionMode: Codable, Equatable, Hashable {
     /// Disruption mode identifier
     public let disruptionMode: Int?
 }
+
+// MARK: - Combine Extensions
+
+extension DisruptionMode: Identifiable {
+    public var id: Int? { disruptionMode }
+}

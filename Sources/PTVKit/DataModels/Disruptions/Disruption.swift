@@ -57,6 +57,8 @@ public struct Disruption: Codable {
     public let displayStatus: Bool?
 }
 
+// MARK: - Combine Extensions
+
 extension Disruption: Identifiable {
     public var id: Int? { disruptionId }
 }

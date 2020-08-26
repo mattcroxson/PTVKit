@@ -17,3 +17,9 @@ public struct DisruptionStop: Codable {
     /// Name of stop
     public let stopName: String?
 }
+
+// MARK: - Combine Extensions
+
+extension DisruptionStop: Identifiable {
+    public var id: Int? { stopId }
+}

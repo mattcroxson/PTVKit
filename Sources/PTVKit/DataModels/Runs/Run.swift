@@ -45,3 +45,9 @@ public struct Run: Codable {
     /// Descriptor of the trip/service run. Only available for some runs
     public let vehicleDescription: VehicleDescriptor?
 }
+
+// MARK: - Combine Extensions
+
+extension Run: Identifiable {
+    public var id: Int? { runId }
+}

@@ -41,3 +41,9 @@ public struct StopGeosearch: Codable {
     /// Order this field ascendingly (when non-zero) to get physical order (earliest first) of stops on that route.
     public let stopSequence: Int?
 }
+
+// MARK: - Combine Extensions
+
+extension StopGeosearch: Identifiable {
+    public var id: Int? { stopId }
+}

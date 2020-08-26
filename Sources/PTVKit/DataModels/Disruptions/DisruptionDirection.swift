@@ -24,3 +24,9 @@ public struct DisruptionDirection: Codable {
     /// applies to multiple (or no) services
     public let serviceTime: String?
 }
+
+// MARK: - Combine Extensions
+
+extension DisruptionDirection: Identifiable {
+    public var id: Int? { routeDirectionId }
+}

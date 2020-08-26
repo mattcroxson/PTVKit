@@ -29,3 +29,9 @@ public struct DisruptionRoute: Codable {
     /// Direction of travel relevant to a disruption (if applicable)
     public let direction: DisruptionDirection?
 }
+
+// MARK: - Combine Extensions
+
+extension DisruptionRoute: Identifiable {
+    public var id: Int? { routeId }
+}

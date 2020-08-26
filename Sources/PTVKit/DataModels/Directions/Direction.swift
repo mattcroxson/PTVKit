@@ -29,3 +29,9 @@ extension Direction: Comparable {
         return (lhs.directionName ?? "") < (rhs.directionName ?? "")
     }
 }
+
+// MARK: - Combine Extensions
+
+extension Direction: Identifiable {
+    public var id: Int? { directionId }
+}

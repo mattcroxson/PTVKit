@@ -9,6 +9,7 @@
 import Combine
 import Foundation
 
+/// PTV API interface
 public protocol PTVAPIAccessing {
 
     /// Completion handler called when a URL request either receives a response or throws an error

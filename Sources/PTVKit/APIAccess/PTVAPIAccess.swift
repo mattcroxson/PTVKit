@@ -6,13 +6,11 @@
 //  Copyright © 2019 Matt Croxson. All rights reserved.
 //
 
+import Combine
 import Foundation
 
-/// Completion handler called when a URL request either receives a response or throws an error
-public typealias PTVAPIResponseCompletion<T: Decodable> = (Result<T, PTVAPIError>) -> Void
-
 /// Primary access point to the API
-public class PTVAPIAccess {
+public class PTVAPIAccess: PTVAPIAccessing {
 
     // MARK: - Properties
 
@@ -36,7 +34,7 @@ public class PTVAPIAccess {
     ///   - completion: Completion handler to call when the request completes or an error is thrown
     public func getResponse<T: Decodable>(from endpoint: PTVEndpoint,
                                           parameters: [PTVEndpointParameter]? = nil,
-                                          completion: PTVAPIResponseCompletion<T>?) {
+                                          completion: ResponseCompletion<T>?) {
 
         guard T.self == endpoint.responseType else {
             completion?(.failure(PTVAPIError.incompatibleEndpoint(response: T.self,
@@ -134,8 +132,6 @@ extension PTVAPIAccess {
 
 // MARK: - Combine
 
-import Combine
-
 @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
 extension PTVAPIAccess {
 
@@ -143,10 +139,10 @@ extension PTVAPIAccess {
     ///
     /// - Parameters:
     ///   - endpoint: Endpoint to retreive data from
-    ///   - parameters: Paramters to include in the request
+    ///   - parameters: Parameters to include in the request
     /// - Returns: `AnyPublisher` object that emits once the request completes or if an error is thrown.
-    public func apiRequestPublisher<T>(using endpoint: PTVEndpoint,
-                                       parameters: [PTVEndpointParameter]? = nil) -> AnyPublisher<T, PTVAPIError> where T: Decodable {
+    public func apiResponsePublisher<T>(for endpoint: PTVEndpoint,
+                                        parameters: [PTVEndpointParameter]? = nil) -> AnyPublisher<T, PTVAPIError> where T: Decodable {
 
         guard T.self == endpoint.responseType else {
             return Fail(outputType: T.self,

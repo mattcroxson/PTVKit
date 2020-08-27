@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>DisruptionRoute Structure Reference</title>
+    <title>PTVAPIAccessing Protocol Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -13,8 +13,8 @@
     <script src="../js/jazzy.search.js" defer></script>
   </head>
   <body>
-    <a name="//apple_ref/swift/Struct/DisruptionRoute" class="dashAnchor"></a>
-    <a title="DisruptionRoute Structure Reference"></a>
+    <a name="//apple_ref/swift/Protocol/PTVAPIAccessing" class="dashAnchor"></a>
+    <a title="PTVAPIAccessing Protocol Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html">PTVKit 0.4.0 Docs</a> (100% documented)</p>
@@ -30,7 +30,7 @@
       <p id="breadcrumbs">
         <a href="../index.html">PTVKit Reference</a>
         <img id="carat" src="../img/carat.png" />
-        DisruptionRoute Structure Reference
+        PTVAPIAccessing Protocol Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -219,16 +219,15 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>DisruptionRoute</h1>
+            <h1>PTVAPIAccessing</h1>
               <div class="declaration">
                 <div class="language">
                   
-                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">DisruptionRoute</span> <span class="p">:</span> <span class="kt">Codable</span></code></pre>
-<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">DisruptionRoute</span><span class="p">:</span> <span class="kt">Identifiable</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">PTVAPIAccessing</span></code></pre>
 
                 </div>
               </div>
-            <p>Represents a route related to a disruption</p>
+            <p>PTV API interface</p>
 
           </section>
           <section class="section task-group-section">
@@ -237,9 +236,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:6PTVKit15DisruptionRouteV9routeTypeSiSgvp"></a>
-                    <a name="//apple_ref/swift/Property/routeType" class="dashAnchor"></a>
-                    <a class="token" href="#/s:6PTVKit15DisruptionRouteV9routeTypeSiSgvp">routeType</a>
+                    <a name="/s:6PTVKit15PTVAPIAccessingP18ResponseCompletiona"></a>
+                    <a name="//apple_ref/swift/Alias/ResponseCompletion" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6PTVKit15PTVAPIAccessingP18ResponseCompletiona">ResponseCompletion</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -247,14 +246,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Transport mode identifier</p>
+                        <p>Completion handler called when a URL request either receives a response or throws an error</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">routeType</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">typealias</span> <span class="kt">ResponseCompletion</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">(</span><span class="kt">Result</span><span class="o">&lt;</span><span class="kt">T</span><span class="p">,</span> <span class="kt"><a href="../Enums/PTVAPIError.html">PTVAPIError</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt">Decodable</span></code></pre>
 
                         </div>
                       </div>
@@ -264,9 +263,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:6PTVKit15DisruptionRouteV7routeIdSiSgvp"></a>
-                    <a name="//apple_ref/swift/Property/routeId" class="dashAnchor"></a>
-                    <a class="token" href="#/s:6PTVKit15DisruptionRouteV7routeIdSiSgvp">routeId</a>
+                    <a name="/s:6PTVKit15PTVAPIAccessingP11getResponse4from10parameters10completionyAA11PTVEndpointO_SayAA0H9ParameterVGSgys6ResultOyqd__AA11PTVAPIErrorOGcSgtSeRd__lF"></a>
+                    <a name="//apple_ref/swift/Method/getResponse(from:parameters:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6PTVKit15PTVAPIAccessingP11getResponse4from10parameters10completionyAA11PTVEndpointO_SayAA0H9ParameterVGSgys6ResultOyqd__AA11PTVAPIErrorOGcSgtSeRd__lF">getResponse(from:<wbr>parameters:<wbr>completion:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -274,16 +273,61 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Route identifer</p>
+                        <p>Performs an API request and calls the completion handler once a response is received or an error is thrown.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">routeId</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="n">getResponse</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">from</span> <span class="nv">endpoint</span><span class="p">:</span> <span class="kt"><a href="../Enums/PTVEndpoint.html">PTVEndpoint</a></span><span class="p">,</span>
+                    <span class="nv">parameters</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs/PTVEndpointParameter.html">PTVEndpointParameter</a></span><span class="p">]?,</span>
+                    <span class="nv">completion</span><span class="p">:</span> <span class="kt"><a href="../Protocols/PTVAPIAccessing.html#/s:6PTVKit15PTVAPIAccessingP18ResponseCompletiona">ResponseCompletion</a></span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">?)</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt">Decodable</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>endpoint</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Endpoint to retrieve data from</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>parameters</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Parameters to include in the request</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Completion handler to call when the request completes or an error is thrown</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -291,9 +335,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:6PTVKit15DisruptionRouteV9routeNameSSSgvp"></a>
-                    <a name="//apple_ref/swift/Property/routeName" class="dashAnchor"></a>
-                    <a class="token" href="#/s:6PTVKit15DisruptionRouteV9routeNameSSSgvp">routeName</a>
+                    <a name="/s:6PTVKit15PTVAPIAccessingP20apiResponsePublisher3for10parameters7Combine03AnyE0Vyqd__AA11PTVAPIErrorOGAA11PTVEndpointO_SayAA0K9ParameterVGSgtSeRd__lF"></a>
+                    <a name="//apple_ref/swift/Method/apiResponsePublisher(for:parameters:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6PTVKit15PTVAPIAccessingP20apiResponsePublisher3for10parameters7Combine03AnyE0Vyqd__AA11PTVAPIErrorOGAA11PTVEndpointO_SayAA0K9ParameterVGSgtSeRd__lF">apiResponsePublisher(for:<wbr>parameters:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -301,136 +345,53 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Name of route</p>
+                        <p>Returns a publisher that performs an API request and emits the response, or an error if one is thrown</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">routeName</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="kt">OSX</span> <span class="mf">10.15</span><span class="p">,</span> <span class="n">iOS</span> <span class="mf">13.0</span><span class="p">,</span> <span class="n">tvOS</span> <span class="mf">13.0</span><span class="p">,</span> <span class="n">watchOS</span> <span class="mf">6.0</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span>
+<span class="kd">func</span> <span class="n">apiResponsePublisher</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="k">for</span> <span class="nv">endpoint</span><span class="p">:</span> <span class="kt"><a href="../Enums/PTVEndpoint.html">PTVEndpoint</a></span><span class="p">,</span>
+                             <span class="nv">parameters</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs/PTVEndpointParameter.html">PTVEndpointParameter</a></span><span class="p">]?)</span> <span class="o">-&gt;</span> <span class="kt">AnyPublisher</span><span class="o">&lt;</span><span class="kt">T</span><span class="p">,</span> <span class="kt"><a href="../Enums/PTVAPIError.html">PTVAPIError</a></span><span class="o">&gt;</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt">Decodable</span></code></pre>
 
                         </div>
                       </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:6PTVKit15DisruptionRouteV11routeNumberSSSgvp"></a>
-                    <a name="//apple_ref/swift/Property/routeNumber" class="dashAnchor"></a>
-                    <a class="token" href="#/s:6PTVKit15DisruptionRouteV11routeNumberSSSgvp">routeNumber</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Route number presented to public (i.e. not route_id)</p>
-
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>endpoint</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Endpoint to retreive data from</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>parameters</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Parameters to include in the request</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">routeNumber</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:6PTVKit15DisruptionRouteV11routeGtfsIdSSSgvp"></a>
-                    <a name="//apple_ref/swift/Property/routeGtfsId" class="dashAnchor"></a>
-                    <a class="token" href="#/s:6PTVKit15DisruptionRouteV11routeGtfsIdSSSgvp">routeGtfsId</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>GTFS Identifer of the route</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">routeGtfsId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:6PTVKit15DisruptionRouteV9directionAA0B9DirectionVSgvp"></a>
-                    <a name="//apple_ref/swift/Property/direction" class="dashAnchor"></a>
-                    <a class="token" href="#/s:6PTVKit15DisruptionRouteV9directionAA0B9DirectionVSgvp">direction</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Direction of travel relevant to a disruption (if applicable)</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">direction</span><span class="p">:</span> <span class="kt"><a href="../Structs/DisruptionDirection.html">DisruptionDirection</a></span><span class="p">?</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <div class="task-name-container">
-                <a name="/Combine%20Extensions"></a>
-                <a name="//apple_ref/swift/Section/Combine Extensions" class="dashAnchor"></a>
-                <div class="section-name-container">
-                  <a class="section-name-link" href="#/Combine%20Extensions"></a>
-                  <h3 class="section-name"><p>Combine Extensions</p>
-</h3>
-                </div>
-              </div>
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:s12IdentifiableP2id2IDQzvp"></a>
-                    <a name="//apple_ref/swift/Property/id" class="dashAnchor"></a>
-                    <a class="token" href="#/s:s12IdentifiableP2id2IDQzvp">id</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">id</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
-
-                        </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><code>AnyPublisher</code> object that emits once the request completes or if an error is thrown.</p>
                       </div>
                     </section>
                   </div>

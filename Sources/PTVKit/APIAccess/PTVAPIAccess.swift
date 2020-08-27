@@ -9,7 +9,7 @@
 import Combine
 import Foundation
 
-/// Primary access point to the API
+/// Provides access to the PTV API
 public class PTVAPIAccess: PTVAPIAccessing {
 
     // MARK: - Properties

@@ -42,21 +42,12 @@ protocol PTVEndpointConfigurer {
 // MARK: - Default Implementations
 extension PTVEndpointConfigurer {
 
-    var scheme: String { return "https" }
-
-    var host: String {
-        return "timetableapi.ptv.vic.gov.au"
-    }
-
-    var headers: [String: String]? {
-        return nil
-    }
-
-    var method: PTVHTTPMethod { return .get } // All PTVAPI methods are currently GET
-
-    var cachePolicy: URLRequest.CachePolicy {
-        return URLRequest.CachePolicy.useProtocolCachePolicy
-    }
+    var scheme: String { "https" }
+    var host: String { "timetableapi.ptv.vic.gov.au" }
+    var headers: [String: String]? { nil }
+    var method: PTVHTTPMethod { .get } // All PTVAPI methods are currently GET
+    var cachePolicy: URLRequest.CachePolicy { .useProtocolCachePolicy }
+    var version: String { "v3" }
 
     var url: URL? {
         var components = URLComponents()
@@ -64,9 +55,5 @@ extension PTVEndpointConfigurer {
         components.host = host
         components.path = path
         return components.url
-    }
-
-    var version: String {
-        return "v3"
     }
 }

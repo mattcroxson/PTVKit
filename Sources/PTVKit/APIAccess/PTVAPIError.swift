@@ -28,7 +28,7 @@ public enum PTVAPIError: LocalizedError {
     case invalidResponse
 
     /// The endpoint is missing a response type
-    case missingResponseType(endpoint: PTVEndpoint)
+    case missingResponseType(endpoint: String)
 
     /// An error that occurs while the request is being performed, including a description
     case requestFailed(baseError: Error)

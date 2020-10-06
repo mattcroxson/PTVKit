@@ -19,11 +19,11 @@ final class PTVAPIAccessSpec: QuickSpec {
             let mockEnvironment = PTVMockDataService.mockEnvironment
             var apiAccess: PTVAPIAccess!
 
-            beforeEach {
-                apiAccess = PTVAPIAccess(configuration: mockEnvironment.configuration)
-            }
-
             describe("accessing a get endpoint") {
+
+                beforeEach {
+                    apiAccess = PTVAPIAccess(configuration: mockEnvironment.configuration)
+                }
 
                 context("with no path parameters") {
 
@@ -133,6 +133,10 @@ final class PTVAPIAccessSpec: QuickSpec {
 
             describe("accessing a post endpoint") {
 
+                beforeEach {
+                    apiAccess = PTVAPIAccess(configuration: mockEnvironment.configuration)
+                }
+
                 context("with no path parameters") {
 
                     let endpoint = PTVMockEndpoint.mockPost
@@ -239,22 +243,30 @@ final class PTVAPIAccessSpec: QuickSpec {
                 }
             }
 
-//            describe("getting a response from a get endpoint") {
-//                context("with no path parameters") {
-//                    let endpoint = PTVMockEndpoint.mock
-//
-//                    context("with no query paramters") {
-//                        it("should") {
-//                            waitUntil { done in
-//                                let response = apiAccess.getResponse(from: endpoint) { result in
-//
-//                                    done()
-//                                }
-//                            }
-//                        }
-//                    }
-//                }
-//            }
+            describe("getting a response from a get endpoint") {
+                context("with no path parameters") {
+                    let endpoint = PTVMockEndpoint.mock
+
+                    context("with no query paramters") {
+
+                        let mockNetworkAccess = PTVMockNetworkAccess(dataResponse: nil, failureResponse: nil)
+
+                        beforeEach {
+                            apiAccess = PTVAPIAccess(configuration: mockEnvironment.configuration,
+                                                     networkAccess: mockNetworkAccess)
+                        }
+                        it("should return a mock object") {
+                            waitUntil { done in
+                                
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
+}
+
+struct MockDecodable: Decodable {
+    let mockValue: String
 }

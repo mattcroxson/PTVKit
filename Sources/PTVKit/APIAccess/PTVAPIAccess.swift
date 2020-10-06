@@ -15,28 +15,28 @@ public class PTVAPIAccess: PTVAPIAccessing {
     // MARK: - Properties
 
     private let environment: PTVAPIEnvironment
-    private let networkService: NetworkAccess
+    private let networkAccess: NetworkAccess
 
     // MARK: - PTVAPIAccess
 
-    /// Initialises the PTV API access object with the default network service
+    /// Initialises the PTV API access object with the default network access object
     ///
     /// - Parameters:
     ///   - configuration: Configuration provider to initialise the access object
     public convenience init(configuration: PTVAPIConfigurationProvider) {
-        let networkService = PTVAPINetworkAccess(configuration: configuration)
-        self.init(configuration: configuration, networkService: networkService)
+        let networkAccess = PTVAPINetworkAccess(configuration: configuration)
+        self.init(configuration: configuration, networkAccess: networkAccess)
     }
 
     /// Initialises the PTV API access object
     ///
     /// - Parameters:
     ///   - configuration: Configuration provider to initialise the access object
-    ///   - networkService: Network service to process API request through.
+    ///   - networkAccess: Network access object to process API request through.
     init(configuration: PTVAPIConfigurationProvider,
-         networkService: NetworkAccess) {
+         networkAccess: NetworkAccess) {
         self.environment = PTVAPIEnvironment(configuration: configuration)
-        self.networkService = networkService
+        self.networkAccess = networkAccess
     }
 
     /// Performs an API request and calls the completion handler once a response is received or an error is thrown.
@@ -48,9 +48,15 @@ public class PTVAPIAccess: PTVAPIAccessing {
     public func getResponse<T: Decodable>(from endpoint: PTVEndpoint,
                                           parameters: [PTVEndpointParameter]? = nil,
                                           completion: ResponseCompletion<T>?) {
+        self.response(from: endpoint, parameters: parameters, completion: completion)
+    }
+
+    func response<T: Decodable>(from endpoint: PTVEndpointConfigurer,
+                                parameters: [PTVEndpointParameter]? = nil,
+                                completion: ResponseCompletion<T>?) {
 
         guard let responseType = endpoint.responseType else {
-            completion?(.failure(.missingResponseType(endpoint: endpoint)))
+            completion?(.failure(.missingResponseType(endpoint: "\(endpoint)")))
             return
         }
 
@@ -67,7 +73,7 @@ public class PTVAPIAccess: PTVAPIAccessing {
             return
         }
 
-        networkService.process(request: request) { (data, response, error) in
+        networkAccess.process(request: request) { (data, response, error) in
             do {
                 guard let data = data,
                       let response = response as? HTTPURLResponse,
@@ -155,10 +161,14 @@ extension PTVAPIAccess {
     /// - Returns: `AnyPublisher` object that emits once the request completes or if an error is thrown.
     public func apiResponsePublisher<T: Decodable>(for endpoint: PTVEndpoint,
                                                    parameters: [PTVEndpointParameter]? = nil) -> APIPublisher<T> {
+        responsePublisher(for: endpoint, parameters: parameters)
+    }
 
+    func responsePublisher<T: Decodable>(for endpoint: PTVEndpointConfigurer,
+                                         parameters: [PTVEndpointParameter]? = nil) -> APIPublisher<T> {
         guard let responseType = endpoint.responseType else {
             return Fail(outputType: T.self,
-                        failure: .missingResponseType(endpoint: endpoint))
+                        failure: .missingResponseType(endpoint: "\(endpoint)"))
                 .eraseToAnyPublisher()
         }
 
@@ -180,7 +190,7 @@ extension PTVAPIAccess {
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
 
-        return networkService
+        return networkAccess
             .publisher(for: request)
             .decode(type: T.self, decoder: decoder)
             .mapError { return PTVAPIError.map($0) }

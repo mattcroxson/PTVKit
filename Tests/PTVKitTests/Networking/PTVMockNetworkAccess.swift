@@ -7,6 +7,7 @@
 //
 
 @testable import PTVKit
+import Foundation
 import Combine
 
 class PTVMockNetworkAccess: NetworkAccess {

@@ -36,9 +36,14 @@ public class PTVAPIAccess: PTVAPIAccessing {
                                           parameters: [PTVEndpointParameter]? = nil,
                                           completion: ResponseCompletion<T>?) {
 
+        guard let responseType = endpoint.responseType else {
+            completion?(.failure(.missingResponseType(endpoint: endpoint)))
+            return
+        }
+
         guard T.self == endpoint.responseType else {
             completion?(.failure(PTVAPIError.incompatibleEndpoint(response: T.self,
-                                                                  endpoint: endpoint.responseType)))
+                                                                  endpoint: responseType)))
             return
         }
 
@@ -144,10 +149,16 @@ extension PTVAPIAccess {
     public func apiResponsePublisher<T: Decodable>(for endpoint: PTVEndpoint,
                                                    parameters: [PTVEndpointParameter]? = nil) -> APIPublisher<T> {
 
+        guard let responseType = endpoint.responseType else {
+            return Fail(outputType: T.self,
+                        failure: .missingResponseType(endpoint: endpoint))
+                .eraseToAnyPublisher()
+        }
+
         guard T.self == endpoint.responseType else {
             return Fail(outputType: T.self,
                         failure: .incompatibleEndpoint(response: T.self,
-                                                       endpoint: endpoint.responseType))
+                                                       endpoint: responseType))
                 .eraseToAnyPublisher()
         }
 

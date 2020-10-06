@@ -19,7 +19,7 @@ let package = Package(
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
-        .package(url: "git@github.com:Quick/Nimble.git", from: "8.0.0"),
+        .package(url: "git@github.com:Quick/Nimble.git", from: "9.0.0"),
         .package(url: "git@github.com:Quick/Quick.git", from: "3.0.0")
     ],
     targets: [

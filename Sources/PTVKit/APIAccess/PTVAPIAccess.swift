@@ -15,15 +15,28 @@ public class PTVAPIAccess: PTVAPIAccessing {
     // MARK: - Properties
 
     private let environment: PTVAPIEnvironment
+    private let networkService: NetworkAccess
 
     // MARK: - PTVAPIAccess
+
+    /// Initialises the PTV API access object with the default network service
+    ///
+    /// - Parameters:
+    ///   - configuration: Configuration provider to initialise the access object
+    public convenience init(configuration: PTVAPIConfigurationProvider) {
+        let networkService = PTVAPINetworkAccess(configuration: configuration)
+        self.init(configuration: configuration, networkService: networkService)
+    }
 
     /// Initialises the PTV API access object
     ///
     /// - Parameters:
     ///   - configuration: Configuration provider to initialise the access object
-    public init(configuration: PTVAPIConfigurationProvider) {
+    ///   - networkService: Network service to process API request through.
+    init(configuration: PTVAPIConfigurationProvider,
+         networkService: NetworkAccess) {
         self.environment = PTVAPIEnvironment(configuration: configuration)
+        self.networkService = networkService
     }
 
     /// Performs an API request and calls the completion handler once a response is received or an error is thrown.
@@ -54,18 +67,13 @@ public class PTVAPIAccess: PTVAPIAccessing {
             return
         }
 
-        let sessionConfiguration = URLSessionConfiguration.default
-        sessionConfiguration.timeoutIntervalForRequest = environment.requestTimeout
-        sessionConfiguration.timeoutIntervalForResource = environment.resourceTimeout
-        sessionConfiguration.waitsForConnectivity = true
-
-        let urlSession = URLSession(configuration: sessionConfiguration)
-
-        let task = urlSession.dataTask(with: request) { (data, response, error) in
+        networkService.process(request: request) { (data, response, error) in
             do {
                 guard let data = data,
-                    let response = response as? HTTPURLResponse, (200..<300) ~= response.statusCode, error == nil else {
-                        throw error ?? PTVAPIError.unknown
+                      let response = response as? HTTPURLResponse,
+                      (200..<300) ~= response.statusCode,
+                      error == nil else {
+                    throw error ?? PTVAPIError.unknown
                 }
                 let decoder = JSONDecoder()
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
@@ -75,7 +83,6 @@ public class PTVAPIAccess: PTVAPIAccessing {
                 completion?(.failure(.requestFailed(baseError: error)))
             }
         }
-        task.resume()
     }
 }
 
@@ -167,37 +174,14 @@ extension PTVAPIAccess {
         guard let request = apiRequest(endpoint: endpoint, parameters: parameterQueryItems) else {
             return Fail(outputType: T.self,
                         failure: .cannotGenerateRequest)
-            .eraseToAnyPublisher()
+                .eraseToAnyPublisher()
         }
-
-        let sessionConfiguration = URLSessionConfiguration.default
-        sessionConfiguration.timeoutIntervalForRequest = environment.requestTimeout
-        sessionConfiguration.timeoutIntervalForResource = environment.resourceTimeout
-        sessionConfiguration.waitsForConnectivity = true
-
-        let urlSession = URLSession(configuration: sessionConfiguration)
 
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
 
-        return urlSession
-            .dataTaskPublisher(for: request)
-            .tryMap { response in
-                guard let httpUrlResponse = response.response as? HTTPURLResponse else {
-                    throw PTVAPIError.invalidResponse
-                }
-
-                let statusCode = httpUrlResponse.statusCode
-
-                guard statusCode == 200 else {
-                    switch statusCode {
-                    case 400: throw PTVAPIError.invalidRequest
-                    case 403: throw PTVAPIError.accessDenied
-                    default: throw PTVAPIError.unexpectedStatus(statusCode)
-                    }
-                }
-
-                return response.data }
+        return networkService
+            .publisher(for: request)
             .decode(type: T.self, decoder: decoder)
             .mapError { return PTVAPIError.map($0) }
             .eraseToAnyPublisher()

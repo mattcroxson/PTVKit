@@ -120,6 +120,15 @@ final class PTVAPIAccessSpec: QuickSpec {
                         }
                     }
                 }
+
+                context("with a nil url") {
+                    let endpoint = PTVMockEndpoint.mockWithNilUrl
+
+                    it("should fail") {
+                        let request = apiAccess.apiRequest(endpoint: endpoint, parameters: nil)
+                        expect(request?.url).to(beNil())
+                    }
+                }
             }
 
             describe("accessing a post endpoint") {
@@ -219,7 +228,33 @@ final class PTVAPIAccessSpec: QuickSpec {
                         }
                     }
                 }
+
+                context("with a nil url") {
+                    let endpoint = PTVMockEndpoint.mockPostWithNilUrl
+
+                    it("should fail") {
+                        let request = apiAccess.apiRequest(endpoint: endpoint, parameters: nil)
+                        expect(request?.url).to(beNil())
+                    }
+                }
             }
+
+//            describe("getting a response from a get endpoint") {
+//                context("with no path parameters") {
+//                    let endpoint = PTVMockEndpoint.mock
+//
+//                    context("with no query paramters") {
+//                        it("should") {
+//                            waitUntil { done in
+//                                let response = apiAccess.getResponse(from: endpoint) { result in
+//
+//                                    done()
+//                                }
+//                            }
+//                        }
+//                    }
+//                }
+//            }
         }
     }
 }

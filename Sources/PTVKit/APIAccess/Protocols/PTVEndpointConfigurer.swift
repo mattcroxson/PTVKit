@@ -29,8 +29,14 @@ protocol PTVEndpointConfigurer {
     /// The caching policy for the request
     var cachePolicy: URLRequest.CachePolicy { get }
 
-    /// The API version that the endpoint configuration is for.
+    /// The API version that the endpoint configuration is for
     var version: String { get }
+
+    /// The URL for the endpoint
+    var url: URL? { get }
+
+    /// The type of object the API is expecting to return
+    var responseType: Decodable.Type? { get }
 }
 
 // MARK: - Default Implementations

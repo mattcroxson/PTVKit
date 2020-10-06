@@ -11,7 +11,6 @@ import Foundation
 import Combine
 
 class PTVMockNetworkAccess: NetworkAccess {
-
     let dataResponse: Data?
     let failureResponse: Error?
 
@@ -22,7 +21,12 @@ class PTVMockNetworkAccess: NetworkAccess {
     }
 
     func process(request: URLRequest, completion: @escaping (Data?, URLResponse?, Error?) -> Void) {
-
+        if let data = dataResponse {
+            completion(data, nil, nil)
+        } else if let failure = failureResponse {
+            completion(nil, nil, failure)
+        }
+        completion(nil, nil, MockNetworkAccessError.noResponse)
     }
 
     @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
@@ -45,7 +49,6 @@ class PTVMockNetworkAccess: NetworkAccess {
 }
 
 enum MockNetworkAccessError: LocalizedError {
-
     case missingUrl
     case noResponse
 

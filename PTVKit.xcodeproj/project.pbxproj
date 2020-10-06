@@ -195,6 +195,7 @@
 			children = (
 				17034F102262B666004462A6 /* PTVMockDataService.swift */,
 				17EEE26F2271837D007B1B62 /* PTVMockEndpoint.swift */,
+				176D4739252C431A0010F577 /* PTVMockNetworkAccess.swift */,
 			);
 			path = MockData;
 			sourceTree = "<group>";
@@ -242,14 +243,6 @@
 				176D4734252C3ECD0010F577 /* NetworkAccess.swift */,
 				176D473C252D0A0E0010F577 /* NetworkAccessError.swift */,
 				176D4736252C422C0010F577 /* PTVAPINetworkAccess.swift */,
-			);
-			path = Networking;
-			sourceTree = "<group>";
-		};
-		176D4738252C43000010F577 /* Networking */ = {
-			isa = PBXGroup;
-			children = (
-				176D4739252C431A0010F577 /* PTVMockNetworkAccess.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -366,7 +359,6 @@
 			children = (
 				17D136FA226D8D5300890E3B /* Extensions */,
 				17034F0F2262B637004462A6 /* MockData */,
-				176D4738252C43000010F577 /* Networking */,
 				17034F0C2262B617004462A6 /* PTVAPIAccess */,
 			);
 			path = PTVKitTests;

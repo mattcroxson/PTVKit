@@ -21,10 +21,9 @@ public protocol PTVAPIAccessing {
     ///   - endpoint: Endpoint to retrieve data from
     ///   - parameters: Parameters to include in the request
     ///   - completion: Completion handler to call when the request completes or an error is thrown
-    func getResponse<T>(from endpoint: PTVEndpoint,
-                        parameters: [PTVEndpointParameter]?,
-                        completion: ResponseCompletion<T>?) where T : Decodable
-    
+    func getResponse<T: Decodable>(from endpoint: PTVEndpoint,
+                                   parameters: [PTVEndpointParameter]?,
+                                   completion: ResponseCompletion<T>?)
 
     // MARK: - Combine/SwiftUI
 

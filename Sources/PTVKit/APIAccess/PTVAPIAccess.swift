@@ -141,8 +141,8 @@ extension PTVAPIAccess {
     ///   - endpoint: Endpoint to retreive data from
     ///   - parameters: Parameters to include in the request
     /// - Returns: `AnyPublisher` object that emits once the request completes or if an error is thrown.
-    public func apiResponsePublisher<T>(for endpoint: PTVEndpoint,
-                                        parameters: [PTVEndpointParameter]? = nil) -> AnyPublisher<T, PTVAPIError> where T: Decodable {
+    public func apiResponsePublisher<T: Decodable>(for endpoint: PTVEndpoint,
+                                                   parameters: [PTVEndpointParameter]? = nil) -> APIPublisher<T> {
 
         guard T.self == endpoint.responseType else {
             return Fail(outputType: T.self,

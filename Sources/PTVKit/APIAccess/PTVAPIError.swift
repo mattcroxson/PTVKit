@@ -27,6 +27,9 @@ public enum PTVAPIError: LocalizedError {
     /// The response returned by the API is not valid
     case invalidResponse
 
+    /// The endpoint is missing a response type
+    case missingResponseType(endpoint: PTVEndpoint)
+
     /// An error that occurs while the request is being performed, including a description
     case requestFailed(baseError: Error)
 
@@ -45,6 +48,7 @@ public enum PTVAPIError: LocalizedError {
             return "The API response \(response) selected does not match the endpoint response \(endpoint)"
         case .invalidRequest: return "The request was invalid. Check the configuration is correct. (HTTP 400)"
         case .invalidResponse: return "An unexpected response was returned by the API."
+        case let .missingResponseType(endpoint): return "The endpoint \(endpoint) is missing a response type."
         case let .requestFailed(baseError): return baseError.localizedDescription
         case let .unexpectedStatus(statusCode): return "The API returned an unexpected response: (HTTP \(statusCode))"
         case .unknown: return "An unknown error has occurred"

@@ -179,7 +179,7 @@ extension PTVAPIAccess {
                 let statusCode = httpUrlResponse.statusCode
 
                 guard statusCode == 200 else {
-                    switch statusCode  {
+                    switch statusCode {
                     case 400: throw PTVAPIError.invalidRequest
                     case 403: throw PTVAPIError.accessDenied
                     default: throw PTVAPIError.unexpectedStatus(statusCode)

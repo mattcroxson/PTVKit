@@ -39,11 +39,11 @@ public enum PTVAPIError: LocalizedError {
     /// Localized description of the error that has occured
     public var errorDescription: String? {
         switch self {
-        case .accessDenied: return "API authencation failed. Check your develoeper ID and API key are correct. (HTTP 403)"
+        case .accessDenied: return "API authencation failed. Check your credentials are correct. (HTTP 403)"
         case .cannotGenerateRequest: return "An error occurred generating the URL request"
         case let .incompatibleEndpoint(response, endpoint):
             return "The API response \(response) selected does not match the endpoint response \(endpoint)"
-        case .invalidRequest: return "The request could not be completed by the API. Please confirm the request configuration is correct. (HTTP 400)"
+        case .invalidRequest: return "The request was invalid. Check the configuration is correct. (HTTP 400)"
         case .invalidResponse: return "An unexpected response was returned by the API."
         case let .requestFailed(baseError): return baseError.localizedDescription
         case let .unexpectedStatus(statusCode): return "The API returned an unexpected response: (HTTP \(statusCode))"

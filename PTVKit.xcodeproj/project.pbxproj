@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		17034F0A2262B5EF004462A6 /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1796BE182262B45C00980F2A /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		17034F0B2262B5EF004462A6 /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1796BE192262B45C00980F2A /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		17034F0E2262B630004462A6 /* PTVAPIAccessSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17034F0D2262B630004462A6 /* PTVAPIAccessSpec.swift */; };
 		17034F112262B666004462A6 /* PTVMockDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17034F102262B666004462A6 /* PTVMockDataService.swift */; };
 		172750A2227413E200B60326 /* PTVEndpointParameterName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172750A1227413E200B60326 /* PTVEndpointParameterName.swift */; };
@@ -20,6 +18,8 @@
 		1754CF3E226C53A80064DA4E /* URLComponents+PTVKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1754CF3D226C53A80064DA4E /* URLComponents+PTVKit.swift */; };
 		17574AB42259BB63007349BC /* PTVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17574AAA2259BB63007349BC /* PTVKit.framework */; };
 		17574ABB2259BB63007349BC /* PTVKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 17574AAD2259BB63007349BC /* PTVKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		177DFD67252AF95400D1DFAC /* Nimble in Frameworks */ = {isa = PBXBuildFile; productRef = 177DFD66252AF95400D1DFAC /* Nimble */; };
+		177DFD6A252AF97000D1DFAC /* Quick in Frameworks */ = {isa = PBXBuildFile; productRef = 177DFD69252AF97000D1DFAC /* Quick */; };
 		17806FB32271C0F900916717 /* PTVEndpointParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17806FB22271C0F900916717 /* PTVEndpointParameter.swift */; };
 		17806FB52271CB4E00916717 /* OutletGeolocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17806FB42271CB4E00916717 /* OutletGeolocation.swift */; };
 		17806FB72271CBA900916717 /* OutletGeolocationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17806FB62271CBA900916717 /* OutletGeolocationResponse.swift */; };
@@ -47,8 +47,6 @@
 		17852A7322715F7700687E08 /* ResultRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17852A7222715F7700687E08 /* ResultRoute.swift */; };
 		17852A7522715FC900687E08 /* ResultStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17852A7422715FC900687E08 /* ResultStop.swift */; };
 		17852A77227161C400687E08 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17852A76227161C400687E08 /* SearchResult.swift */; };
-		1796BE1A2262B45C00980F2A /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1796BE182262B45C00980F2A /* Nimble.framework */; };
-		1796BE1B2262B45C00980F2A /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1796BE192262B45C00980F2A /* Quick.framework */; };
 		17B5CFB12262AD7D00B12975 /* PTVAPIConfigurationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B5CFB02262AD7D00B12975 /* PTVAPIConfigurationProvider.swift */; };
 		17B5CFB42262AE3400B12975 /* PTVAPIAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B5CFB32262AE3400B12975 /* PTVAPIAccess.swift */; };
 		17B5CFB62262AF1000B12975 /* PTVAPIEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B5CFB52262AF1000B12975 /* PTVAPIEnvironment.swift */; };
@@ -85,20 +83,6 @@
 			remoteInfo = PTVKit;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		17034F092262B5E9004462A6 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				17034F0A2262B5EF004462A6 /* Nimble.framework in CopyFiles */,
-				17034F0B2262B5EF004462A6 /* Quick.framework in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		17034F0D2262B630004462A6 /* PTVAPIAccessSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTVAPIAccessSpec.swift; sourceTree = "<group>"; };
@@ -184,8 +168,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				17574AB42259BB63007349BC /* PTVKit.framework in Frameworks */,
-				1796BE1A2262B45C00980F2A /* Nimble.framework in Frameworks */,
-				1796BE1B2262B45C00980F2A /* Quick.framework in Frameworks */,
+				177DFD6A252AF97000D1DFAC /* Quick in Frameworks */,
+				177DFD67252AF95400D1DFAC /* Nimble in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -530,7 +514,6 @@
 				17574AAF2259BB63007349BC /* Sources */,
 				17574AB02259BB63007349BC /* Frameworks */,
 				17574AB12259BB63007349BC /* Resources */,
-				17034F092262B5E9004462A6 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -538,6 +521,10 @@
 				17574AB62259BB63007349BC /* PBXTargetDependency */,
 			);
 			name = PTVKitTests;
+			packageProductDependencies = (
+				177DFD66252AF95400D1DFAC /* Nimble */,
+				177DFD69252AF97000D1DFAC /* Quick */,
+			);
 			productName = PTVKitTests;
 			productReference = 17574AB32259BB63007349BC /* PTVKitTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -570,6 +557,10 @@
 				Base,
 			);
 			mainGroup = 17574AA02259BB63007349BC;
+			packageReferences = (
+				177DFD65252AF95400D1DFAC /* XCRemoteSwiftPackageReference "Nimble" */,
+				177DFD68252AF97000D1DFAC /* XCRemoteSwiftPackageReference "Quick" */,
+			);
 			productRefGroup = 17574AAB2259BB63007349BC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -894,10 +885,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 57T46CP54H;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Tests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -918,10 +906,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 57T46CP54H;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Tests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -967,6 +952,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		177DFD65252AF95400D1DFAC /* XCRemoteSwiftPackageReference "Nimble" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Quick/Nimble.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+		177DFD68252AF97000D1DFAC /* XCRemoteSwiftPackageReference "Quick" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Quick/Quick.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		177DFD66252AF95400D1DFAC /* Nimble */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 177DFD65252AF95400D1DFAC /* XCRemoteSwiftPackageReference "Nimble" */;
+			productName = Nimble;
+		};
+		177DFD69252AF97000D1DFAC /* Quick */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 177DFD68252AF97000D1DFAC /* XCRemoteSwiftPackageReference "Quick" */;
+			productName = Quick;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 17574AA12259BB63007349BC /* Project object */;
 }

@@ -230,8 +230,8 @@
 		17574AB72259BB63007349BC /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				178C917F24BEC205009A7F31 /* PTVKitTests */,
 				17574ABA2259BB63007349BC /* Info.plist */,
+				178C917F24BEC205009A7F31 /* PTVKitTests */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -240,8 +240,8 @@
 			isa = PBXGroup;
 			children = (
 				176D4734252C3ECD0010F577 /* NetworkAccess.swift */,
-				176D4736252C422C0010F577 /* PTVAPINetworkAccess.swift */,
 				176D473C252D0A0E0010F577 /* NetworkAccessError.swift */,
+				176D4736252C422C0010F577 /* PTVAPINetworkAccess.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -382,6 +382,7 @@
 		17B5CFAF2262AD6400B12975 /* APIAccess */ = {
 			isa = PBXGroup;
 			children = (
+				17B5CFB22262AE0300B12975 /* Protocols */,
 				17B5CFB32262AE3400B12975 /* PTVAPIAccess.swift */,
 				17B5CFB52262AF1000B12975 /* PTVAPIEnvironment.swift */,
 				174850A72271B2F900CFE5B1 /* PTVAPIError.swift */,
@@ -389,7 +390,6 @@
 				17806FB22271C0F900916717 /* PTVEndpointParameter.swift */,
 				172750A1227413E200B60326 /* PTVEndpointParameterName.swift */,
 				17395731226D7BF0001744E3 /* PTVHTTPMethod.swift */,
-				17B5CFB22262AE0300B12975 /* Protocols */,
 			);
 			path = APIAccess;
 			sourceTree = "<group>";

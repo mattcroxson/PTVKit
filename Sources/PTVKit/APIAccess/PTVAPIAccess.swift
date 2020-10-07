@@ -60,7 +60,7 @@ public class PTVAPIAccess: PTVAPIAccessing {
             return
         }
 
-        guard T.self == endpoint.responseType else {
+        guard T.self == responseType else {
             completion?(.failure(PTVAPIError.incompatibleEndpoint(response: T.self,
                                                                   endpoint: responseType)))
             return
@@ -172,7 +172,7 @@ extension PTVAPIAccess {
                 .eraseToAnyPublisher()
         }
 
-        guard T.self == endpoint.responseType else {
+        guard T.self == responseType else {
             return Fail(outputType: T.self,
                         failure: .incompatibleEndpoint(response: T.self,
                                                        endpoint: responseType))

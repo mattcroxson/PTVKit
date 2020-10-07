@@ -10,10 +10,10 @@
 import Foundation
 
 enum PTVMockEndpoint {
-    case mock
-    case mockWithNilUrl
-    case mockWithSingleParameter(parameter: String)
-    case mockWithMultiParameter(first: String, second: String)
+    case mockGet
+    case mockGetWithNilUrl
+    case mockGetWithSingleParameter(parameter: String)
+    case mockGetWithMultiParameter(first: String, second: String)
     case mockPost
     case mockPostWithNilUrl
     case mockPostWithSingleParameter(parameter: String)
@@ -23,10 +23,10 @@ enum PTVMockEndpoint {
 extension PTVMockEndpoint: PTVEndpointConfigurer {
     var path: String {
         switch self {
-        case .mock: return "/mock"
-        case .mockWithNilUrl: return "/mock"
-        case let .mockWithSingleParameter(parameter): return "/mockWithSingleParameter/parameter/\(parameter)"
-        case let .mockWithMultiParameter(first, second): return "/mockWithMultiParameter/first/\(first)/second/\(second)"
+        case .mockGet: return "/mock"
+        case .mockGetWithNilUrl: return "/mock"
+        case let .mockGetWithSingleParameter(parameter): return "/mockWithSingleParameter/parameter/\(parameter)"
+        case let .mockGetWithMultiParameter(first, second): return "/mockWithMultiParameter/first/\(first)/second/\(second)"
         case .mockPost: return "/mock"
         case .mockPostWithNilUrl: return "/mock"
         case let .mockPostWithSingleParameter(parameter): return "/mockWithSingleParameter/parameter/\(parameter)"
@@ -45,7 +45,7 @@ extension PTVMockEndpoint: PTVEndpointConfigurer {
 
     var url: URL? {
         switch self {
-        case .mockWithNilUrl,
+        case .mockGetWithNilUrl,
              .mockPostWithNilUrl: return nil
         default:
             var components = URLComponents()
@@ -57,6 +57,11 @@ extension PTVMockEndpoint: PTVEndpointConfigurer {
     }
 
     var responseType: Decodable.Type? {
-        return nil
+        switch self {
+        case .mockGet,
+             .mockGetWithSingleParameter,
+             .mockGetWithMultiParameter: return MockDecodable.self
+        default: return nil
+        }
     }
 }

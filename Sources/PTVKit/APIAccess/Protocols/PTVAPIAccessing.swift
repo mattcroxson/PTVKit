@@ -21,10 +21,16 @@ public protocol PTVAPIAccessing {
     ///   - endpoint: Endpoint to retrieve data from
     ///   - parameters: Parameters to include in the request
     ///   - completion: Completion handler to call when the request completes or an error is thrown
-    func getResponse<T>(from endpoint: PTVEndpoint,
-                        parameters: [PTVEndpointParameter]?,
-                        completion: ResponseCompletion<T>?) where T : Decodable
-    
+    func getResponse<T: Decodable>(from endpoint: PTVEndpoint,
+                                   parameters: [PTVEndpointParameter]?,
+                                   completion: ResponseCompletion<T>?)
+
+    // MARK: - Combine/SwiftUI
+
+    /// Publisher that performs an API request and emits the response, or an error if one is thrown
+    @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+    typealias APIPublisher<T: Decodable> = AnyPublisher<T, PTVAPIError>
+
     /// Returns a publisher that performs an API request and emits the response, or an error if one is thrown
     ///
     /// - Parameters:
@@ -32,6 +38,6 @@ public protocol PTVAPIAccessing {
     ///   - parameters: Parameters to include in the request
     /// - Returns: `AnyPublisher` object that emits once the request completes or if an error is thrown.
     @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
-    func apiResponsePublisher<T>(for endpoint: PTVEndpoint,
-                                 parameters: [PTVEndpointParameter]?) -> AnyPublisher<T, PTVAPIError> where T : Decodable
+    func apiResponsePublisher<T: Decodable>(for endpoint: PTVEndpoint,
+                                            parameters: [PTVEndpointParameter]?) -> APIPublisher<T>
 }

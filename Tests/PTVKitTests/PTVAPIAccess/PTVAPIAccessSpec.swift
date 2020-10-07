@@ -10,6 +10,7 @@
 import Foundation
 import Quick
 import Nimble
+import Combine
 
 final class PTVAPIAccessSpec: QuickSpec {
     override func spec() {
@@ -19,15 +20,15 @@ final class PTVAPIAccessSpec: QuickSpec {
             let mockEnvironment = PTVMockDataService.mockEnvironment
             var apiAccess: PTVAPIAccess!
 
-            beforeEach {
-                apiAccess = PTVAPIAccess(configuration: mockEnvironment.configuration)
-            }
-
             describe("accessing a get endpoint") {
+
+                beforeEach {
+                    apiAccess = PTVAPIAccess(configuration: mockEnvironment.configuration)
+                }
 
                 context("with no path parameters") {
 
-                    let endpoint = PTVMockEndpoint.mock
+                    let endpoint = PTVMockEndpoint.mockGet
 
                     context("with no query parameters") {
                         it("should have a valid url") {
@@ -59,7 +60,7 @@ final class PTVAPIAccessSpec: QuickSpec {
 
                 context("with a single path parameter") {
 
-                    let endpoint = PTVMockEndpoint.mockWithSingleParameter(parameter: "mock")
+                    let endpoint = PTVMockEndpoint.mockGetWithSingleParameter(parameter: "mock")
 
                     context("with no query parameters") {
                         it("should have a valid url") {
@@ -91,7 +92,7 @@ final class PTVAPIAccessSpec: QuickSpec {
 
                 context("with multiple path parameters") {
 
-                    let endpoint = PTVMockEndpoint.mockWithMultiParameter(first: "mock", second: "mock")
+                    let endpoint = PTVMockEndpoint.mockGetWithMultiParameter(first: "mock", second: "mock")
 
                     context("with no query parameters") {
                         it("should have a valid url") {
@@ -120,9 +121,22 @@ final class PTVAPIAccessSpec: QuickSpec {
                         }
                     }
                 }
+
+                context("with a nil url") {
+                    let endpoint = PTVMockEndpoint.mockGetWithNilUrl
+
+                    it("should fail") {
+                        let request = apiAccess.apiRequest(endpoint: endpoint, parameters: nil)
+                        expect(request?.url).to(beNil())
+                    }
+                }
             }
 
             describe("accessing a post endpoint") {
+
+                beforeEach {
+                    apiAccess = PTVAPIAccess(configuration: mockEnvironment.configuration)
+                }
 
                 context("with no path parameters") {
 
@@ -219,7 +233,534 @@ final class PTVAPIAccessSpec: QuickSpec {
                         }
                     }
                 }
+
+                context("with a nil url") {
+                    let endpoint = PTVMockEndpoint.mockPostWithNilUrl
+
+                    it("should fail") {
+                        let request = apiAccess.apiRequest(endpoint: endpoint, parameters: nil)
+                        expect(request?.url).to(beNil())
+                    }
+                }
             }
+
+            describe("getting a response from a get endpoint") {
+
+                context("with no path parameters") {
+
+                    context("with no query paramters") {
+
+                        let endpoint = PTVMockEndpoint.mockGet
+                        let mockResponse = MockDecodable(mockValue: "mockValue").asData
+                        let mockNetworkAccess = PTVMockNetworkAccess(dataResponse: mockResponse,
+                                                                     failureResponse: nil)
+
+                        beforeEach {
+                            apiAccess = PTVAPIAccess(configuration: mockEnvironment.configuration,
+                                                     networkAccess: mockNetworkAccess)
+                        }
+
+                        it("should return a mock object") {
+                            var mockValue: MockDecodable?
+                            var mockError: PTVAPIError?
+
+                            waitUntil { done in
+                                apiAccess.response(from: endpoint) { (result: Result<MockDecodable, PTVAPIError>) in
+                                    switch result {
+                                    case let .success(value): mockValue = value
+                                    case let .failure(error): mockError = error
+                                    }
+                                    done()
+                                }
+                            }
+
+                            expect(mockValue?.mockValue).to(equal("mockValue"))
+                            expect(mockError).to(beNil())
+                        }
+                    }
+
+                    context("with a single query parameter") {
+                        let endpoint = PTVMockEndpoint.mockGetWithSingleParameter(parameter: "mock")
+                        let mockResponse = MockDecodable(mockValue: "mockValue").asData
+                        let mockNetworkAccess = PTVMockNetworkAccess(dataResponse: mockResponse,
+                                                                     failureResponse: nil)
+
+                        beforeEach {
+                            apiAccess = PTVAPIAccess(configuration: mockEnvironment.configuration,
+                                                     networkAccess: mockNetworkAccess)
+                        }
+
+                        it("should return a mock object") {
+                            var mockValue: MockDecodable?
+                            var mockError: PTVAPIError?
+
+                            waitUntil { done in
+                                apiAccess.response(from: endpoint) { (result: Result<MockDecodable, PTVAPIError>) in
+                                    switch result {
+                                    case let .success(value): mockValue = value
+                                    case let .failure(error): mockError = error
+                                    }
+                                    done()
+                                }
+                            }
+
+                            expect(mockValue?.mockValue).to(equal("mockValue"))
+                            expect(mockError).to(beNil())
+                        }
+                    }
+
+                    context("with multiple query paramters") {
+                        let endpoint = PTVMockEndpoint.mockGetWithMultiParameter(first: "first", second: "second")
+                        let mockResponse = MockDecodable(mockValue: "mockValue").asData
+                        let mockNetworkAccess = PTVMockNetworkAccess(dataResponse: mockResponse,
+                                                                     failureResponse: nil)
+
+                        beforeEach {
+                            apiAccess = PTVAPIAccess(configuration: mockEnvironment.configuration,
+                                                     networkAccess: mockNetworkAccess)
+                        }
+
+                        it("should return a mock object") {
+                            var mockValue: MockDecodable?
+                            var mockError: PTVAPIError?
+
+                            waitUntil { done in
+                                apiAccess.response(from: endpoint) { (result: Result<MockDecodable, PTVAPIError>) in
+                                    switch result {
+                                    case let .success(value): mockValue = value
+                                    case let .failure(error): mockError = error
+                                    }
+                                    done()
+                                }
+                            }
+
+                            expect(mockValue?.mockValue).to(equal("mockValue"))
+                            expect(mockError).to(beNil())
+                        }
+                    }
+
+                    context("with a nil url") {
+                        let endpoint = PTVMockEndpoint.mockGetWithNilUrl
+                        let mockResponse = MockDecodable(mockValue: "mockValue").asData
+                        let mockNetworkAccess = PTVMockNetworkAccess(dataResponse: mockResponse,
+                                                                     failureResponse: nil)
+
+                        beforeEach {
+                            apiAccess = PTVAPIAccess(configuration: mockEnvironment.configuration,
+                                                     networkAccess: mockNetworkAccess)
+                        }
+
+                        it("should return a mock object") {
+                            var mockValue: MockDecodable?
+                            var mockError: PTVAPIError?
+
+                            waitUntil { done in
+                                apiAccess.response(from: endpoint) { (result: Result<MockDecodable, PTVAPIError>) in
+                                    switch result {
+                                    case let .success(value): mockValue = value
+                                    case let .failure(error): mockError = error
+                                    }
+                                    done()
+                                }
+                            }
+
+                            expect(mockValue?.mockValue).to(beNil())
+                            expect(mockError).to(equal(PTVAPIError.missingResponseType(endpoint: "mockGetWithNilUrl")))
+                        }
+                    }
+
+                    context("with a incompatible response type") {
+                        let endpoint = PTVMockEndpoint.mockGetWithIncompatibleResponseType
+                        let mockResponse = MockDecodable(mockValue: "mockValue").asData
+                        let mockNetworkAccess = PTVMockNetworkAccess(dataResponse: mockResponse,
+                                                                     failureResponse: nil)
+
+                        beforeEach {
+                            apiAccess = PTVAPIAccess(configuration: mockEnvironment.configuration,
+                                                     networkAccess: mockNetworkAccess)
+                        }
+
+                        it("should return a mock object") {
+                            var mockValue: MockDecodable?
+                            var mockError: PTVAPIError?
+
+                            waitUntil { done in
+                                apiAccess.response(from: endpoint) { (result: Result<MockDecodable, PTVAPIError>) in
+                                    switch result {
+                                    case let .success(value): mockValue = value
+                                    case let .failure(error): mockError = error
+                                    }
+                                    done()
+                                }
+                            }
+
+                            expect(mockValue?.mockValue).to(beNil())
+                            expect(mockError)
+                                .to(equal(PTVAPIError.incompatibleEndpoint(response: MockDecodable.self,
+                                                                           endpoint: MockIncompatibleDecodable.self)))
+                        }
+                    }
+                }
+
+                context("with an HTTP error") {
+
+                    let endpoint = PTVMockEndpoint.mockGet
+                    let mockNetworkAccess = PTVMockNetworkAccess(dataResponse: nil,
+                                                                 failureResponse: MockNetworkAccessError.badHTTPStatus(404),
+                                                                 httpStatus: 404)
+
+                    beforeEach {
+                        apiAccess = PTVAPIAccess(configuration: mockEnvironment.configuration,
+                                                 networkAccess: mockNetworkAccess)
+                    }
+
+                    it("should fail with a 404") {
+                        var mockValue: MockDecodable?
+                        var mockError: PTVAPIError?
+
+                        waitUntil { done in
+                            apiAccess.response(from: endpoint) { (result: Result<MockDecodable, PTVAPIError>) in
+                                switch result {
+                                case let .success(value): mockValue = value
+                                case let .failure(error): mockError = error
+                                }
+                                done()
+                            }
+                        }
+
+                        expect(mockValue?.mockValue).to(beNil())
+                        expect(mockError?.localizedDescription).to(equal("HTTP status 404"))
+                    }
+                }
+
+                context("with an missing error") {
+
+                    let endpoint = PTVMockEndpoint.mockGet
+                    let mockNetworkAccess = PTVMockNetworkAccess(dataResponse: nil,
+                                                                 failureResponse: nil,
+                                                                 httpStatus: 404)
+
+                    beforeEach {
+                        apiAccess = PTVAPIAccess(configuration: mockEnvironment.configuration,
+                                                 networkAccess: mockNetworkAccess)
+                    }
+
+                    it("should fail with an unknown error") {
+                        var mockValue: MockDecodable?
+                        var mockError: PTVAPIError?
+
+                        waitUntil { done in
+                            apiAccess.response(from: endpoint) { (result: Result<MockDecodable, PTVAPIError>) in
+                                switch result {
+                                case let .success(value): mockValue = value
+                                case let .failure(error): mockError = error
+                                }
+                                done()
+                            }
+                        }
+
+                        expect(mockValue?.mockValue).to(beNil())
+                        expect(mockError?.localizedDescription).to(equal("An unknown error has occurred"))
+                    }
+                }
+            }
+        }
+    }
+}
+
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+final class PTVAPIAccessCombineSpec: QuickSpec {
+    override func spec() {
+
+        describe("PTVAPIAccess") {
+
+            let mockEnvironment = PTVMockDataService.mockEnvironment
+            var apiAccess: PTVAPIAccess!
+
+            describe("getting a publisher from a get endpoint") {
+
+                context("with no path parameters") {
+
+                    context("with no query paramters") {
+
+                        let endpoint = PTVMockEndpoint.mockGet
+                        let mockResponse = MockDecodable(mockValue: "mockValue").asData
+                        let mockNetworkAccess = PTVMockNetworkAccess(dataResponse: mockResponse,
+                                                                     failureResponse: nil)
+
+                        beforeEach {
+                            apiAccess = PTVAPIAccess(configuration: mockEnvironment.configuration,
+                                                     networkAccess: mockNetworkAccess)
+                        }
+
+                        it("should return a mock object") {
+                            var mockValue: MockDecodable?
+                            var mockError: PTVAPIError?
+
+                            waitUntil { done in
+                                _ = apiAccess
+                                    .responsePublisher(for: endpoint)
+                                    .sink { completion in
+                                        switch completion {
+                                        case .finished: done()
+                                        case let .failure(error):
+                                            mockError = error
+                                            done()
+                                        }
+                                    } receiveValue: { (value: MockDecodable) in
+                                        mockValue = value
+                                    }
+                            }
+
+                            expect(mockValue?.mockValue).to(equal("mockValue"))
+                            expect(mockError).to(beNil())
+                        }
+                    }
+
+                    context("with a single query parameter") {
+                        let endpoint = PTVMockEndpoint.mockGetWithSingleParameter(parameter: "mock")
+                        let mockResponse = MockDecodable(mockValue: "mockValue").asData
+                        let mockNetworkAccess = PTVMockNetworkAccess(dataResponse: mockResponse,
+                                                                     failureResponse: nil)
+
+                        beforeEach {
+                            apiAccess = PTVAPIAccess(configuration: mockEnvironment.configuration,
+                                                     networkAccess: mockNetworkAccess)
+                        }
+
+                        it("should return a mock object") {
+                            var mockValue: MockDecodable?
+                            var mockError: PTVAPIError?
+
+                            waitUntil { done in
+                                _ = apiAccess
+                                    .responsePublisher(for: endpoint)
+                                    .sink { completion in
+                                        switch completion {
+                                        case .finished: done()
+                                        case let .failure(error):
+                                            mockError = error
+                                            done()
+                                        }
+                                    } receiveValue: { (value: MockDecodable) in
+                                        mockValue = value
+                                    }
+                            }
+
+                            expect(mockValue?.mockValue).to(equal("mockValue"))
+                            expect(mockError).to(beNil())
+                        }
+                    }
+
+                    context("with multiple query paramters") {
+                        let endpoint = PTVMockEndpoint.mockGetWithMultiParameter(first: "first", second: "second")
+                        let mockResponse = MockDecodable(mockValue: "mockValue").asData
+                        let mockNetworkAccess = PTVMockNetworkAccess(dataResponse: mockResponse,
+                                                                     failureResponse: nil)
+
+                        beforeEach {
+                            apiAccess = PTVAPIAccess(configuration: mockEnvironment.configuration,
+                                                     networkAccess: mockNetworkAccess)
+                        }
+
+                        it("should return a mock object") {
+                            var mockValue: MockDecodable?
+                            var mockError: PTVAPIError?
+
+                            waitUntil { done in
+                                _ = apiAccess
+                                    .responsePublisher(for: endpoint)
+                                    .sink { completion in
+                                        switch completion {
+                                        case .finished: done()
+                                        case let .failure(error):
+                                            mockError = error
+                                            done()
+                                        }
+                                    } receiveValue: { (value: MockDecodable) in
+                                        mockValue = value
+                                    }
+                            }
+
+                            expect(mockValue?.mockValue).to(equal("mockValue"))
+                            expect(mockError).to(beNil())
+                        }
+                    }
+
+                    context("with a nil url") {
+                        let endpoint = PTVMockEndpoint.mockGetWithNilUrl
+                        let mockResponse = MockDecodable(mockValue: "mockValue").asData
+                        let mockNetworkAccess = PTVMockNetworkAccess(dataResponse: mockResponse,
+                                                                     failureResponse: nil)
+
+                        beforeEach {
+                            apiAccess = PTVAPIAccess(configuration: mockEnvironment.configuration,
+                                                     networkAccess: mockNetworkAccess)
+                        }
+
+                        it("should return a mock object") {
+                            var mockValue: MockDecodable?
+                            var mockError: PTVAPIError?
+
+                            waitUntil { done in
+                                _ = apiAccess
+                                    .responsePublisher(for: endpoint)
+                                    .sink { completion in
+                                        switch completion {
+                                        case .finished: done()
+                                        case let .failure(error):
+                                            mockError = error
+                                            done()
+                                        }
+                                    } receiveValue: { (value: MockDecodable) in
+                                        mockValue = value
+                                    }
+                            }
+
+                            expect(mockValue?.mockValue).to(beNil())
+                            expect(mockError).to(equal(PTVAPIError.missingResponseType(endpoint: "mockGetWithNilUrl")))
+                        }
+                    }
+
+                    context("with an incompatible response type") {
+                        let endpoint = PTVMockEndpoint.mockGetWithIncompatibleResponseType
+                        let mockResponse = MockDecodable(mockValue: "mockValue").asData
+                        let mockNetworkAccess = PTVMockNetworkAccess(dataResponse: mockResponse,
+                                                                     failureResponse: nil)
+
+                        beforeEach {
+                            apiAccess = PTVAPIAccess(configuration: mockEnvironment.configuration,
+                                                     networkAccess: mockNetworkAccess)
+                        }
+
+                        it("should return a mock object") {
+                            var mockValue: MockDecodable?
+                            var mockError: PTVAPIError?
+
+                            waitUntil { done in
+                                _ = apiAccess
+                                    .responsePublisher(for: endpoint)
+                                    .sink { completion in
+                                        switch completion {
+                                        case .finished: done()
+                                        case let .failure(error):
+                                            mockError = error
+                                            done()
+                                        }
+                                    } receiveValue: { (value: MockDecodable) in
+                                        mockValue = value
+                                    }
+                            }
+
+                            expect(mockValue?.mockValue).to(beNil())
+                            expect(mockError)
+                                .to(equal(PTVAPIError.incompatibleEndpoint(response: MockDecodable.self,
+                                                                           endpoint: MockIncompatibleDecodable.self)))
+                        }
+                    }
+
+                    context("with an HTTP error") {
+
+                        let endpoint = PTVMockEndpoint.mockGet
+                        let mockNetworkAccess = PTVMockNetworkAccess(dataResponse: nil,
+                                                                     failureResponse: MockNetworkAccessError.badHTTPStatus(404),
+                                                                     httpStatus: 404)
+
+                        beforeEach {
+                            apiAccess = PTVAPIAccess(configuration: mockEnvironment.configuration,
+                                                     networkAccess: mockNetworkAccess)
+                        }
+
+                        it("should fail with a 404") {
+                            var mockValue: MockDecodable?
+                            var mockError: PTVAPIError?
+
+                            waitUntil { done in
+                                _ = apiAccess
+                                    .responsePublisher(for: endpoint)
+                                    .sink { completion in
+                                        switch completion {
+                                        case .finished: done()
+                                        case let .failure(error):
+                                            mockError = error
+                                            done()
+                                        }
+                                    } receiveValue: { (value: MockDecodable) in
+                                        mockValue = value
+                                    }
+                            }
+
+                            expect(mockValue?.mockValue).to(beNil())
+                            expect(mockError?.localizedDescription).to(equal("HTTP status 404"))
+                        }
+                    }
+
+                    context("with an missing error") {
+
+                        let endpoint = PTVMockEndpoint.mockGet
+                        let mockNetworkAccess = PTVMockNetworkAccess(dataResponse: nil,
+                                                                     failureResponse: nil,
+                                                                     httpStatus: 404)
+
+                        beforeEach {
+                            apiAccess = PTVAPIAccess(configuration: mockEnvironment.configuration,
+                                                     networkAccess: mockNetworkAccess)
+                        }
+
+                        it("should fail with an unknown error") {
+                            var mockValue: MockDecodable?
+                            var mockError: PTVAPIError?
+
+                            waitUntil { done in
+                                _ = apiAccess
+                                    .responsePublisher(for: endpoint)
+                                    .sink { completion in
+                                        switch completion {
+                                        case .finished: done()
+                                        case let .failure(error):
+                                            mockError = error
+                                            done()
+                                        }
+                                    } receiveValue: { (value: MockDecodable) in
+                                        mockValue = value
+                                    }
+                            }
+
+                            expect(mockValue?.mockValue).to(beNil())
+                            expect(mockError?.localizedDescription).to(equal("No data or failure responses were provided"))
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+struct MockDecodable: Codable, DataRepresentable {
+    let mockValue: String
+
+    init(mockValue: String) {
+        self.mockValue = "mockValue"
+    }
+}
+
+struct MockIncompatibleDecodable: Codable, DataRepresentable {
+    let incompatibleValue: Int
+
+    init(incompatibleValue: Int) {
+        self.incompatibleValue = incompatibleValue
+    }
+}
+
+protocol DataRepresentable where Self: Codable {}
+extension DataRepresentable {
+    var asData: Data {
+        let jsonEncoder = JSONEncoder()
+        do {
+            let data = try jsonEncoder.encode(self)
+            return data
+        } catch {
+            fatalError("Tried to encode by failed: \(error.localizedDescription)")
         }
     }
 }

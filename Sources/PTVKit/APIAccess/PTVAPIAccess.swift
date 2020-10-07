@@ -15,15 +15,28 @@ public class PTVAPIAccess: PTVAPIAccessing {
     // MARK: - Properties
 
     private let environment: PTVAPIEnvironment
+    private let networkAccess: NetworkAccess
 
     // MARK: - PTVAPIAccess
+
+    /// Initialises the PTV API access object with the default network access object
+    ///
+    /// - Parameters:
+    ///   - configuration: Configuration provider to initialise the access object
+    public convenience init(configuration: PTVAPIConfigurationProvider) {
+        let networkAccess = PTVAPINetworkAccess(configuration: configuration)
+        self.init(configuration: configuration, networkAccess: networkAccess)
+    }
 
     /// Initialises the PTV API access object
     ///
     /// - Parameters:
     ///   - configuration: Configuration provider to initialise the access object
-    public init(configuration: PTVAPIConfigurationProvider) {
+    ///   - networkAccess: Network access object to process API request through.
+    init(configuration: PTVAPIConfigurationProvider,
+         networkAccess: NetworkAccess) {
         self.environment = PTVAPIEnvironment(configuration: configuration)
+        self.networkAccess = networkAccess
     }
 
     /// Performs an API request and calls the completion handler once a response is received or an error is thrown.
@@ -35,10 +48,21 @@ public class PTVAPIAccess: PTVAPIAccessing {
     public func getResponse<T: Decodable>(from endpoint: PTVEndpoint,
                                           parameters: [PTVEndpointParameter]? = nil,
                                           completion: ResponseCompletion<T>?) {
+        self.response(from: endpoint, parameters: parameters, completion: completion)
+    }
 
-        guard T.self == endpoint.responseType else {
+    func response<T: Decodable>(from endpoint: PTVEndpointConfigurer,
+                                parameters: [PTVEndpointParameter]? = nil,
+                                completion: ResponseCompletion<T>?) {
+
+        guard let responseType = endpoint.responseType else {
+            completion?(.failure(.missingResponseType(endpoint: "\(endpoint)")))
+            return
+        }
+
+        guard T.self == responseType else {
             completion?(.failure(PTVAPIError.incompatibleEndpoint(response: T.self,
-                                                                  endpoint: endpoint.responseType)))
+                                                                  endpoint: responseType)))
             return
         }
 
@@ -49,18 +73,13 @@ public class PTVAPIAccess: PTVAPIAccessing {
             return
         }
 
-        let sessionConfiguration = URLSessionConfiguration.default
-        sessionConfiguration.timeoutIntervalForRequest = environment.requestTimeout
-        sessionConfiguration.timeoutIntervalForResource = environment.resourceTimeout
-        sessionConfiguration.waitsForConnectivity = true
-
-        let urlSession = URLSession(configuration: sessionConfiguration)
-
-        let task = urlSession.dataTask(with: request) { (data, response, error) in
+        networkAccess.process(request: request) { (data, response, error) in
             do {
                 guard let data = data,
-                    let response = response as? HTTPURLResponse, (200..<300) ~= response.statusCode, error == nil else {
-                        throw error ?? PTVAPIError.unknown
+                      let response = response as? HTTPURLResponse,
+                      (200..<300) ~= response.statusCode,
+                      error == nil else {
+                    throw error ?? PTVAPIError.unknown
                 }
                 let decoder = JSONDecoder()
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
@@ -70,7 +89,6 @@ public class PTVAPIAccess: PTVAPIAccessing {
                 completion?(.failure(.requestFailed(baseError: error)))
             }
         }
-        task.resume()
     }
 }
 
@@ -141,13 +159,23 @@ extension PTVAPIAccess {
     ///   - endpoint: Endpoint to retreive data from
     ///   - parameters: Parameters to include in the request
     /// - Returns: `AnyPublisher` object that emits once the request completes or if an error is thrown.
-    public func apiResponsePublisher<T>(for endpoint: PTVEndpoint,
-                                        parameters: [PTVEndpointParameter]? = nil) -> AnyPublisher<T, PTVAPIError> where T: Decodable {
+    public func apiResponsePublisher<T: Decodable>(for endpoint: PTVEndpoint,
+                                                   parameters: [PTVEndpointParameter]? = nil) -> APIPublisher<T> {
+        responsePublisher(for: endpoint, parameters: parameters)
+    }
 
-        guard T.self == endpoint.responseType else {
+    func responsePublisher<T: Decodable>(for endpoint: PTVEndpointConfigurer,
+                                         parameters: [PTVEndpointParameter]? = nil) -> APIPublisher<T> {
+        guard let responseType = endpoint.responseType else {
+            return Fail(outputType: T.self,
+                        failure: .missingResponseType(endpoint: "\(endpoint)"))
+                .eraseToAnyPublisher()
+        }
+
+        guard T.self == responseType else {
             return Fail(outputType: T.self,
                         failure: .incompatibleEndpoint(response: T.self,
-                                                       endpoint: endpoint.responseType))
+                                                       endpoint: responseType))
                 .eraseToAnyPublisher()
         }
 
@@ -156,37 +184,14 @@ extension PTVAPIAccess {
         guard let request = apiRequest(endpoint: endpoint, parameters: parameterQueryItems) else {
             return Fail(outputType: T.self,
                         failure: .cannotGenerateRequest)
-            .eraseToAnyPublisher()
+                .eraseToAnyPublisher()
         }
-
-        let sessionConfiguration = URLSessionConfiguration.default
-        sessionConfiguration.timeoutIntervalForRequest = environment.requestTimeout
-        sessionConfiguration.timeoutIntervalForResource = environment.resourceTimeout
-        sessionConfiguration.waitsForConnectivity = true
-
-        let urlSession = URLSession(configuration: sessionConfiguration)
 
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
 
-        return urlSession
-            .dataTaskPublisher(for: request)
-            .tryMap { response in
-                guard let httpUrlResponse = response.response as? HTTPURLResponse else {
-                    throw PTVAPIError.invalidResponse
-                }
-
-                let statusCode = httpUrlResponse.statusCode
-
-                guard statusCode == 200 else {
-                    switch statusCode  {
-                    case 400: throw PTVAPIError.invalidRequest
-                    case 403: throw PTVAPIError.accessDenied
-                    default: throw PTVAPIError.unexpectedStatus(statusCode)
-                    }
-                }
-
-                return response.data }
+        return networkAccess
+            .publisher(for: request)
             .decode(type: T.self, decoder: decoder)
             .mapError { return PTVAPIError.map($0) }
             .eraseToAnyPublisher()

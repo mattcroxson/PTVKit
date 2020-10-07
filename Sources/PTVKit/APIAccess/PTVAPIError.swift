@@ -27,6 +27,9 @@ public enum PTVAPIError: LocalizedError {
     /// The response returned by the API is not valid
     case invalidResponse
 
+    /// The endpoint is missing a response type
+    case missingResponseType(endpoint: String)
+
     /// An error that occurs while the request is being performed, including a description
     case requestFailed(baseError: Error)
 
@@ -39,12 +42,13 @@ public enum PTVAPIError: LocalizedError {
     /// Localized description of the error that has occured
     public var errorDescription: String? {
         switch self {
-        case .accessDenied: return "API authencation failed. Check your develoeper ID and API key are correct. (HTTP 403)"
+        case .accessDenied: return "API authencation failed. Check your credentials are correct. (HTTP 403)"
         case .cannotGenerateRequest: return "An error occurred generating the URL request"
         case let .incompatibleEndpoint(response, endpoint):
             return "The API response \(response) selected does not match the endpoint response \(endpoint)"
-        case .invalidRequest: return "The request could not be completed by the API. Please confirm the request configuration is correct. (HTTP 400)"
+        case .invalidRequest: return "The request was invalid. Check the configuration is correct. (HTTP 400)"
         case .invalidResponse: return "An unexpected response was returned by the API."
+        case let .missingResponseType(endpoint): return "The endpoint \(endpoint) is missing a response type."
         case let .requestFailed(baseError): return baseError.localizedDescription
         case let .unexpectedStatus(statusCode): return "The API returned an unexpected response: (HTTP \(statusCode))"
         case .unknown: return "An unknown error has occurred"
@@ -53,5 +57,24 @@ public enum PTVAPIError: LocalizedError {
 
     static func map(_ error: Error) -> PTVAPIError {
         return error as? PTVAPIError ?? .requestFailed(baseError: error)
+    }
+}
+
+extension PTVAPIError: Equatable {
+    public static func == (lhs: Self, rhs: Self) -> Bool {
+        switch (lhs, rhs) {
+        case (.accessDenied, .accessDenied),
+             (.cannotGenerateRequest, .cannotGenerateRequest),
+             (.invalidRequest, .invalidRequest),
+             (.invalidResponse, .invalidResponse),
+             (.requestFailed, .requestFailed), // This is here as `Error` does not conform to equatable
+             (.unknown, .unknown): return true
+        case let (.incompatibleEndpoint(leftResponse, leftEndpoint),
+                  .incompatibleEndpoint(rightResponse, rightEndpoint)):
+            return leftResponse == rightResponse && leftEndpoint == rightEndpoint
+        case let (.missingResponseType(leftValue), .missingResponseType(rightValue)): return leftValue == rightValue
+        case let (.unexpectedStatus(leftValue), .unexpectedStatus(rightValue)): return leftValue == rightValue
+        default: return false
+        }
     }
 }

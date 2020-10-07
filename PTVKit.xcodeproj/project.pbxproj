@@ -3,12 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		17034F0A2262B5EF004462A6 /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1796BE182262B45C00980F2A /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		17034F0B2262B5EF004462A6 /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1796BE192262B45C00980F2A /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		17034F0E2262B630004462A6 /* PTVAPIAccessSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17034F0D2262B630004462A6 /* PTVAPIAccessSpec.swift */; };
 		17034F112262B666004462A6 /* PTVMockDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17034F102262B666004462A6 /* PTVMockDataService.swift */; };
 		172750A2227413E200B60326 /* PTVEndpointParameterName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172750A1227413E200B60326 /* PTVEndpointParameterName.swift */; };
@@ -20,6 +18,12 @@
 		1754CF3E226C53A80064DA4E /* URLComponents+PTVKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1754CF3D226C53A80064DA4E /* URLComponents+PTVKit.swift */; };
 		17574AB42259BB63007349BC /* PTVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17574AAA2259BB63007349BC /* PTVKit.framework */; };
 		17574ABB2259BB63007349BC /* PTVKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 17574AAD2259BB63007349BC /* PTVKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		176D4735252C3ECD0010F577 /* NetworkAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176D4734252C3ECD0010F577 /* NetworkAccess.swift */; };
+		176D4737252C422C0010F577 /* PTVAPINetworkAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176D4736252C422C0010F577 /* PTVAPINetworkAccess.swift */; };
+		176D473B252C43580010F577 /* PTVMockNetworkAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176D4739252C431A0010F577 /* PTVMockNetworkAccess.swift */; };
+		176D473D252D0A0E0010F577 /* NetworkAccessError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176D473C252D0A0E0010F577 /* NetworkAccessError.swift */; };
+		177DFD67252AF95400D1DFAC /* Nimble in Frameworks */ = {isa = PBXBuildFile; productRef = 177DFD66252AF95400D1DFAC /* Nimble */; };
+		177DFD6A252AF97000D1DFAC /* Quick in Frameworks */ = {isa = PBXBuildFile; productRef = 177DFD69252AF97000D1DFAC /* Quick */; };
 		17806FB32271C0F900916717 /* PTVEndpointParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17806FB22271C0F900916717 /* PTVEndpointParameter.swift */; };
 		17806FB52271CB4E00916717 /* OutletGeolocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17806FB42271CB4E00916717 /* OutletGeolocation.swift */; };
 		17806FB72271CBA900916717 /* OutletGeolocationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17806FB62271CBA900916717 /* OutletGeolocationResponse.swift */; };
@@ -47,8 +51,6 @@
 		17852A7322715F7700687E08 /* ResultRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17852A7222715F7700687E08 /* ResultRoute.swift */; };
 		17852A7522715FC900687E08 /* ResultStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17852A7422715FC900687E08 /* ResultStop.swift */; };
 		17852A77227161C400687E08 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17852A76227161C400687E08 /* SearchResult.swift */; };
-		1796BE1A2262B45C00980F2A /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1796BE182262B45C00980F2A /* Nimble.framework */; };
-		1796BE1B2262B45C00980F2A /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1796BE192262B45C00980F2A /* Quick.framework */; };
 		17B5CFB12262AD7D00B12975 /* PTVAPIConfigurationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B5CFB02262AD7D00B12975 /* PTVAPIConfigurationProvider.swift */; };
 		17B5CFB42262AE3400B12975 /* PTVAPIAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B5CFB32262AE3400B12975 /* PTVAPIAccess.swift */; };
 		17B5CFB62262AF1000B12975 /* PTVAPIEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B5CFB52262AF1000B12975 /* PTVAPIEnvironment.swift */; };
@@ -86,20 +88,6 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		17034F092262B5E9004462A6 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				17034F0A2262B5EF004462A6 /* Nimble.framework in CopyFiles */,
-				17034F0B2262B5EF004462A6 /* Quick.framework in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		17034F0D2262B630004462A6 /* PTVAPIAccessSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTVAPIAccessSpec.swift; sourceTree = "<group>"; };
 		17034F102262B666004462A6 /* PTVMockDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTVMockDataService.swift; sourceTree = "<group>"; };
@@ -115,6 +103,10 @@
 		17574AAE2259BB63007349BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17574AB32259BB63007349BC /* PTVKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PTVKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		17574ABA2259BB63007349BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		176D4734252C3ECD0010F577 /* NetworkAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAccess.swift; sourceTree = "<group>"; };
+		176D4736252C422C0010F577 /* PTVAPINetworkAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTVAPINetworkAccess.swift; sourceTree = "<group>"; };
+		176D4739252C431A0010F577 /* PTVMockNetworkAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTVMockNetworkAccess.swift; sourceTree = "<group>"; };
+		176D473C252D0A0E0010F577 /* NetworkAccessError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAccessError.swift; sourceTree = "<group>"; };
 		17806FB22271C0F900916717 /* PTVEndpointParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTVEndpointParameter.swift; sourceTree = "<group>"; };
 		17806FB42271CB4E00916717 /* OutletGeolocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutletGeolocation.swift; sourceTree = "<group>"; };
 		17806FB62271CBA900916717 /* OutletGeolocationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutletGeolocationResponse.swift; sourceTree = "<group>"; };
@@ -142,8 +134,6 @@
 		17852A7222715F7700687E08 /* ResultRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultRoute.swift; sourceTree = "<group>"; };
 		17852A7422715FC900687E08 /* ResultStop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultStop.swift; sourceTree = "<group>"; };
 		17852A76227161C400687E08 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
-		1796BE182262B45C00980F2A /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
-		1796BE192262B45C00980F2A /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		17B5CFB02262AD7D00B12975 /* PTVAPIConfigurationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTVAPIConfigurationProvider.swift; sourceTree = "<group>"; };
 		17B5CFB32262AE3400B12975 /* PTVAPIAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTVAPIAccess.swift; sourceTree = "<group>"; };
 		17B5CFB52262AF1000B12975 /* PTVAPIEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTVAPIEnvironment.swift; sourceTree = "<group>"; };
@@ -184,8 +174,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				17574AB42259BB63007349BC /* PTVKit.framework in Frameworks */,
-				1796BE1A2262B45C00980F2A /* Nimble.framework in Frameworks */,
-				1796BE1B2262B45C00980F2A /* Quick.framework in Frameworks */,
+				177DFD6A252AF97000D1DFAC /* Quick in Frameworks */,
+				177DFD67252AF95400D1DFAC /* Nimble in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,6 +195,7 @@
 			children = (
 				17034F102262B666004462A6 /* PTVMockDataService.swift */,
 				17EEE26F2271837D007B1B62 /* PTVMockEndpoint.swift */,
+				176D4739252C431A0010F577 /* PTVMockNetworkAccess.swift */,
 			);
 			path = MockData;
 			sourceTree = "<group>";
@@ -240,10 +231,20 @@
 		17574AB72259BB63007349BC /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				178C917F24BEC205009A7F31 /* PTVKitTests */,
 				17574ABA2259BB63007349BC /* Info.plist */,
+				178C917F24BEC205009A7F31 /* PTVKitTests */,
 			);
 			path = Tests;
+			sourceTree = "<group>";
+		};
+		176D4733252C3EC40010F577 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				176D4734252C3ECD0010F577 /* NetworkAccess.swift */,
+				176D473C252D0A0E0010F577 /* NetworkAccessError.swift */,
+				176D4736252C422C0010F577 /* PTVAPINetworkAccess.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		1773FAA32259BE38002F96B5 /* DataModels */ = {
@@ -347,6 +348,7 @@
 			children = (
 				17B5CFAF2262AD6400B12975 /* APIAccess */,
 				1773FAA32259BE38002F96B5 /* DataModels */,
+				176D4733252C3EC40010F577 /* Networking */,
 				17D8F17D2263F23F000EC5E0 /* Support */,
 			);
 			path = PTVKit;
@@ -365,8 +367,6 @@
 		1796BE172262B45C00980F2A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1796BE182262B45C00980F2A /* Nimble.framework */,
-				1796BE192262B45C00980F2A /* Quick.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -374,6 +374,7 @@
 		17B5CFAF2262AD6400B12975 /* APIAccess */ = {
 			isa = PBXGroup;
 			children = (
+				17B5CFB22262AE0300B12975 /* Protocols */,
 				17B5CFB32262AE3400B12975 /* PTVAPIAccess.swift */,
 				17B5CFB52262AF1000B12975 /* PTVAPIEnvironment.swift */,
 				174850A72271B2F900CFE5B1 /* PTVAPIError.swift */,
@@ -381,7 +382,6 @@
 				17806FB22271C0F900916717 /* PTVEndpointParameter.swift */,
 				172750A1227413E200B60326 /* PTVEndpointParameterName.swift */,
 				17395731226D7BF0001744E3 /* PTVHTTPMethod.swift */,
-				17B5CFB22262AE0300B12975 /* Protocols */,
 			);
 			path = APIAccess;
 			sourceTree = "<group>";
@@ -530,7 +530,6 @@
 				17574AAF2259BB63007349BC /* Sources */,
 				17574AB02259BB63007349BC /* Frameworks */,
 				17574AB12259BB63007349BC /* Resources */,
-				17034F092262B5E9004462A6 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -538,6 +537,10 @@
 				17574AB62259BB63007349BC /* PBXTargetDependency */,
 			);
 			name = PTVKitTests;
+			packageProductDependencies = (
+				177DFD66252AF95400D1DFAC /* Nimble */,
+				177DFD69252AF97000D1DFAC /* Quick */,
+			);
 			productName = PTVKitTests;
 			productReference = 17574AB32259BB63007349BC /* PTVKitTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -549,7 +552,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1020;
-				LastUpgradeCheck = 1020;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Matt Croxson";
 				TargetAttributes = {
 					17574AA92259BB63007349BC = {
@@ -570,6 +573,10 @@
 				Base,
 			);
 			mainGroup = 17574AA02259BB63007349BC;
+			packageReferences = (
+				177DFD65252AF95400D1DFAC /* XCRemoteSwiftPackageReference "Nimble" */,
+				177DFD68252AF97000D1DFAC /* XCRemoteSwiftPackageReference "Quick" */,
+			);
 			productRefGroup = 17574AAB2259BB63007349BC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -630,6 +637,7 @@
 				17D22C1B226419080012589A /* Data+PTVKit.swift in Sources */,
 				17C92D522259C3670098EB2C /* Route.swift in Sources */,
 				172750A2227413E200B60326 /* PTVEndpointParameterName.swift in Sources */,
+				176D4737252C422C0010F577 /* PTVAPINetworkAccess.swift in Sources */,
 				17C92D552259C3EF0098EB2C /* RouteResponse.swift in Sources */,
 				1784C05422712D3F005622D2 /* DisruptionDirection.swift in Sources */,
 				17C92D4B2259BFE50098EB2C /* Status.swift in Sources */,
@@ -649,6 +657,7 @@
 				17852A7322715F7700687E08 /* ResultRoute.swift in Sources */,
 				17C92D702259DC090098EB2C /* StopResponse.swift in Sources */,
 				17C92D642259D3410098EB2C /* StopAccessibilityWheelchair.swift in Sources */,
+				176D4735252C3ECD0010F577 /* NetworkAccess.swift in Sources */,
 				17852A6A22715BB400687E08 /* VehiclePosition.swift in Sources */,
 				17852A62227149D900687E08 /* OutletResponse.swift in Sources */,
 				17C92D622259D21E0098EB2C /* StopGPS.swift in Sources */,
@@ -662,6 +671,7 @@
 				17852A562271439B00687E08 /* Departure.swift in Sources */,
 				1784C05822712E3A005622D2 /* DisruptionRoute.swift in Sources */,
 				1784C05022712C05005622D2 /* DisruptionMode.swift in Sources */,
+				176D473D252D0A0E0010F577 /* NetworkAccessError.swift in Sources */,
 				1739572D226D5549001744E3 /* PTVEndpointConfigurer.swift in Sources */,
 				17B5CFB62262AF1000B12975 /* PTVAPIEnvironment.swift in Sources */,
 				17852A77227161C400687E08 /* SearchResult.swift in Sources */,
@@ -690,6 +700,7 @@
 				17D136FC226D8D6000890E3B /* URLExtensionSpec.swift in Sources */,
 				17EEE2702271837D007B1B62 /* PTVMockEndpoint.swift in Sources */,
 				17034F112262B666004462A6 /* PTVMockDataService.swift in Sources */,
+				176D473B252C43580010F577 /* PTVMockNetworkAccess.swift in Sources */,
 				17034F0E2262B630004462A6 /* PTVAPIAccessSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -731,6 +742,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -757,7 +769,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -795,6 +807,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -815,7 +828,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -842,7 +855,7 @@
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = Resources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -873,7 +886,7 @@
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = Resources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -894,12 +907,9 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 57T46CP54H;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Tests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -918,12 +928,9 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 57T46CP54H;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Tests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -967,6 +974,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		177DFD65252AF95400D1DFAC /* XCRemoteSwiftPackageReference "Nimble" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Quick/Nimble.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+		177DFD68252AF97000D1DFAC /* XCRemoteSwiftPackageReference "Quick" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Quick/Quick.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		177DFD66252AF95400D1DFAC /* Nimble */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 177DFD65252AF95400D1DFAC /* XCRemoteSwiftPackageReference "Nimble" */;
+			productName = Nimble;
+		};
+		177DFD69252AF97000D1DFAC /* Quick */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 177DFD68252AF97000D1DFAC /* XCRemoteSwiftPackageReference "Quick" */;
+			productName = Quick;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 17574AA12259BB63007349BC /* Project object */;
 }

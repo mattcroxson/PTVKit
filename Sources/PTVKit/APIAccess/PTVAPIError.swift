@@ -59,3 +59,22 @@ public enum PTVAPIError: LocalizedError {
         return error as? PTVAPIError ?? .requestFailed(baseError: error)
     }
 }
+
+extension PTVAPIError: Equatable {
+    public static func == (lhs: Self, rhs: Self) -> Bool {
+        switch (lhs, rhs) {
+        case (.accessDenied, .accessDenied),
+             (.cannotGenerateRequest, .cannotGenerateRequest),
+             (.invalidRequest, .invalidRequest),
+             (.invalidResponse, .invalidResponse),
+             (.requestFailed, .requestFailed), // This is here as `Error` does not conform to equatable
+             (.unknown, .unknown): return true
+        case let (.incompatibleEndpoint(leftResponse, leftEndpoint),
+                  .incompatibleEndpoint(rightResponse, rightEndpoint)):
+            return leftResponse == rightResponse && leftEndpoint == rightEndpoint
+        case let (.missingResponseType(leftValue), .missingResponseType(rightValue)): return leftValue == rightValue
+        case let (.unexpectedStatus(leftValue), .unexpectedStatus(rightValue)): return leftValue == rightValue
+        default: return false
+        }
+    }
+}

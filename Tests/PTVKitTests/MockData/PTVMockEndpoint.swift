@@ -12,10 +12,12 @@ import Foundation
 enum PTVMockEndpoint {
     case mockGet
     case mockGetWithNilUrl
+    case mockGetWithIncompatibleResponseType
     case mockGetWithSingleParameter(parameter: String)
     case mockGetWithMultiParameter(first: String, second: String)
     case mockPost
     case mockPostWithNilUrl
+    case mockPostWithIncompatibleResponseType
     case mockPostWithSingleParameter(parameter: String)
     case mockPostWithMultiParameter(first: String, second: String)
 }
@@ -25,10 +27,12 @@ extension PTVMockEndpoint: PTVEndpointConfigurer {
         switch self {
         case .mockGet: return "/mock"
         case .mockGetWithNilUrl: return "/mock"
+        case .mockGetWithIncompatibleResponseType: return "/mock"
         case let .mockGetWithSingleParameter(parameter): return "/mockWithSingleParameter/parameter/\(parameter)"
         case let .mockGetWithMultiParameter(first, second): return "/mockWithMultiParameter/first/\(first)/second/\(second)"
         case .mockPost: return "/mock"
         case .mockPostWithNilUrl: return "/mock"
+        case .mockPostWithIncompatibleResponseType: return "/mock"
         case let .mockPostWithSingleParameter(parameter): return "/mockWithSingleParameter/parameter/\(parameter)"
         case let .mockPostWithMultiParameter(first, second): return "/mockWithMultiParameter/first/\(first)/second/\(second)"
         }
@@ -61,6 +65,8 @@ extension PTVMockEndpoint: PTVEndpointConfigurer {
         case .mockGet,
              .mockGetWithSingleParameter,
              .mockGetWithMultiParameter: return MockDecodable.self
+        case .mockGetWithIncompatibleResponseType,
+             .mockPostWithIncompatibleResponseType: return MockIncompatibleDecodable.self
         default: return nil
         }
     }

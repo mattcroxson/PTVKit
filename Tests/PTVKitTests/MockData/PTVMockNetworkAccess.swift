@@ -28,14 +28,14 @@ class PTVMockNetworkAccess: NetworkAccess {
             return completion(nil, nil, MockNetworkAccessError.missingUrl)
         }
 
-        let response = HTTPURLResponse.response(for: url, statusCode: 200)
+        let response = HTTPURLResponse.response(for: url, statusCode: httpStatus)
 
         if let data = dataResponse {
             return completion(data, response, nil)
         } else if let failure = failureResponse {
             return completion(nil, nil, failure)
         }
-        return completion(nil, nil, MockNetworkAccessError.noResponse)
+        return completion(nil, response, nil)
     }
 
     @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
@@ -60,11 +60,13 @@ class PTVMockNetworkAccess: NetworkAccess {
 enum MockNetworkAccessError: LocalizedError {
     case missingUrl
     case noResponse
+    case badHTTPStatus(Int)
 
     var errorDescription: String? {
         switch self {
         case .missingUrl: return "The URL is missing from the request"
         case .noResponse: return "No data or failure responses were provided"
+        case let .badHTTPStatus(status): return "HTTP status \(status)"
         }
     }
 }

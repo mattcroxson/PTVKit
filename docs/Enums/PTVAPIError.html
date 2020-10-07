@@ -17,7 +17,7 @@
     <a title="PTVAPIError Enumeration Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">PTVKit 0.4.0 Docs</a> (100% documented)</p>
+        <p><a href="../index.html">PTVKit 0.5.0 Docs</a> (100% documented)</p>
         <p class="header-right"><a href="https://github.com/Lumus/PTVKit"><img src="../img/gh.png"/>View on GitHub</a></p>
         <p class="header-right">
           <form role="search" action="../search.json">
@@ -224,6 +224,7 @@
                 <div class="language">
                   
                   <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">PTVAPIError</span> <span class="p">:</span> <span class="kt">LocalizedError</span></code></pre>
+<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">PTVAPIError</span><span class="p">:</span> <span class="kt">Equatable</span></code></pre>
 
                 </div>
               </div>
@@ -372,6 +373,33 @@ response type</p>
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/s:6PTVKit11PTVAPIErrorO19missingResponseTypeyACSS_tcACmF"></a>
+                    <a name="//apple_ref/swift/Element/missingResponseType(endpoint:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6PTVKit11PTVAPIErrorO19missingResponseTypeyACSS_tcACmF">missingResponseType(endpoint:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The endpoint is missing a response type</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="nf">missingResponseType</span><span class="p">(</span><span class="nv">endpoint</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/s:6PTVKit11PTVAPIErrorO13requestFailedyACs5Error_p_tcACmF"></a>
                     <a name="//apple_ref/swift/Element/requestFailed(baseError:)" class="dashAnchor"></a>
                     <a class="token" href="#/s:6PTVKit11PTVAPIErrorO13requestFailedyACs5Error_p_tcACmF">requestFailed(baseError:<wbr>)</a>
@@ -471,6 +499,32 @@ response type</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">errorDescription</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:SQ2eeoiySbx_xtFZ"></a>
+                    <a name="//apple_ref/swift/Method/==(_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:SQ2eeoiySbx_xtFZ">==(_:<wbr>_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="o">==</span> <span class="p">(</span><span class="nv">lhs</span><span class="p">:</span> <span class="p">`</span><span class="nv">Self</span><span class="p">`,</span> <span class="nv">rhs</span><span class="p">:</span> <span class="p">`</span><span class="nv">Self</span><span class="p">`)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
 
                         </div>
                       </div>

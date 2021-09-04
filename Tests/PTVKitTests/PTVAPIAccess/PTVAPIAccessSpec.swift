@@ -468,32 +468,3 @@ final class PTVAPIAccessSpec: QuickSpec {
         }
     }
 }
-
-struct MockDecodable: Codable, DataRepresentable {
-    let mockValue: String
-
-    init(mockValue: String) {
-        self.mockValue = "mockValue"
-    }
-}
-
-struct MockIncompatibleDecodable: Codable, DataRepresentable {
-    let incompatibleValue: Int
-
-    init(incompatibleValue: Int) {
-        self.incompatibleValue = incompatibleValue
-    }
-}
-
-protocol DataRepresentable where Self: Codable {}
-extension DataRepresentable {
-    var asData: Data {
-        let jsonEncoder = JSONEncoder()
-        do {
-            let data = try jsonEncoder.encode(self)
-            return data
-        } catch {
-            fatalError("Tried to encode by failed: \(error.localizedDescription)")
-        }
-    }
-}

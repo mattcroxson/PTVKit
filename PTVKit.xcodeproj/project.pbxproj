@@ -77,6 +77,9 @@
 		17E4D6782312777C002E6B43 /* DisruptionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E4D6772312777C002E6B43 /* DisruptionResponse.swift */; };
 		17EEE2702271837D007B1B62 /* PTVMockEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17EEE26F2271837D007B1B62 /* PTVMockEndpoint.swift */; };
 		E373CF0D26E30C7500928733 /* PTVAPIAccessCombineSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = E373CF0C26E30C7500928733 /* PTVAPIAccessCombineSpec.swift */; };
+		E373CF1026E30D1F00928733 /* MockDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E373CF0F26E30D1F00928733 /* MockDecodable.swift */; };
+		E373CF1226E30D2B00928733 /* MockIncompatibleDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E373CF1126E30D2B00928733 /* MockIncompatibleDecodable.swift */; };
+		E373CF1426E30D3A00928733 /* DataRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E373CF1326E30D3A00928733 /* DataRepresentable.swift */; };
 		E3B0730A26E1FC210016DFDB /* PTVAPIAccessAsyncUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B0730926E1FC210016DFDB /* PTVAPIAccessAsyncUnitTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -162,6 +165,9 @@
 		17E4D6772312777C002E6B43 /* DisruptionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisruptionResponse.swift; sourceTree = "<group>"; };
 		17EEE26F2271837D007B1B62 /* PTVMockEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTVMockEndpoint.swift; sourceTree = "<group>"; };
 		E373CF0C26E30C7500928733 /* PTVAPIAccessCombineSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTVAPIAccessCombineSpec.swift; sourceTree = "<group>"; };
+		E373CF0F26E30D1F00928733 /* MockDecodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDecodable.swift; sourceTree = "<group>"; };
+		E373CF1126E30D2B00928733 /* MockIncompatibleDecodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockIncompatibleDecodable.swift; sourceTree = "<group>"; };
+		E373CF1326E30D3A00928733 /* DataRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRepresentable.swift; sourceTree = "<group>"; };
 		E3B0730926E1FC210016DFDB /* PTVAPIAccessAsyncUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTVAPIAccessAsyncUnitTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -199,6 +205,9 @@
 		17034F0F2262B637004462A6 /* MockData */ = {
 			isa = PBXGroup;
 			children = (
+				E373CF1326E30D3A00928733 /* DataRepresentable.swift */,
+				E373CF0F26E30D1F00928733 /* MockDecodable.swift */,
+				E373CF1126E30D2B00928733 /* MockIncompatibleDecodable.swift */,
 				17034F102262B666004462A6 /* PTVMockDataService.swift */,
 				17EEE26F2271837D007B1B62 /* PTVMockEndpoint.swift */,
 				176D4739252C431A0010F577 /* PTVMockNetworkAccess.swift */,
@@ -703,13 +712,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E373CF1426E30D3A00928733 /* DataRepresentable.swift in Sources */,
 				17D136FC226D8D6000890E3B /* URLExtensionSpec.swift in Sources */,
 				E3B0730A26E1FC210016DFDB /* PTVAPIAccessAsyncUnitTests.swift in Sources */,
 				17EEE2702271837D007B1B62 /* PTVMockEndpoint.swift in Sources */,
+				E373CF1026E30D1F00928733 /* MockDecodable.swift in Sources */,
 				17034F112262B666004462A6 /* PTVMockDataService.swift in Sources */,
 				E373CF0D26E30C7500928733 /* PTVAPIAccessCombineSpec.swift in Sources */,
 				176D473B252C43580010F577 /* PTVMockNetworkAccess.swift in Sources */,
 				17034F0E2262B630004462A6 /* PTVAPIAccessSpec.swift in Sources */,
+				E373CF1226E30D2B00928733 /* MockIncompatibleDecodable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,6 +12,8 @@ import Foundation
 /// PTV API interface
 public protocol PTVAPIAccessing {
 
+    // MARK: - Completion Handler
+
     /// Completion handler called when a URL request either receives a response or throws an error
     typealias ResponseCompletion<T: Decodable> = (Result<T, PTVAPIError>) -> Void
 
@@ -30,6 +32,8 @@ public protocol PTVAPIAccessing {
     /// Publisher that performs an API request and emits the response, or an error if one is thrown
     @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
     typealias APIPublisher<T: Decodable> = AnyPublisher<T, PTVAPIError>
+
+    // MARK: - Async/Await
 
     /// Returns a publisher that performs an API request and emits the response, or an error if one is thrown
     ///

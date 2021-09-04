@@ -9,6 +9,8 @@
 import Foundation
 import Combine
 
+// MARK: - Completion Handler
+
 class PTVAPINetworkAccess: NetworkAccess {
 
     private let environment: PTVAPIEnvironment
@@ -41,6 +43,8 @@ class PTVAPINetworkAccess: NetworkAccess {
             .resume()
     }
 }
+
+// MARK: - Combine/SwiftUI
 
 @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
 extension PTVAPINetworkAccess {
@@ -88,6 +92,8 @@ extension PTVAPINetworkAccess {
             .eraseToAnyPublisher()
     }
 }
+
+// MARK: - Async/Await
 
 @available(OSX 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
 extension PTVAPINetworkAccess {

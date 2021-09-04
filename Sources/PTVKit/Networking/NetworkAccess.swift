@@ -17,17 +17,23 @@ protocol NetworkAccess {
     ///   - completion: Completion to handle the results of the data task.
     func process(request: URLRequest, completion: @escaping (Data?, URLResponse?, Error?) -> Void)
 
+    // MARK: - Combine/SwiftUI
+
     /// Creates a Publisher for the provided data request
     /// - Parameter request: Request to create the publisher with
     /// - Returns: The created publisher
     @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
     func publisher(for request: URLRequest) -> DataTaskPublisher
 
+    // MARK: - Async/Await
+
     /// Processes a URL request and returns a Data object, or throws an error if a failure occurs.
     /// - Returns: Data object returned by the API.
     @available(OSX 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
     func process(request: URLRequest) async throws -> Data
 }
+
+// MARK: - Combine/SwiftUI
 
 @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
 typealias DataTaskPublisher = AnyPublisher<Data, Error>

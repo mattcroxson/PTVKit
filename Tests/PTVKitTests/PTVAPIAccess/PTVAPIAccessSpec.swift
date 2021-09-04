@@ -493,6 +493,10 @@ final class PTVAPIAccessCombineSpec: QuickSpec {
                                                      networkAccess: mockNetworkAccess)
                         }
 
+                        afterEach {
+                            apiAccess = nil
+                        }
+
                         it("should return a mock object") {
                             var mockValue: MockDecodable?
                             var mockError: PTVAPIError?
@@ -526,6 +530,10 @@ final class PTVAPIAccessCombineSpec: QuickSpec {
                         beforeEach {
                             apiAccess = PTVAPIAccess(configuration: mockEnvironment.configuration,
                                                      networkAccess: mockNetworkAccess)
+                        }
+
+                        afterEach {
+                            apiAccess = nil
                         }
 
                         it("should return a mock object") {
@@ -563,6 +571,10 @@ final class PTVAPIAccessCombineSpec: QuickSpec {
                                                      networkAccess: mockNetworkAccess)
                         }
 
+                        afterEach {
+                            apiAccess = nil
+                        }
+
                         it("should return a mock object") {
                             var mockValue: MockDecodable?
                             var mockError: PTVAPIError?
@@ -598,7 +610,11 @@ final class PTVAPIAccessCombineSpec: QuickSpec {
                                                      networkAccess: mockNetworkAccess)
                         }
 
-                        it("should return a mock object") {
+                        afterEach {
+                            apiAccess = nil
+                        }
+
+                        it("should fail") {
                             var mockValue: MockDecodable?
                             var mockError: PTVAPIError?
 
@@ -633,7 +649,11 @@ final class PTVAPIAccessCombineSpec: QuickSpec {
                                                      networkAccess: mockNetworkAccess)
                         }
 
-                        it("should return a mock object") {
+                        afterEach {
+                            apiAccess = nil
+                        }
+
+                        it("should fail") {
                             var mockValue: MockDecodable?
                             var mockError: PTVAPIError?
 
@@ -671,6 +691,10 @@ final class PTVAPIAccessCombineSpec: QuickSpec {
                                                      networkAccess: mockNetworkAccess)
                         }
 
+                        afterEach {
+                            apiAccess = nil
+                        }
+
                         it("should fail with a 404") {
                             var mockValue: MockDecodable?
                             var mockError: PTVAPIError?
@@ -705,6 +729,10 @@ final class PTVAPIAccessCombineSpec: QuickSpec {
                         beforeEach {
                             apiAccess = PTVAPIAccess(configuration: mockEnvironment.configuration,
                                                      networkAccess: mockNetworkAccess)
+                        }
+
+                        afterEach {
+                            apiAccess = nil
                         }
 
                         it("should fail with an unknown error") {

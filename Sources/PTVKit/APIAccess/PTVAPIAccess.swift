@@ -197,3 +197,44 @@ extension PTVAPIAccess {
             .eraseToAnyPublisher()
     }
 }
+
+// MARK: - async
+
+@available(OSX 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+extension PTVAPIAccess {
+
+    /// Asynchronously performs an API request and returns the response, or throws an error if a failure occurs.
+    ///
+    /// - Parameters:
+    ///   - endpoint: Endpoint to retreive data from
+    ///   - parameters: Parameters to include in the request
+    /// - Returns: `Decodable` object returned by the API.
+    public func apiResponse<T: Decodable>(for endpoint: PTVEndpoint,
+                                          parameters: [PTVEndpointParameter]? = nil) async throws -> T {
+        try await response(for: endpoint, parameters: parameters)
+    }
+
+    func response<T: Decodable>(for endpoint: PTVEndpointConfigurer,
+                                parameters: [PTVEndpointParameter]? = nil) async throws -> T {
+        guard let responseType = endpoint.responseType else {
+            throw PTVAPIError.missingResponseType(endpoint: "\(endpoint)")
+        }
+
+        guard T.self == responseType else {
+            throw PTVAPIError.incompatibleEndpoint(response: T.self, endpoint: responseType)
+        }
+
+        let parameterQueryItems = parameters?.flatMap { $0.urlQueryItems }
+
+        guard let request = apiRequest(endpoint: endpoint, parameters: parameterQueryItems) else {
+            throw PTVAPIError.cannotGenerateRequest
+        }
+
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+
+        let data = try await networkAccess.process(request: request)
+
+        return try decoder.decode(T.self, from: data)
+    }
+}

@@ -88,3 +88,32 @@ extension PTVAPINetworkAccess {
             .eraseToAnyPublisher()
     }
 }
+
+@available(OSX 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+extension PTVAPINetworkAccess {
+    func process(request: URLRequest) async throws -> Data {
+        let sessionConfiguration = URLSessionConfiguration.default
+        sessionConfiguration.timeoutIntervalForRequest = environment.requestTimeout
+        sessionConfiguration.timeoutIntervalForResource = environment.resourceTimeout
+        sessionConfiguration.waitsForConnectivity = true
+
+        let urlSession = URLSession(configuration: sessionConfiguration)
+        let (data, response) = try await urlSession.data(for: request, delegate: nil)
+
+        guard let httpUrlResponse = response as? HTTPURLResponse else {
+            throw PTVAPIError.invalidResponse
+        }
+
+        let statusCode = httpUrlResponse.statusCode
+
+        guard statusCode == 200 else {
+            switch statusCode {
+            case 400: throw PTVAPIError.invalidRequest
+            case 403: throw PTVAPIError.accessDenied
+            default: throw PTVAPIError.unexpectedStatus(statusCode)
+            }
+        }
+
+        return data
+    }
+}

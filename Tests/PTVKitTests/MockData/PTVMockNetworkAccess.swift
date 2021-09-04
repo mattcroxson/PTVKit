@@ -55,6 +55,17 @@ class PTVMockNetworkAccess: NetworkAccess {
             .publisher
             .eraseToAnyPublisher()
     }
+
+    @available(OSX 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+    func process(request: URLRequest) async throws -> Data {
+        if let data = dataResponse {
+            return data
+        } else if let failure = failureResponse {
+            throw failure
+        }
+
+        throw MockNetworkAccessError.noResponse
+    }
 }
 
 enum MockNetworkAccessError: LocalizedError {

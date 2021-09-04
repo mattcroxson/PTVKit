@@ -1,19 +1,18 @@
 //
-//  PTVAPIAccessUnitTests.swift
-//  PTVAPIAccessUnitTests
+//  PTVAPIAccessAsyncUnitTests.swift
+//  PTVAPIAccessAsyncUnitTests
 //
 //  Created by Matt Croxson on 3/9/21.
 //  Copyright © 2021 Matt Croxson. All rights reserved.
 //
-
-// swiftlint:disable line_length
+// swiftlint:disable all
 
 import XCTest
 
 @testable import PTVKit
 
 @available(OSX 12, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
-class PTVAPIAccessUnitTests: XCTestCase {
+class PTVAPIAccessAsyncUnitTests: XCTestCase {
 
     let mockEnvironment = PTVMockDataService.mockEnvironment
     var apiAccess: PTVAPIAccess!

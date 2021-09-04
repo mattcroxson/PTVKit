@@ -76,7 +76,8 @@
 		17D22C1B226419080012589A /* Data+PTVKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D22C1A226419080012589A /* Data+PTVKit.swift */; };
 		17E4D6782312777C002E6B43 /* DisruptionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E4D6772312777C002E6B43 /* DisruptionResponse.swift */; };
 		17EEE2702271837D007B1B62 /* PTVMockEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17EEE26F2271837D007B1B62 /* PTVMockEndpoint.swift */; };
-		E3B0730A26E1FC210016DFDB /* PTVAPIAccessUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B0730926E1FC210016DFDB /* PTVAPIAccessUnitTests.swift */; };
+		E373CF0D26E30C7500928733 /* PTVAPIAccessCombineSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = E373CF0C26E30C7500928733 /* PTVAPIAccessCombineSpec.swift */; };
+		E3B0730A26E1FC210016DFDB /* PTVAPIAccessAsyncUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B0730926E1FC210016DFDB /* PTVAPIAccessAsyncUnitTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -160,7 +161,8 @@
 		17D22C1A226419080012589A /* Data+PTVKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+PTVKit.swift"; sourceTree = "<group>"; };
 		17E4D6772312777C002E6B43 /* DisruptionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisruptionResponse.swift; sourceTree = "<group>"; };
 		17EEE26F2271837D007B1B62 /* PTVMockEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTVMockEndpoint.swift; sourceTree = "<group>"; };
-		E3B0730926E1FC210016DFDB /* PTVAPIAccessUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTVAPIAccessUnitTests.swift; sourceTree = "<group>"; };
+		E373CF0C26E30C7500928733 /* PTVAPIAccessCombineSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTVAPIAccessCombineSpec.swift; sourceTree = "<group>"; };
+		E3B0730926E1FC210016DFDB /* PTVAPIAccessAsyncUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTVAPIAccessAsyncUnitTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,8 +189,9 @@
 		17034F0C2262B617004462A6 /* PTVAPIAccess */ = {
 			isa = PBXGroup;
 			children = (
+				E373CF0C26E30C7500928733 /* PTVAPIAccessCombineSpec.swift */,
 				17034F0D2262B630004462A6 /* PTVAPIAccessSpec.swift */,
-				E3B0730926E1FC210016DFDB /* PTVAPIAccessUnitTests.swift */,
+				E3B0730926E1FC210016DFDB /* PTVAPIAccessAsyncUnitTests.swift */,
 			);
 			path = PTVAPIAccess;
 			sourceTree = "<group>";
@@ -701,9 +704,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				17D136FC226D8D6000890E3B /* URLExtensionSpec.swift in Sources */,
-				E3B0730A26E1FC210016DFDB /* PTVAPIAccessUnitTests.swift in Sources */,
+				E3B0730A26E1FC210016DFDB /* PTVAPIAccessAsyncUnitTests.swift in Sources */,
 				17EEE2702271837D007B1B62 /* PTVMockEndpoint.swift in Sources */,
 				17034F112262B666004462A6 /* PTVMockDataService.swift in Sources */,
+				E373CF0D26E30C7500928733 /* PTVAPIAccessCombineSpec.swift in Sources */,
 				176D473B252C43580010F577 /* PTVMockNetworkAccess.swift in Sources */,
 				17034F0E2262B630004462A6 /* PTVAPIAccessSpec.swift in Sources */,
 			);

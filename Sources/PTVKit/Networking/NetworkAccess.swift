@@ -22,6 +22,11 @@ protocol NetworkAccess {
     /// - Returns: The created publisher
     @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
     func publisher(for request: URLRequest) -> DataTaskPublisher
+
+    /// Processes a URL request and returns a Data object, or throws an error if a failure occurs.
+    /// - Returns: Data object returned by the API.
+    @available(OSX 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+    func process(request: URLRequest) async throws -> Data
 }
 
 @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)

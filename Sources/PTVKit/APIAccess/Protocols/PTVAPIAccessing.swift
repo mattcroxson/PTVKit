@@ -33,8 +33,6 @@ public protocol PTVAPIAccessing {
     @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
     typealias APIPublisher<T: Decodable> = AnyPublisher<T, PTVAPIError>
 
-    // MARK: - Async/Await
-
     /// Returns a publisher that performs an API request and emits the response, or an error if one is thrown
     ///
     /// - Parameters:
@@ -44,4 +42,16 @@ public protocol PTVAPIAccessing {
     @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
     func apiResponsePublisher<T: Decodable>(for endpoint: PTVEndpoint,
                                             parameters: [PTVEndpointParameter]?) -> APIPublisher<T>
+
+    // MARK: - Async/Await
+
+    /// Asynchronously performs an API request and returns the response, or throws an error if a failure occurs.
+    ///
+    /// - Parameters:
+    ///   - endpoint: Endpoint to retreive data from
+    ///   - parameters: Parameters to include in the request
+    /// - Returns: `Decodable` object returned by the API.
+    @available(OSX 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+    func apiResponse<T: Decodable>(for endpoint: PTVEndpoint,
+                                   parameters: [PTVEndpointParameter]?) async throws -> T
 }
